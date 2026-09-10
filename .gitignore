@@ -46,6 +46,4 @@ nosetests.xml
 
 git-commit-msg.txt
 .venv/
-__pycache__/
-*.pyc
 *.log
