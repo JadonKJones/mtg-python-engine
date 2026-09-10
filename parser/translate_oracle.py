@@ -93,6 +93,8 @@ def _destroy_target(word):
 
     t = {
         "creature": "'creature'",
+        "creature you control": "'your creature'",
+        "creature an opponent controls": "'opponent creature'",
         "artifact": "'artifact'",
         "enchantment": "'enchantment'",
         "land": "'land'",
@@ -211,14 +213,6 @@ def clause_to_code(cl, actor):
         return "%s.create_token('%s %s', %d)" % (actor, col, typ, cnt)
 
     # --- single-target clauses ---
-    m = re.fullmatch(r"~ deals (\d+) damage (?:divided (?:evenly )?among (.+)|to (.+))", low.replace("this creature", "~").replace("this spell", "~"))
-    if m:
-        target_group = m.group(2) or m.group(3)
-        if _dmg_target(target_group):
-            # If divided, it's a simplification in this engine
-            return ("TARGET", _dmg_target(target_group),
-                    "[t.take_damage(self, %d) for t in targets]" % int(m.group(1)))
-
     m = re.fullmatch(r"~ deals (\d+) damage to (.+)", low.replace("this creature", "~").replace("this spell", "~"))
     if m and _dmg_target(m.group(2)):
         return ("TARGET", _dmg_target(m.group(2)),

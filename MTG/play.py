@@ -44,9 +44,13 @@ class Play(gameobject.GameObject):
         if not targets_chosen and card:
             self.targets_chosen = card.targets_chosen
             self.target_criterias = card.target_criterias
+            if getattr(card, 'targets_chosen_criterias', None) is not None:
+                self.targets_chosen_criterias = card.targets_chosen_criterias
         elif not targets_chosen and source:
             self.targets_chosen = source.targets_chosen
             self.target_criterias = source.target_criterias
+            if getattr(source, 'targets_chosen_criterias', None) is not None:
+                self.targets_chosen_criterias = source.targets_chosen_criterias
 
         if self.targets_chosen:
             self.target_timestamps = [t.timestamp for t in self.targets_chosen]
@@ -78,10 +82,12 @@ class Play(gameobject.GameObject):
         # check target validity by affirming that at least one timestamp is the same
         # AND targets are still valid (e.g. still a creature)
         # TODO: shroud/hexproof/protection
-        elif self.targets_chosen and not any([c(self, t) and t.timestamp == time for c, t, time in zip(self.target_criterias,
+        elif self.targets_chosen:
+            criterias = getattr(self, 'targets_chosen_criterias', self.target_criterias)
+            if not any([c(self, t) and t.timestamp == time for c, t, time in zip(criterias,
                                            self.targets_chosen, self.target_timestamps)]):
-            print("All targets invalid. %r fizzles." % self)
-            fizzles = True
+                print("All targets invalid. %r fizzles." % self)
+                fizzles = True
 
 
         elif not self.apply_condition():

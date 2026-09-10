@@ -3,10 +3,10 @@
 482 unique cards.
 
 - **implemented**: 49
-- **partial**: 34
+- **partial**: 35
 - **keyword**: 48
 - **vanilla**: 17
-- **unsupported**: 334
+- **unsupported**: 333
 
 > Every card is castable in a game. `keyword`/`vanilla` have no non-keyword text; `partial` wires the clauses the engine supports and drops the rest; `unsupported` plays as a vanilla/keyword permanent.
 
@@ -78,6 +78,7 @@
 - Legion Guildmage — 1/2 clauses
 - Liturgy of Blood — 1/2 clauses
 - Maximize Altitude — 1/2 clauses
+- Nature's Way — 1/2 clauses
 - Never Happened — 1/2 clauses
 - New Prahv Guildmage — 1/2 clauses
 - Pilfered Plans — 1/2 clauses
@@ -296,7 +297,6 @@
 - Mountain — 
 - Muse Drake — Flying
 - Mwonvuli Beast Tracker — When this creature enters, search your library for a creature card wit
-- Nature's Way — Target creature you control gains vigilance and trample until end of t
 - Necrotic Wound — Undergrowth — Target creature gets -X/-X until end of turn, where X is
 - Nephalia Smuggler — {3}{U}, {T}: Exile another target creature you control, then return th
 - Nightveil Sprite — Flying
