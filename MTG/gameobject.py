@@ -160,6 +160,10 @@ class GameObject():
         return cardtype.CardType.ENCHANTMENT in self.characteristics.types
 
     @property
+    def is_planeswalker(self):
+        return cardtype.CardType.PLANESWALKER in self.characteristics.types
+
+    @property
     def is_aura(self):
         return self.is_enchantment and 'Aura' in self.characteristics.subtype
 

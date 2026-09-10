@@ -158,3 +158,184 @@ add_trigger("Restoration Angel", triggers.triggerConditions['onEtB'], '[self.tar
 add_targets("Path to Exile", ['creature'], prompts=[])
 add_play_func_with_targets("Path to Exile", lambda self, targets, is_legal_target: [targets[0].exile(), targets[0].controller.search_lib(lambda c: c.is_basic_land, target_zone=None, todo_func=lambda c: c.change_zone(targets[0].controller.battlefield, status_mod=['tapped'])) if targets[0].controller.make_choice("Would you like to search for a basic land?") else None])
 
+add_aura_effect("Aerial Modification", '[self.add_pt((2, 2))]', ['creature'])
+
+add_aura_effect("Aether Meltdown", '[self.add_pt((-4, 0))]', ['creature'])
+
+add_targets("Angelic Edict", ['creature or enchantment'], prompts=[])
+add_play_func_with_targets("Angelic Edict", lambda self, targets, is_legal_target: [targets[0].exile()])
+
+add_targets("Annihilating Fire", ['creature or player'], prompts=[])
+add_play_func_with_targets("Annihilating Fire", lambda self, targets, is_legal_target: [targets[0].take_damage(self, 3)])
+
+add_targets("Annul", ['artifact or enchantment spell'], prompts=[])
+add_play_func_with_targets("Annul", lambda self, targets, is_legal_target: [targets[0].counter(source=self)])
+
+add_activated_ability("Aquus Steed", '2U, T', "self.targets_chosen[0].add_effect('modifyPT', (-2, 0), self, self.game.eot_time)", ['creature'])
+
+add_targets("Artisan's Sorrow", ['artifact or enchantment'], prompts=[])
+add_play_func_with_targets("Artisan's Sorrow", lambda self, targets, is_legal_target: [targets[0].destroy(), self.controller.scry(2)])
+
+add_targets("Battlewise Valor", ['creature'], prompts=[])
+add_play_func_with_targets("Battlewise Valor", lambda self, targets, is_legal_target: [targets[0].add_effect('modifyPT', (2, 2), self, self.game.eot_time), self.controller.scry(1)])
+
+add_activated_ability("Brindle Boar", 'Sacrifice ~', 'self.controller.gain_life(4)', [])
+
+add_play_func_no_target("Call of the Conclave", lambda self: [self.controller.create_token('3/3 green Centaur', 1)])
+
+add_activated_ability("Centaur's Herald", '2G, Sacrifice ~', "self.controller.create_token('3/3 green Centaur', 1)", [])
+
+add_activated_ability("Conclave Guildmage", '5W, T', "self.controller.create_token('2/2 green And', 1)", [])
+
+add_targets("Consign", ['nonland permanent'], prompts=[])
+add_play_func_with_targets("Consign", lambda self, targets, is_legal_target: [targets[0].bounce()])
+
+add_targets("Counterspell", ['spell'], prompts=[])
+add_play_func_with_targets("Counterspell", lambda self, targets, is_legal_target: [targets[0].counter(source=self)])
+
+add_targets("Craterize", ['land'], prompts=[])
+add_play_func_with_targets("Craterize", lambda self, targets, is_legal_target: [targets[0].destroy()])
+
+add_aura_effect("Dead Weight", '[self.add_pt((-2, -2))]', ['creature'])
+
+add_targets("Deadly Visit", ['creature'], prompts=[])
+add_play_func_with_targets("Deadly Visit", lambda self, targets, is_legal_target: [targets[0].destroy()])
+
+add_targets("Devious Cover-Up", ['spell'], prompts=[])
+add_play_func_with_targets("Devious Cover-Up", lambda self, targets, is_legal_target: [targets[0].counter(source=self)])
+
+add_activated_ability("Devout Chaplain", 'T', 'self.targets_chosen[0].exile()', ['artifact or enchantment'])
+
+add_targets("Disappearing Act", ['spell'], prompts=[])
+add_play_func_with_targets("Disappearing Act", lambda self, targets, is_legal_target: [targets[0].counter(source=self)])
+
+add_aura_effect("Divine Favor", '[self.add_pt((1, 3))]', ['creature'])
+
+add_activated_ability("Era of Innovation", 'Sacrifice ~', 'self.controller.draw(3)', [])
+
+add_static_effect("Escarpment Fortress", 'controller -self', "modifyPT", (1, 0), lambda eff: eff.apply_target.is_creature)
+
+add_targets("Fade into Antiquity", ['artifact or enchantment'], prompts=[])
+add_play_func_with_targets("Fade into Antiquity", lambda self, targets, is_legal_target: [targets[0].exile()])
+
+add_targets("Fall of the Gavel", ['spell'], prompts=[])
+add_play_func_with_targets("Fall of the Gavel", lambda self, targets, is_legal_target: [targets[0].counter(source=self), self.controller.gain_life(5)])
+
+add_activated_ability("Gideon's Lawkeeper", 'W, T', 'self.targets_chosen[0].tap()', ['creature'])
+
+add_play_func_no_target("Harsh Scrutiny", lambda self: [None, self.controller.scry(1)])
+
+add_aura_effect("Holy Mantle", '[self.add_pt((2, 2))]', ['creature'])
+
+add_play_func_no_target("Hypothesizzle", lambda self: [self.controller.draw(2)])
+
+add_play_func_no_target("Illusionist's Stratagem", lambda self: [self.controller.draw(1)])
+
+add_targets("Inescapable Blaze", ['creature or player'], prompts=[])
+add_play_func_with_targets("Inescapable Blaze", lambda self, targets, is_legal_target: [targets[0].take_damage(self, 6)])
+
+add_targets("Integrity", ['creature'], prompts=[])
+add_play_func_with_targets("Integrity", lambda self, targets, is_legal_target: [targets[0].add_effect('modifyPT', (2, 2), self, self.game.eot_time)])
+
+add_targets("Iona's Judgment", ['creature or enchantment'], prompts=[])
+add_play_func_with_targets("Iona's Judgment", lambda self, targets, is_legal_target: [targets[0].exile()])
+
+add_play_func_no_target("Knight Watch", lambda self: [self.controller.create_token('2/2 white Knight', 2)])
+
+add_targets("Lash of the Whip", ['creature'], prompts=[])
+add_play_func_with_targets("Lash of the Whip", lambda self, targets, is_legal_target: [targets[0].add_effect('modifyPT', (-4, -4), self, self.game.eot_time)])
+
+add_play_func_no_target("Lay Bare the Heart", lambda self: [None])
+
+add_activated_ability("League Guildmage", '3U, T', 'self.controller.draw(1)', [])
+
+add_activated_ability("Ledev Champion", '3GW', "self.controller.create_token('1/1 white Soldier', 1)", [])
+
+add_activated_ability("Legion Guildmage", '5R, T', 'self.controller.opponent.take_damage(self, 3)', [])
+
+add_targets("Liturgy of Blood", ['creature'], prompts=[])
+add_play_func_with_targets("Liturgy of Blood", lambda self, targets, is_legal_target: [targets[0].destroy()])
+
+add_activated_ability("Lobber Crew", 'T', 'self.controller.opponent.take_damage(self, 1)', [])
+
+add_aura_effect("Maniacal Rage", '[self.add_pt((2, 2))]', ['creature'])
+
+add_play_func_no_target("Never Happened", lambda self: [None])
+
+add_activated_ability("New Prahv Guildmage", 'WU', "self.targets_chosen[0].add_effect('gainAbility', 'Flying', self, self.game.eot_time)", ['creature'])
+
+add_play_func_no_target("Pilfered Plans", lambda self: [self.controller.draw(2)])
+
+add_play_func_no_target("Portent of Betrayal", lambda self: [self.controller.scry(1)])
+
+add_targets("Price of Fame", ['creature'], prompts=[])
+add_play_func_with_targets("Price of Fame", lambda self, targets, is_legal_target: [targets[0].destroy()])
+
+add_targets("Psychic Strike", ['spell'], prompts=[])
+add_play_func_with_targets("Psychic Strike", lambda self, targets, is_legal_target: [targets[0].counter(source=self)])
+
+add_aura_effect("Pursuit of Flight", '[self.add_pt((2, 2))]', ['creature'])
+
+add_play_func_no_target("Radical Idea", lambda self: [self.controller.draw(1)])
+
+add_targets("Ray of Dissolution", ['enchantment'], prompts=[])
+add_play_func_with_targets("Ray of Dissolution", lambda self, targets, is_legal_target: [targets[0].destroy(), self.controller.gain_life(3)])
+
+add_play_func_no_target("Repel the Darkness", lambda self: [self.controller.draw(1)])
+
+add_targets("Righteous Blow", ['attacking or blocking creature'], prompts=[])
+add_play_func_with_targets("Righteous Blow", lambda self, targets, is_legal_target: [targets[0].take_damage(self, 2)])
+
+add_targets("Rites of Reaping", ['creature'], prompts=[])
+add_play_func_with_targets("Rites of Reaping", lambda self, targets, is_legal_target: [targets[0].add_effect('modifyPT', (3, 3), self, self.game.eot_time)])
+
+add_targets("Savage Surge", ['creature'], prompts=[])
+add_play_func_with_targets("Savage Surge", lambda self, targets, is_legal_target: [targets[0].add_effect('modifyPT', (2, 2), self, self.game.eot_time)])
+
+add_targets("Searing Spear", ['creature or player'], prompts=[])
+add_play_func_with_targets("Searing Spear", lambda self, targets, is_legal_target: [targets[0].take_damage(self, 3)])
+
+add_activated_ability("Shielded Aether Thief", 'T', 'self.controller.draw(1)', [])
+
+add_aura_effect("Siege Modification", '[self.add_pt((3, 0))]', ['creature'])
+
+add_targets("Solemn Offering", ['artifact or enchantment'], prompts=[])
+add_play_func_with_targets("Solemn Offering", lambda self, targets, is_legal_target: [targets[0].destroy(), self.controller.gain_life(4)])
+
+add_targets("Stand Firm", ['creature'], prompts=[])
+add_play_func_with_targets("Stand Firm", lambda self, targets, is_legal_target: [targets[0].add_effect('modifyPT', (1, 1), self, self.game.eot_time), self.controller.scry(2)])
+
+add_play_func_no_target("Stir the Sands", lambda self: [self.controller.create_token('2/2 black Zombie', 3)])
+
+add_targets("Survey the Wreckage", ['land'], prompts=[])
+add_play_func_with_targets("Survey the Wreckage", lambda self, targets, is_legal_target: [targets[0].destroy(), self.controller.create_token('1/1 red Goblin', 1)])
+
+add_activated_ability("Swarm Guildmage", '1G, T', 'self.controller.gain_life(2)', [])
+
+add_targets("Take Heart", ['creature'], prompts=[])
+add_play_func_with_targets("Take Heart", lambda self, targets, is_legal_target: [targets[0].add_effect('modifyPT', (2, 2), self, self.game.eot_time)])
+
+add_play_func_no_target("Talrand's Invocation", lambda self: [self.controller.create_token('2/2 blue Drake', 2)])
+
+add_play_func_no_target("The Crystal's Chosen", lambda self: [self.controller.create_token('1/1 colorless Hero', 4)])
+
+add_targets("Turn to Slag", ['creature'], prompts=[])
+add_play_func_with_targets("Turn to Slag", lambda self, targets, is_legal_target: [targets[0].take_damage(self, 5)])
+
+add_targets("Unexplained Disappearance", ['creature'], prompts=[])
+add_play_func_with_targets("Unexplained Disappearance", lambda self, targets, is_legal_target: [targets[0].bounce()])
+
+add_targets("Unsummon", ['creature'], prompts=[])
+add_play_func_with_targets("Unsummon", lambda self, targets, is_legal_target: [targets[0].bounce()])
+
+add_play_func_no_target("Urban Evolution", lambda self: [self.controller.draw(3)])
+
+add_activated_ability("Vessel of Endless Rest", 'T', 'self.controller.mana.add(mana.Mana.COLORLESS, 1)', [])
+
+add_targets("Volt Charge", ['creature or player'], prompts=[])
+add_play_func_with_targets("Volt Charge", lambda self, targets, is_legal_target: [targets[0].take_damage(self, 3)])
+
+add_activated_ability("Wand of Vertebrae", 'T', 'self.controller.mill(1)', [])
+
+add_play_func_no_target("Wild Guess", lambda self: [self.controller.draw(2)])
+

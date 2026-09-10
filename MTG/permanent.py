@@ -610,7 +610,8 @@ class Aura(Permanent):
         pass
 
     def disenchant(self):
-        target.auras.remove(self)
+        if self.enchant_target is not None and self in self.enchant_target.auras:
+            self.enchant_target.auras.remove(self)
         self.enchant_target = None
 
     def add_ability(self, ability):

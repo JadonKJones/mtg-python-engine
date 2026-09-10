@@ -549,6 +549,25 @@ class Player():
             self.graveyard.add(self.library.pop())
         return True
 
+    def scry(self, num=1):
+        """Look at the top `num` cards; optionally send some to the bottom.
+
+        Minimal interactive implementation: for each card, keep on top or move
+        to the bottom of the library. Order-preserving for the kept cards.
+        """
+        num = min(num, len(self.library))
+        if num <= 0:
+            return True
+        # self.library.elements[-1] is the top card
+        top = self.library.elements[-num:]
+        del self.library.elements[-num:]
+        keep, bottom = [], []
+        for card in reversed(top):  # closest-to-top first
+            ans = self.make_choice("Scry: keep %r on top? (yes/no)" % card)
+            (keep if str(ans).strip().lower() in ("", "y", "yes") else bottom).append(card)
+        self.library.elements = bottom + self.library.elements + list(reversed(keep))
+        return True
+
     def create_token(self, attributes, num=1, keyword_abilities=[], activated_abilities=[]):
         token.create_token(attributes, self, num, keyword_abilities, activated_abilities)
 

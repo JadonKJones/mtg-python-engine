@@ -13,7 +13,7 @@ from MTG import utils
 from MTG import permanent
 
 
-SETPREFIX = ['M15', 'sm_set', 'cube']
+SETPREFIX = ['M15', 'sm_set', 'cube', 'collection']
 name_to_id_dict = {}
 id_to_name_dict = {}
 
@@ -431,7 +431,8 @@ def parse_card_from_lines(lines, log=None):
     exec(str_to_exe)
 
 
-def setup_cards(FILES=['data/m15_cards.txt', 'data/cube_cards.txt']):
+def setup_cards(FILES=['data/m15_cards.txt', 'data/cube_cards.txt',
+                       'data/collection_cards.txt']):
     """
     Read in cards information from data/cards.txt
 

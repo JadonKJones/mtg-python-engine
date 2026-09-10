@@ -79,40 +79,48 @@ def choose_targets(source):
         targets_chosen.append(card)
     return targets_chosen
 
+_TARGET_SHORTCUTS = {
+    'creature': lambda self, p: p.is_permanent and p.is_creature,
+    'your creature': lambda self, p: p.is_permanent and p.is_creature and p.controller == self.controller,
+    'other creature': lambda self, p: p.is_permanent and p.is_creature and p != self,
+    'your other creature': lambda self, p: (p.is_permanent and p.is_creature
+                                            and p.controller == self.controller and p != self),
+    'opponent creature': lambda self, p: p.is_creature and p.controller != self.controller,
+    'opponent': lambda self, p: p.is_player and p != self.controller,
+    'player': lambda self, p: p.is_player,
+    'creature or player': lambda self, p: p.is_player or (p.is_creature and p.is_permanent),
+    'any target': lambda self, p: p.is_player or (p.is_creature and p.is_permanent),
+    'spell': lambda self, s: s.is_spell,
+    'instant or sorcery spell': lambda self, s: s.is_spell and (s.is_instant or s.is_sorcery),
+    'creature spell': lambda self, s: s.is_spell and s.is_creature,
+    'noncreature spell': lambda self, s: s.is_spell and not s.is_creature,
+    'artifact spell': lambda self, s: s.is_spell and s.is_artifact,
+    'enchantment spell': lambda self, s: s.is_spell and s.is_enchantment,
+    'artifact or enchantment spell': lambda self, s: s.is_spell and (s.is_artifact or s.is_enchantment),
+    # permanents by type -- auto-generated collection cards lean on these
+    'permanent': lambda self, p: p.is_permanent,
+    'artifact': lambda self, p: p.is_permanent and p.is_artifact,
+    'enchantment': lambda self, p: p.is_permanent and p.is_enchantment,
+    'land': lambda self, p: p.is_permanent and p.is_land,
+    'nonland permanent': lambda self, p: p.is_permanent and not p.is_land,
+    'planeswalker': lambda self, p: p.is_permanent and p.is_planeswalker,
+    'artifact or enchantment': lambda self, p: p.is_permanent and (p.is_artifact or p.is_enchantment),
+    'artifact or creature': lambda self, p: p.is_permanent and (p.is_artifact or p.is_creature),
+    'creature or planeswalker': lambda self, p: p.is_permanent and (p.is_creature or p.is_planeswalker),
+    'creature or enchantment': lambda self, p: p.is_permanent and (p.is_creature or p.is_enchantment),
+    'nonblack creature': lambda self, p: p.is_permanent and p.is_creature and not p.has_color('B'),
+    'nonwhite creature': lambda self, p: p.is_permanent and p.is_creature and not p.has_color('W'),
+    'attacking creature': lambda self, p: p.is_creature and p.status.is_attacking,
+    'blocking creature': lambda self, p: p.is_creature and p.status.is_blocking,
+    'attacking or blocking creature': lambda self, p: p.is_creature and (p.status.is_attacking or p.status.is_blocking),
+    'tapped creature': lambda self, p: p.is_creature and p.status.tapped,
+}
+
+
 def parse_targets(criterias):
     for i, v in enumerate(criterias):
-        if v == 'creature':
-            criterias[i] = lambda self, p: p.is_permanent and p.is_creature
-
-        if v == 'your creature':
-            criterias[i] = lambda self, p: p.is_permanent and p.is_creature and p.controller == self.controller
-
-        if v == 'other creature':
-            criterias[i] = lambda self, p: p.is_permanent and p.is_creature and p != self
-
-        if v == 'your other creature':
-            criterias[i] = lambda self, p: (p.is_permanent and p.is_creature
-                                            and p.controller == self.controller and p != self)
-
-        if v == 'opponent creature':
-            criterias[i] = lambda self, p: p.is_creature and p.controller != self.controller
-
-        if v == 'opponent':
-            criterias[i] = lambda self, p: p.is_player and p != self.controller
-
-        if v == 'player':
-            criterias[i] = lambda self, p: p.is_player
-
-        if v == 'creature or player':
-            criterias[i] = (lambda self, p: p.is_player
-                         or (p.is_creature and p.is_permanent))
-
-        if v == 'spell':
-            criterias[i] = lambda self, s: s.is_spell
-
-        if v == 'instant or sorcery spell':
-            criterias[i] = lambda self, s: s.is_spell and (s.is_instant or s.is_sorcery)
-
+        if isinstance(v, str) and v in _TARGET_SHORTCUTS:
+            criterias[i] = _TARGET_SHORTCUTS[v]
     return criterias
 
 def parse_ability_costs(cost):

@@ -1,0 +1,508 @@
+# Collection rules-text coverage
+
+482 unique cards.
+
+- **implemented**: 41
+- **partial**: 33
+- **keyword**: 48
+- **vanilla**: 17
+- **unsupported**: 343
+
+> Every card is castable in a game. `keyword`/`vanilla` have no non-keyword text; `partial` wires the clauses the engine supports and drops the rest; `unsupported` plays as a vanilla/keyword permanent.
+
+## implemented
+
+- Aerial Modification — ok
+- Aether Meltdown — ok
+- Angelic Edict — ok
+- Annul — ok
+- Aquus Steed — ok
+- Artisan's Sorrow — ok
+- Battlewise Valor — ok
+- Brindle Boar — ok
+- Call of the Conclave — ok
+- Centaur's Herald — ok
+- Consign // Oblivion — ok
+- Counterspell — ok
+- Craterize — ok
+- Dead Weight — ok
+- Devout Chaplain — ok
+- Divine Favor — ok
+- Era of Innovation — ok
+- Escarpment Fortress — ok
+- Fade into Antiquity — ok
+- Fall of the Gavel — ok
+- Gideon's Lawkeeper — ok
+- Holy Mantle — ok
+- Integrity // Intervention — ok
+- Iona's Judgment — ok
+- Knight Watch — ok
+- Lash of the Whip — ok
+- Ledev Champion — ok
+- Lobber Crew — ok
+- Maniacal Rage — ok
+- Pursuit of Flight — ok
+- Ray of Dissolution — ok
+- Righteous Blow — ok
+- Searing Spear — ok
+- Shielded Aether Thief — ok
+- Siege Modification — ok
+- Solemn Offering — ok
+- Stand Firm — ok
+- Survey the Wreckage — ok
+- Talrand's Invocation — ok
+- Unsummon — ok
+- Vessel of Endless Rest — ok
+
+## partial
+
+- Annihilating Fire — 1/2 clauses
+- Conclave Guildmage — 1/2 clauses
+- Deadly Visit — 1/2 clauses
+- Devious Cover-Up — 1/3 clauses
+- Disappearing Act — 1/2 clauses
+- Harsh Scrutiny — 2/4 clauses
+- Hypothesizzle — 1/3 clauses
+- Illusionist's Stratagem — 1/2 clauses
+- Inescapable Blaze — 1/2 clauses
+- Lay Bare the Heart — 1/3 clauses
+- League Guildmage — 1/2 clauses
+- Legion Guildmage — 1/2 clauses
+- Liturgy of Blood — 1/2 clauses
+- Never Happened — 1/2 clauses
+- New Prahv Guildmage — 1/2 clauses
+- Pilfered Plans — 1/2 clauses
+- Portent of Betrayal — 1/4 clauses
+- Price of Fame — 1/3 clauses
+- Psychic Strike — 1/2 clauses
+- Radical Idea — 1/2 clauses
+- Repel the Darkness — 1/2 clauses
+- Rites of Reaping — 1/2 clauses
+- Savage Surge — 1/2 clauses
+- Stir the Sands — 1/3 clauses
+- Swarm Guildmage — 1/2 clauses
+- Take Heart — 1/2 clauses
+- The Crystal's Chosen — 1/2 clauses
+- Turn to Slag — 1/2 clauses
+- Unexplained Disappearance — 1/2 clauses
+- Urban Evolution — 1/2 clauses
+- Volt Charge — 1/2 clauses
+- Wand of Vertebrae — 1/2 clauses
+- Wild Guess — 1/2 clauses
+
+## unsupported
+
+- Acidic Slime — Deathtouch
+- Adventurer's Inn — When this land enters, you gain 2 life.
+- Advocate of the Beast — At the beginning of your end step, put a +1/+1 counter on target Beast
+- Aeronaut Admiral — Flying
+- Aether Adept — When this creature enters, return target creature to its owner's hand.
+- Affectionate Indrik — When this creature enters, you may have it fight target creature you d
+- Agent of Horizons — {2}{U}: This creature can't be blocked this turn.
+- Ahn-Crop Crasher — Haste
+- Airdrop Aeronauts — Flying
+- Akroan Hoplite — Whenever this creature attacks, it gets +X/+0 until end of turn, where
+- Angel's Tomb — Whenever a creature you control enters, you may have this artifact bec
+- Apostle's Blessing — Target artifact or creature you control gains protection from artifact
+- Arbor Elf — {T}: Untap target Forest.
+- Archaeomancer — When this creature enters, return target instant or sorcery card from 
+- Armory Guard — This creature has vigilance as long as you control a Gate.
+- Arrest — Enchant creature
+- Artful Takedown — Choose one or both —
+- Auramancer — When this creature enters, you may return target enchantment card from
+- Auriok Sunchaser — Metalcraft — As long as you control three or more artifacts, this crea
+- Avenging Arrow — Destroy target creature that dealt damage this turn.
+- Azorius Guildgate — This land enters tapped.
+- Balamb T-Rexaur — Trample
+- Bard's Bow — Job select
+- Barrier of Bones — Defender
+- Batterhorn — When this creature enters, you may destroy target artifact.
+- Battlewise Hoplite — Heroic — Whenever you cast a spell that targets this creature, put a +
+- Bazaar Krovod — Whenever this creature attacks, another target attacking creature gets
+- Beacon Bolt — ~ deals damage to target creature equal to the total number of instant
+- Beamsplitter Mage — Whenever you cast an instant or sorcery spell that targets only this c
+- Bellows Lizard — {1}{R}: This creature gets +1/+0 until end of turn.
+- Benalish Veteran — Whenever this creature attacks, it gets +1/+1 until end of turn.
+- Bioshift — Move any number of +1/+1 counters from target creature onto another ta
+- Blighted Woodland — {T}: Add {C}.
+- Blistercoil Weird — Whenever you cast an instant or sorcery spell, this creature gets +1/+
+- Blur Sliver — Sliver creatures you control have haste.
+- Blustersquall — Tap target creature you don't control.
+- Bomat Bazaar Barge — When this Vehicle enters, draw a card.
+- Book Devourer — Trample
+- Borderland Ranger — When this creature enters, you may search your library for a basic lan
+- Boros Challenger — Mentor
+- Boros Elite — Battalion — Whenever this creature and at least two other creatures at
+- Boros Mastiff — Battalion — Whenever this creature and at least two other creatures at
+- Breath Weapon — ~ deals 2 damage to each non-Dragon creature.
+- Burglar Rat — When this creature enters, each opponent discards a card.
+- Burning-Tree Emissary — When this creature enters, add {R}{G}.
+- Cavalry Pegasus — Flying
+- Centaur Battlemaster — Heroic — Whenever you cast a spell that targets this creature, put thr
+- Centaur Peacemaker — When this creature enters, each player gains 4 life.
+- Charging Griffin — Flying
+- Chronicler of Heroes — When this creature enters, draw a card if you control a creature with 
+- Cinder Barrens — This land enters tapped.
+- Circuitous Route — Search your library for up to two basic land cards and/or Gate cards, 
+- Citywatch Sphinx — Flying
+- Claustrophobia — Enchant creature
+- Conclave Cavalier — Vigilance
+- Corpse Traders — {2}{B}, Sacrifice a creature: Target opponent reveals their hand. You 
+- Corrupted Shapeshifter — Devoid
+- Court Street Denizen — Whenever another white creature you control enters, tap target creatur
+- Courtly Provocateur — {T}: Target creature attacks this turn if able.
+- Cower in Fear — Creatures your opponents control get -1/-1 until end of turn.
+- Crackling Triton — {2}{R}, Sacrifice this creature: It deals 2 damage to any target.
+- Crocodile of the Crossing — Haste
+- Crowned Ceratok — Trample
+- Crush Contraband — Choose one or both —
+- Crypt of the Eternals — When this land enters, you gain 1 life.
+- Darkblade Agent — As long as you've surveilled this turn, this creature has deathtouch a
+- Deadeye Harpooner — Revolt — When this creature enters, if a permanent left the battlefiel
+- Deathcult Rogue — This creature can't be blocked except by Rogues.
+- Debtor's Pulpit — Enchant land
+- Defend the Hearth — Prevent all combat damage that would be dealt to players this turn.
+- Defiant Greatmaw — When this creature enters, put two -1/-1 counters on target creature y
+- Deft Dismissal — ~ deals 3 damage divided as you choose among one, two, or three target
+- Demotion — Enchant creature
+- Destined // Lead — Target creature gets +1/+0 and gains indestructible until end of turn.
+- Dimir Locket — {T}: Add {U} or {B}.
+- Dimir Spybug — Flying
+- Disciple of Phenax — When this creature enters, target player reveals a number of cards fro
+- Disdainful Stroke — Counter target spell with mana value 4 or greater.
+- Disinformation Campaign — When this enchantment enters, you draw a card and each opponent discar
+- District Guide — When this creature enters, you may search your library for a basic lan
+- Divine Verdict — Destroy target attacking or blocking creature.
+- Dragon Hatchling — Flying
+- Dryad Militant — If an instant or sorcery card would be put into a graveyard from anywh
+- Edifice of Authority — {1}, {T}: Target creature can't attack this turn. Put a brick counter 
+- Electrickery — ~ deals 1 damage to target creature you don't control.
+- Emancipation Angel — Flying
+- Embalmer's Tools — Activated abilities of creature cards in your graveyard cost {1} less 
+- Enhanced Surveillance — You may look at an additional two cards each time you surveil.
+- Ephara's Warden — {T}: Tap target creature with power 3 or less.
+- Experiment One — Evolve
+- Experimental Aviator — Flying
+- Ezuri's Archers — Reach
+- Feral Animist — {3}: This creature gets +X/+0 until end of turn, where X is its power.
+- Festerhide Boar — Trample
+- Firefist Striker — Battalion — Whenever this creature and at least two other creatures at
+- Flamecast Wheel — {5}, {T}, Sacrifice this artifact: It deals 3 damage to target creatur
+- Flamespeaker Adept — Whenever you scry, this creature gets +2/+0 and gains first strike unt
+- Fleetfeather Sandals — Equipped creature has flying and haste.
+- Flinthoof Boar — This creature gets +1/+1 as long as you control a Mountain.
+- Flower // Flourish — Search your library for a basic Forest or Plains card, reveal it, put 
+- Fog Bank — Defender
+- Forest — 
+- Forsaken Sanctuary — This land enters tapped.
+- Foundry Hornet — Flying
+- Freewind Equenaut — Flying
+- Fretwork Colony — This creature can't block.
+- Frontier Guide — {3}{G}, {T}: Search your library for a basic land card, put it onto th
+- Gaelicat — Flying, vigilance
+- Garrison Sergeant — This creature has double strike as long as you control a Gate.
+- Gate to the Afterlife — Whenever a nontoken creature you control dies, you gain 1 life. Then y
+- Gatekeeper Gargoyle — Flying
+- Gavony Ironwright — Fateful hour — As long as you have 5 or less life, other creatures you
+- Gearshift Ace — First strike
+- Generous Stray — When this creature enters, draw a card.
+- Ghalma's Warden — Metalcraft — This creature gets +2/+2 as long as you control three or 
+- Ghor-Clan Savage — Bloodthirst 3
+- Giott, King of the Dwarves — Double strike
+- Gird for Battle — Put a +1/+1 counter on each of up to two target creatures.
+- Glaive of the Guildpact — Equipped creature gets +1/+0 for each Gate you control and has vigilan
+- Glowspore Shaman — When this creature enters, mill three cards. You may put a land card f
+- Gobbling Ooze — {G}, Sacrifice another creature: Put a +1/+1 counter on this creature.
+- Goblin Banneret — Mentor
+- Goblin Electromancer — Instant and sorcery spells you cast cost {1} less to cast.
+- Goblin Locksmith — Whenever this creature attacks, creatures with defender can't block th
+- Golden Urn — At the beginning of your upkeep, you may put a charge counter on this 
+- Goldnight Commander — Whenever another creature you control enters, creatures you control ge
+- Goldnight Redeemer — Flying
+- Golgari Decoy — All creatures able to block this creature do so.
+- Golgari Findbroker — When this creature enters, return target permanent card from your grav
+- Golgari Raiders — Haste
+- Gonti's Machinations — Whenever you lose life for the first time each turn, you get {E}.
+- Gorehorn Minotaurs — Bloodthirst 2
+- Grappling Sundew — Defender, reach
+- Grasping Dunes — {T}: Add {C}.
+- Gravedigger — When this creature enters, you may return target creature card from yo
+- Gravitic Punch — Target creature you control deals damage equal to its power to target 
+- Gremlin Infestation — Enchant artifact
+- Groundshaker Sliver — Sliver creatures you control have trample.
+- Guard Duty — Enchant creature
+- Guild Summit — When this enchantment enters, you may tap any number of untapped Gates
+- Guildscorn Ward — Enchant creature
+- Haazda Marshal — Whenever this creature and at least two other creatures attack, create
+- Haazda Snare Squad — Whenever this creature attacks, you may pay {W}. If you do, tap target
+- Harmless Assault — Prevent all combat damage that would be dealt this turn by attacking c
+- Healer of the Pride — Whenever another creature you control enters, you gain 2 life.
+- Hellhole Flailer — Unleash
+- Hellkite Whelp — Flying
+- Heroes' Reunion — Target player gains 7 life.
+- Hidden Herbalists — Revolt — When this creature enters, if a permanent left the battlefiel
+- Hidden Strings — You may tap or untap target permanent, then you may tap or untap anoth
+- Hindervines — Prevent all combat damage that would be dealt this turn by creatures w
+- Hold the Gates — Creatures you control get +0/+1 for each Gate you control and have vig
+- House Guildmage — {1}{U}, {T}: Target creature doesn't untap during its controller's nex
+- Hungry Flames — ~ deals 3 damage to target creature and 2 damage to target player or p
+- Hunt the Hunter — Target green creature you control gets +2/+2 until end of turn. It fig
+- Hunted Witness — When this creature dies, create a 1/1 white Soldier creature token wit
+- Ikiral Outrider — Level up {4}
+- Insomnia, Crown City — This land enters tapped.
+- Inspiring Unicorn — Whenever this creature attacks, creatures you control get +1/+1 until 
+- Invasive Surgery — Counter target sorcery spell.
+- Invert // Invent — Switch the power and toughness of each of up to two target creatures u
+- Invigorated Rampage — Choose one —
+- Ironclad Revolutionary — When this creature enters, you may sacrifice an artifact. If you do, p
+- Ironshell Beetle — When this creature enters, put a +1/+1 counter on target creature.
+- Island — 
+- Izzet Keyrune — {T}: Add {U} or {R}.
+- Janjeet Sentry — When this creature enters, you get {E}{E}.
+- Judge's Familiar — Flying
+- Karametra's Acolyte — {T}: Add an amount of {G} equal to your devotion to green.
+- Kefnet's Monument — Blue creature spells you cast cost {1} less to cast.
+- Knight of Glory — Protection from black
+- Kor Hookmaster — When this creature enters, tap target creature an opponent controls. T
+- Kraul Foragers — Undergrowth — When this creature enters, you gain 1 life for each crea
+- Kraul Swarm — Flying
+- Kraul Warrior — {5}{G}: This creature gets +3/+3 until end of turn.
+- Last Breath — Exile target creature with power 2 or less. Its controller gains 4 lif
+- Leapfrog — This creature has flying as long as you've cast an instant or sorcery 
+- Lifecraft Awakening — Put X +1/+1 counters on target artifact you control. If it isn't a cre
+- Lifecrafter's Gift — Put a +1/+1 counter on target creature, then put a +1/+1 counter on ea
+- Lotleth Giant — Undergrowth — When this creature enters, it deals 1 damage to target o
+- Loxodon Restorer — Convoke
+- Magister Sphinx — Flying
+- Make Obsolete — Creatures your opponents control get -1/-1 until end of turn.
+- Marauding Looter — Raid — At the beginning of your end step, if you attacked this turn, y
+- Master of Diversion — Whenever this creature attacks, tap target creature defending player c
+- Maulfist Revolutionary — Trample
+- Maverick Thopterist — Improvise
+- Maximize Altitude — Target creature gets +1/+1 and gains flying until end of turn.
+- Maze Sentinel — Vigilance
+- Might of the Masses — Target creature gets +1/+1 until end of turn for each creature you con
+- Mighty Leap — Target creature gets +2/+2 and gains flying until end of turn.
+- Miming Slime — Create an X/X green Ooze creature token, where X is the greatest power
+- Mist Raven — Flying
+- Molderhulk — Undergrowth — This spell costs {1} less to cast for each creature card
+- Moment of Heroism — Target creature gets +2/+2 and gains lifelink until end of turn.
+- Monk's Fist — Job select
+- Monstrous Onslaught — ~ deals X damage divided as you choose among any number of target crea
+- Mountain — 
+- Muse Drake — Flying
+- Mwonvuli Beast Tracker — When this creature enters, search your library for a creature card wit
+- Nature's Way — Target creature you control gains vigilance and trample until end of t
+- Necrotic Wound — Undergrowth — Target creature gets -X/-X until end of turn, where X is
+- Nephalia Smuggler — {3}{U}, {T}: Exile another target creature you control, then return th
+- Nightveil Sprite — Flying
+- Nivix Guildmage — {1}{U}{R}: Draw a card, then discard a card.
+- Notion Rain — Surveil 2, then draw two cards. ~ deals 2 damage to you.
+- Nylea's Emissary — Bestow {5}{G}
+- Ochran Assassin — Deathtouch
+- Omenspeaker — When this creature enters, scry 2.
+- One Thousand Lashes — Enchant creature
+- Onward // Victory — Target creature gets +X/+0 until end of turn, where X is its power.
+- Opera Love Song — Choose one —
+- Orzhov Keyrune — {T}: Add {W} or {B}.
+- Outland Boar — This creature can't be blocked by creatures with power 2 or less.
+- Pacifism — Enchant creature
+- Pause for Reflection — Convoke
+- Pay No Heed — Prevent all damage a source of your choice would deal this turn.
+- Peak Eruption — Destroy target Mountain. ~ deals 3 damage to that land's controller.
+- Peema Aether-Seer — When this creature enters, you get an amount of {E} equal to the great
+- Perilous Predicament — Each opponent sacrifices an artifact creature and a nonartifact creatu
+- Pharika's Cure — ~ deals 2 damage to target creature and you gain 2 life.
+- Phoenix Down — {1}{W}, {T}, Exile this artifact: Choose one —
+- Pilfering Imp — Flying
+- Plains — 
+- Plummet — Destroy target creature with flying.
+- Poison the Waters — Choose one —
+- Portcullis Vine — Defender
+- Predatory Sliver — Sliver creatures you control get +1/+1.
+- Prey Upon — Target creature you control fights target creature you don't control.
+- Purphoros's Emissary — Bestow {6}{R}
+- Rage Thrower — Whenever another creature dies, this creature deals 2 damage to target
+- Rain of Blades — ~ deals 1 damage to each attacking creature.
+- Rakdos Guildgate — This land enters tapped.
+- Rakdos Ringleader — First strike
+- Rampaging Monument — Trample
+- Ravenous Intruder — Sacrifice an artifact: This creature gets +2/+2 until end of turn.
+- Reckless Brute — Haste
+- Reckless Racer — First strike
+- Reduce // Rubble — Counter target spell unless its controller pays {3}.
+- Relentless X-ATM092 — This creature can't be blocked except by three or more creatures.
+- Relm's Sketching — Create a token that's a copy of target artifact, creature, or land.
+- Renegade Rallier — Revolt — When this creature enters, if a permanent left the battlefiel
+- Restoration Specialist — {W}, Sacrifice this creature: Return up to one target artifact card an
+- Rhizome Lurcher — Undergrowth — This creature enters with a number of +1/+1 counters on 
+- Righteous Charge — Creatures you control get +2/+2 until end of turn.
+- Riot Control — You gain 1 life for each creature your opponents control. Prevent all 
+- Rix Maadi Guildmage — {B}{R}: Target blocking creature gets -1/-1 until end of turn.
+- Roc Charger — Flying
+- Rubblebelt Maaka — Bloodrush — {R}, Discard this card: Target attacking creature gets +3/
+- Ruthless Sniper — Whenever you cycle or discard a card, you may pay {1}. If you do, put 
+- Salvage Scuttler — Whenever this creature attacks, return an artifact you control to its 
+- Samurai's Katana — Job select
+- Sangrite Surge — Target creature gets +3/+3 and gains double strike until end of turn.
+- Satyr Hedonist — {R}, Sacrifice this creature: Add {R}{R}{R}.
+- Satyr Piper — {3}{G}: Target creature must be blocked this turn if able.
+- Scholar of Athreos — {2}{B}: Each opponent loses 1 life. You gain life equal to the life lo
+- Scrapper Champion — Double strike
+- Scroll Thief — Whenever this creature deals combat damage to a player, draw a card.
+- Security Blockade — Enchant land
+- Seek the Horizon — Search your library for up to three basic land cards, reveal them, put
+- Selective Snare — Return X target creatures of the creature type of your choice to their
+- Selesnya Charm — Choose one —
+- Selesnya Locket — {T}: Add {G} or {W}.
+- Self-Destruct — Target creature you control deals X damage to any other target and X d
+- Sensor Splicer — When this creature enters, create a 3/3 colorless Phyrexian Golem arti
+- Sentinel Sliver — Sliver creatures you control have vigilance.
+- Sentry of the Underworld — Flying, vigilance
+- Setessan Griffin — Flying
+- Shadow Alley Denizen — Whenever another black creature you control enters, target creature ga
+- Shielded Passage — Prevent all damage that would be dealt to target creature this turn.
+- Shipwreck Singer — Flying
+- Silent Dart — {4}, {T}, Sacrifice this artifact: It deals 3 damage to target creatur
+- Skarrg Guildmage — {R}{G}: Creatures you control gain trample until end of turn.
+- Skillful Lunge — Target creature gets +2/+0 and gains first strike until end of turn.
+- Skullcrack — Players can't gain life this turn. Damage can't be prevented this turn
+- Skyline Scout — Whenever this creature attacks, you may pay {1}{W}. If you do, it gain
+- Slime Molding — Create an X/X green Ooze creature token.
+- Sly Requisitioner — Improvise
+- Smelt-Ward Minotaur — Whenever you cast an instant or sorcery spell, target creature an oppo
+- Somberwald Vigilante — Whenever this creature becomes blocked by a creature, this creature de
+- Soul Tithe — Enchant nonland permanent
+- Spare from Evil — Creatures you control gain protection from non-Human creatures until e
+- Spinal Centipede — When this creature dies, put a +1/+1 counter on target creature you co
+- Spire Tracer — This creature can't be blocked except by creatures with flying or reac
+- Spring // Mind — Search your library for a basic land card, put it onto the battlefield
+- Sprouting Renewal — Convoke
+- Status // Statue — Target creature gets +1/+1 and gains deathtouch until end of turn.
+- Stone Quarry — This land enters tapped.
+- Stoneshock Giant — {6}{R}{R}: Monstrosity 3.
+- Street Riot — During your turn, creatures you control get +1/+0 and have trample.
+- Submerged Boneyard — This land enters tapped.
+- Sumala Woodshaper — When this creature enters, look at the top four cards of your library.
+- Sunspring Expedition — Landfall — Whenever a land you control enters, you may put a quest cou
+- Suplex — Choose one —
+- Surveilling Sprite — Flying
+- Swamp — 
+- Swathcutter Giant — Vigilance
+- Sword Dancer — {W}{W}: Target attacking creature gets -1/-0 until end of turn.
+- Syncopate — Counter target spell unless its controller pays {X}. If that spell is 
+- Teleportal — Target creature you control gets +1/+0 until end of turn and can't be 
+- Tenth District Guard — When this creature enters, target creature gets +0/+1 until end of tur
+- Terashi's Verdict — Destroy target attacking creature with power 3 or less.
+- The Final Days — Create two tapped 2/2 black Horror creature tokens. If this spell was 
+- Thoughtbound Phantasm — Defender
+- Thunder Magic — Tiered
+- Timber Gorge — This land enters tapped.
+- Timberland Guide — When this creature enters, put a +1/+1 counter on target creature.
+- Tireless Missionaries — When this creature enters, you gain 3 life.
+- Torch Courier — Haste
+- Tormentor's Trident — Equipped creature gets +3/+0 and attacks each combat if able.
+- Totally Lost — Put target nonland permanent on top of its owner's library.
+- Totem-Guide Hartebeest — When this creature enters, you may search your library for an Aura car
+- Tower Defense — Creatures you control get +0/+5 and gain reach until end of turn.
+- Traitorous Instinct — Gain control of target creature until end of turn. Untap that creature
+- Treasured Find — Return target card from your graveyard to your hand. Exile ~.
+- Truefire Captain — Mentor
+- Trusted Forcemage — Soulbond
+- Undercity Necrolisk — {1}, Sacrifice another creature: Put a +1/+1 counter on this creature.
+- Undercity Uprising — Creatures you control gain deathtouch until end of turn. Then target c
+- Urban Utopia — Enchant land
+- Urbis Protector — When this creature enters, create a 4/4 white Angel creature token wit
+- Vedalken Mesmerist — Whenever this creature attacks, target creature an opponent controls g
+- Veiled Shade — {1}{B}: This creature gets +1/+1 until end of turn.
+- Vengeful Rebel — Revolt — When this creature enters, if a permanent left the battlefiel
+- Viashino Racketeer — When this creature enters, you may discard a card. If you do, draw a c
+- Viashino Shanktail — First strike
+- Vigean Hydropon — Graft 5
+- Viridian Emissary — When this creature dies, you may search your library for a basic land 
+- Vizkopa Confessor — Extort
+- Wall of Fire — Defender
+- War Report — You gain life equal to the number of creatures on the battlefield plus
+- Warfire Javelineer — When this creature enters, it deals X damage to target creature an opp
+- Watchers of the Dead — Exile this creature: Each opponent chooses two cards in their graveyar
+- Wee Dragonauts — Flying
+- Whisper Agent — Flash
+- Whispering Snitch — Whenever you surveil for the first time each turn, this creature deals
+- White Mage's Staff — Job select
+- Wildwood Geist — During your turn, this creature gets +2/+2.
+- Windurst, Federation Center — This land enters tapped.
+- Witches' Eye — Equipped creature has "{1}, {T}: Scry 1."
+- Wojek Bodyguard — Mentor
+- Worldsoul Colossus — Convoke
+- Zhur-Taa Druid — {T}: Add {G}.
+
+## keyword
+
+- Ambush Viper — keyword abilities only
+- Anvilwrought Raptor — keyword abilities only
+- Arboretum Elemental — keyword abilities only
+- Archweaver — keyword abilities only
+- Assault Griffin — keyword abilities only
+- Barging Sergeant — keyword abilities only
+- Blightwidow — keyword abilities only
+- Brushstrider — keyword abilities only
+- Caravan Hurda — keyword abilities only
+- Child of Night — keyword abilities only
+- Clinging Anemones — keyword abilities only
+- Crocanura — keyword abilities only
+- Cystbearer — keyword abilities only
+- Dawnstrike Paladin — keyword abilities only
+- Enraged Giant — keyword abilities only
+- Fencing Ace — keyword abilities only
+- Flight of Equenauts — keyword abilities only
+- Glissa's Courier — keyword abilities only
+- Gore-House Chainwalker — keyword abilities only
+- Griffin Sentinel — keyword abilities only
+- Guardian Lions — keyword abilities only
+- Haunted Guardian — keyword abilities only
+- Hired Poisoner — keyword abilities only
+- Hitchclaw Recluse — keyword abilities only
+- Kessig Recluse — keyword abilities only
+- Knight of Obligation — keyword abilities only
+- Ledev Guardian — keyword abilities only
+- Lost Leonin — keyword abilities only
+- Nightveil Predator — keyword abilities only
+- Parhelion Patrol — keyword abilities only
+- Peregrine Griffin — keyword abilities only
+- Priests of Norn — keyword abilities only
+- Rakdos Cackler — keyword abilities only
+- Rakdos Ragemutt — keyword abilities only
+- Risen Sanctuary — keyword abilities only
+- Rosemane Centaur — keyword abilities only
+- Serra Angel — keyword abilities only
+- Shriek Raptor — keyword abilities only
+- Silverclaw Griffin — keyword abilities only
+- Skyknight Legionnaire — keyword abilities only
+- Skyline Predator — keyword abilities only
+- Splatter Thug — keyword abilities only
+- Sunhome Stalwart — keyword abilities only
+- Tenement Crasher — keyword abilities only
+- Thraben Valiant — keyword abilities only
+- Wary Okapi — keyword abilities only
+- Wind-Kin Raiders — keyword abilities only
+- Zephyr Sprite — keyword abilities only
+
+## vanilla
+
+- Armored Wolf-Rider — no rules text
+- Axebane Stag — no rules text
+- Centaur Courser — no rules text
+- Cobblebrute — no rules text
+- Douser of Lights — no rules text
+- Fearless Halberdier — no rules text
+- Fire Elemental — no rules text
+- Glory Seeker — no rules text
+- Hollowhenge Beast — no rules text
+- Pillarfield Ox — no rules text
+- Siege Mastodon — no rules text
+- Silent Artisan — no rules text
+- Thraben Purebloods — no rules text
+- Vorstclaw — no rules text
+- Wild Ceratok — no rules text
+- Wishcoin Crab — no rules text
+- Yoked Ox — no rules text

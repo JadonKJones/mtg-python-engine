@@ -1,0 +1,3376 @@
+{
+ "Zhur-Taa Druid": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Druid",
+  "cmc": 2,
+  "mana": "{R}{G}",
+  "scry": "b82d8359-4841-478c-851b-13a1a0f94737"
+ },
+ "Zephyr Sprite": {
+  "qty": 1,
+  "type": "Creature \u2014 Faerie",
+  "cmc": 1,
+  "mana": "{U}",
+  "scry": "b256f91a-e797-41d7-82a6-3dcd691bbeed"
+ },
+ "Yoked Ox": {
+  "qty": 1,
+  "type": "Creature \u2014 Ox",
+  "cmc": 1,
+  "mana": "{W}",
+  "scry": "a73f186b-c897-4a98-bc25-8e4aa348d8c9"
+ },
+ "Worldsoul Colossus": {
+  "qty": 7,
+  "type": "Creature \u2014 Elemental",
+  "cmc": 2,
+  "mana": "{X}{G}{W}",
+  "scry": "b5186304-b0fb-44a6-ba61-0265b7f42da4"
+ },
+ "Wojek Bodyguard": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Soldier",
+  "cmc": 3,
+  "mana": "{2}{R}",
+  "scry": "63e3e478-967e-4b28-a187-7e59a28af1d7"
+ },
+ "Witches' Eye": {
+  "qty": 2,
+  "type": "Artifact \u2014 Equipment",
+  "cmc": 1,
+  "mana": "{1}",
+  "scry": "6d989daa-78eb-4120-81b5-7866a7b04590"
+ },
+ "Wishcoin Crab": {
+  "qty": 1,
+  "type": "Creature \u2014 Crab",
+  "cmc": 4,
+  "mana": "{3}{U}",
+  "scry": "f368f804-055f-4a4f-bb0c-fe3dc52433c0"
+ },
+ "Windurst, Federation Center": {
+  "qty": 1,
+  "type": "Land \u2014 Town",
+  "cmc": 0,
+  "mana": "",
+  "scry": "c74024bd-b383-468d-9cf5-d112a29f6457"
+ },
+ "Wind-Kin Raiders": {
+  "qty": 4,
+  "type": "Creature \u2014 Human Artificer",
+  "cmc": 6,
+  "mana": "{4}{U}{U}",
+  "scry": "8037f588-6b9f-472d-b26a-2c06db976ad0"
+ },
+ "Wildwood Geist": {
+  "qty": 1,
+  "type": "Creature \u2014 Spirit",
+  "cmc": 5,
+  "mana": "{4}{G}",
+  "scry": "4658b4b2-7043-4ca2-96fd-4f663c20c80f"
+ },
+ "Wild Guess": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 2,
+  "mana": "{R}{R}",
+  "scry": "e7c4556f-652b-4df0-a501-d413d32e7a91"
+ },
+ "Wild Ceratok": {
+  "qty": 3,
+  "type": "Creature \u2014 Rhino",
+  "cmc": 4,
+  "mana": "{3}{G}",
+  "scry": "4464e11a-c5b9-40ea-8be0-dab29d14e289"
+ },
+ "White Mage's Staff": {
+  "qty": 1,
+  "type": "Artifact \u2014 Equipment",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "30db372e-0b4c-4e16-9667-bf3fda666f72"
+ },
+ "Whispering Snitch": {
+  "qty": 4,
+  "type": "Creature \u2014 Vampire Rogue",
+  "cmc": 2,
+  "mana": "{1}{B}",
+  "scry": "fa4ca97e-b402-4a73-9c70-79ec4565a39c"
+ },
+ "Whisper Agent": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Rogue",
+  "cmc": 3,
+  "mana": "{1}{U/B}{U/B}",
+  "scry": "f6d318e7-f49e-49f8-98b6-d62c34aa4af2"
+ },
+ "Wee Dragonauts": {
+  "qty": 4,
+  "type": "Creature \u2014 Faerie Wizard",
+  "cmc": 3,
+  "mana": "{1}{U}{R}",
+  "scry": "9fbe2604-8dbe-4a11-bd36-7256543731cd"
+ },
+ "Watchers of the Dead": {
+  "qty": 6,
+  "type": "Artifact Creature \u2014 Cat",
+  "cmc": 2,
+  "mana": "{2}",
+  "scry": "30efc831-3673-4bc1-8a25-150c0349253a"
+ },
+ "Wary Okapi": {
+  "qty": 1,
+  "type": "Creature \u2014 Antelope",
+  "cmc": 3,
+  "mana": "{2}{G}",
+  "scry": "54f26697-0d4b-4af4-a644-3d0ae13f1d2e"
+ },
+ "Warfire Javelineer": {
+  "qty": 2,
+  "type": "Creature \u2014 Minotaur Warrior",
+  "cmc": 4,
+  "mana": "{3}{R}",
+  "scry": "5ce75b3c-4f83-4c09-9361-d7463e4921e6"
+ },
+ "War Report": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 4,
+  "mana": "{3}{W}",
+  "scry": "6d837262-cd5d-4fc9-96dd-39ed04166883"
+ },
+ "Wand of Vertebrae": {
+  "qty": 7,
+  "type": "Artifact",
+  "cmc": 1,
+  "mana": "{1}",
+  "scry": "87f208bc-e4dc-4d3a-8906-dccde3cc251b"
+ },
+ "Wall of Fire": {
+  "qty": 1,
+  "type": "Creature \u2014 Wall",
+  "cmc": 3,
+  "mana": "{1}{R}{R}",
+  "scry": "c6134faf-80d3-450e-bd70-d68355ad263d"
+ },
+ "Vorstclaw": {
+  "qty": 1,
+  "type": "Creature \u2014 Elemental Horror",
+  "cmc": 6,
+  "mana": "{4}{G}{G}",
+  "scry": "79719ed0-468d-4946-8dfc-fb7e2b2e305e"
+ },
+ "Volt Charge": {
+  "qty": 2,
+  "type": "Instant",
+  "cmc": 3,
+  "mana": "{2}{R}",
+  "scry": "aa88011c-a19d-4faa-8da6-86b9980cd571"
+ },
+ "Vizkopa Confessor": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Cleric",
+  "cmc": 5,
+  "mana": "{3}{W}{B}",
+  "scry": "cac639b9-6c20-45ac-a61f-082bdcebdb83"
+ },
+ "Viridian Emissary": {
+  "qty": 2,
+  "type": "Creature \u2014 Phyrexian Elf Scout",
+  "cmc": 2,
+  "mana": "{1}{G}",
+  "scry": "5f45f4c5-24bb-4aa0-8de2-4c5e3f5000c8"
+ },
+ "Vigean Hydropon": {
+  "qty": 1,
+  "type": "Creature \u2014 Plant Mutant",
+  "cmc": 3,
+  "mana": "{1}{G}{U}",
+  "scry": "6373aedc-4385-4608-bfbc-1937d6528d28"
+ },
+ "Viashino Shanktail": {
+  "qty": 1,
+  "type": "Creature \u2014 Lizard Warrior",
+  "cmc": 4,
+  "mana": "{3}{R}",
+  "scry": "f5dd72d5-548a-4b0e-95bb-e6b8d2de0fbe"
+ },
+ "Viashino Racketeer": {
+  "qty": 3,
+  "type": "Creature \u2014 Lizard Rogue",
+  "cmc": 3,
+  "mana": "{2}{R}",
+  "scry": "bf4c2d22-9c36-42cc-854d-f96410bb5cf1"
+ },
+ "Vessel of Endless Rest": {
+  "qty": 6,
+  "type": "Artifact",
+  "cmc": 3,
+  "mana": "{3}",
+  "scry": "93ec86a5-7d2f-4413-919e-b4f7c70457df"
+ },
+ "Vengeful Rebel": {
+  "qty": 2,
+  "type": "Creature \u2014 Aetherborn Warrior",
+  "cmc": 3,
+  "mana": "{2}{B}",
+  "scry": "6e34edfc-77fc-43b5-bad6-1c4c2a76c8c3"
+ },
+ "Veiled Shade": {
+  "qty": 1,
+  "type": "Creature \u2014 Shade",
+  "cmc": 3,
+  "mana": "{2}{B}",
+  "scry": "35cb18ae-0229-40a1-8838-ffb678ab2ed9"
+ },
+ "Vedalken Mesmerist": {
+  "qty": 1,
+  "type": "Creature \u2014 Vedalken Wizard",
+  "cmc": 2,
+  "mana": "{1}{U}",
+  "scry": "5b5e0a12-2589-473b-90e4-1ee5acc055a2"
+ },
+ "Urbis Protector": {
+  "qty": 2,
+  "type": "Creature \u2014 Human Cleric",
+  "cmc": 6,
+  "mana": "{4}{W}{W}",
+  "scry": "acf932ac-5ea5-491b-b555-5e9ea971d93d"
+ },
+ "Urban Utopia": {
+  "qty": 1,
+  "type": "Enchantment \u2014 Aura",
+  "cmc": 2,
+  "mana": "{1}{G}",
+  "scry": "45d7ab0e-db37-4051-86dd-3ab09c047a2b"
+ },
+ "Urban Evolution": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 5,
+  "mana": "{3}{G}{U}",
+  "scry": "08c3cc2a-77c2-4fd1-9af5-4d563b1f6b36"
+ },
+ "Unsummon": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 1,
+  "mana": "{U}",
+  "scry": "7a960516-3864-4a7a-8117-d25dec0dd665"
+ },
+ "Unexplained Disappearance": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{1}{U}",
+  "scry": "9c99b239-50d2-4393-80ec-94dbfaa6ae70"
+ },
+ "Undercity Uprising": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 4,
+  "mana": "{2}{B}{G}",
+  "scry": "7e1e08bf-a5d6-48bb-9f7f-4711f9ec88d7"
+ },
+ "Undercity Necrolisk": {
+  "qty": 8,
+  "type": "Creature \u2014 Zombie Lizard",
+  "cmc": 4,
+  "mana": "{3}{B}",
+  "scry": "2571d168-38d4-46d7-afae-ffbd12bd2313"
+ },
+ "Turn to Slag": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 5,
+  "mana": "{3}{R}{R}",
+  "scry": "38c18541-e95e-4ae0-be18-3bfcafa24ca2"
+ },
+ "Trusted Forcemage": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Shaman",
+  "cmc": 3,
+  "mana": "{2}{G}",
+  "scry": "3ee66ef9-10a7-4aab-88f7-84956811cc6c"
+ },
+ "Truefire Captain": {
+  "qty": 7,
+  "type": "Creature \u2014 Human Knight",
+  "cmc": 4,
+  "mana": "{R}{R}{W}{W}",
+  "scry": "6099a230-9298-4649-b257-243af40d0625"
+ },
+ "Treasured Find": {
+  "qty": 4,
+  "type": "Sorcery",
+  "cmc": 2,
+  "mana": "{B}{G}",
+  "scry": "9317b616-eabe-461a-bd60-6dd8620becb4"
+ },
+ "Traitorous Instinct": {
+  "qty": 2,
+  "type": "Sorcery",
+  "cmc": 4,
+  "mana": "{3}{R}",
+  "scry": "d65b63ea-e3c3-465d-8cd9-7251cda9cc63"
+ },
+ "Tower Defense": {
+  "qty": 3,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{1}{G}",
+  "scry": "857e1eb2-f3f2-4c7f-9965-da9d7e385223"
+ },
+ "Totem-Guide Hartebeest": {
+  "qty": 1,
+  "type": "Creature \u2014 Antelope",
+  "cmc": 5,
+  "mana": "{4}{W}",
+  "scry": "1364a830-36b7-48b9-bf69-6fd35eed9399"
+ },
+ "Totally Lost": {
+  "qty": 2,
+  "type": "Instant",
+  "cmc": 5,
+  "mana": "{4}{U}",
+  "scry": "215165e8-16f2-4dbf-932d-06c2a9a174d5"
+ },
+ "Tormentor's Trident": {
+  "qty": 5,
+  "type": "Artifact \u2014 Equipment",
+  "cmc": 2,
+  "mana": "{2}",
+  "scry": "9543d454-27d6-42ba-aad8-54811d180cfb"
+ },
+ "Torch Courier": {
+  "qty": 2,
+  "type": "Creature \u2014 Goblin",
+  "cmc": 1,
+  "mana": "{R}",
+  "scry": "d4c9fc8c-e68f-4636-84b8-877f6ec04b09"
+ },
+ "Tireless Missionaries": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Cleric",
+  "cmc": 5,
+  "mana": "{4}{W}",
+  "scry": "c47b7386-168f-4b8e-9a26-9da6d697a501"
+ },
+ "Timberland Guide": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Scout",
+  "cmc": 2,
+  "mana": "{1}{G}",
+  "scry": "ae80fefb-af78-4f98-8058-71b61e91842f"
+ },
+ "Timber Gorge": {
+  "qty": 1,
+  "type": "Land",
+  "cmc": 0,
+  "mana": "",
+  "scry": "c81ae262-fe8d-4c78-8604-711fb8d366d8"
+ },
+ "Thunder Magic": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 1,
+  "mana": "{R}",
+  "scry": "9f2b202c-91da-40ec-8324-6b6be7cb3bc8"
+ },
+ "Thraben Valiant": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Soldier",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "20558f69-9240-49b9-9695-caf75ee2db1b"
+ },
+ "Thraben Purebloods": {
+  "qty": 1,
+  "type": "Creature \u2014 Dog",
+  "cmc": 5,
+  "mana": "{4}{W}",
+  "scry": "16db28f4-3d96-42f5-a264-592fdc2d4196"
+ },
+ "Thoughtbound Phantasm": {
+  "qty": 5,
+  "type": "Creature \u2014 Spirit",
+  "cmc": 1,
+  "mana": "{U}",
+  "scry": "36478e73-162a-412c-bf5b-9ca0d92f51e2"
+ },
+ "The Final Days": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 4,
+  "mana": "{2}{B}{B}",
+  "scry": "bbf01770-6d0f-4015-b4b4-a74a53cb767a"
+ },
+ "The Crystal's Chosen": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 7,
+  "mana": "{5}{W}{W}",
+  "scry": "d4df4373-0ee6-44e3-81c6-0881c070014c"
+ },
+ "Terashi's Verdict": {
+  "qty": 2,
+  "type": "Instant \u2014 Arcane",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "bc5fa34b-95c6-4e02-9e15-3f595f744741"
+ },
+ "Tenth District Guard": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Soldier",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "829f959e-91cd-42ea-8644-ce828a304d01"
+ },
+ "Tenement Crasher": {
+  "qty": 2,
+  "type": "Creature \u2014 Beast",
+  "cmc": 6,
+  "mana": "{5}{R}",
+  "scry": "44af9170-bd99-4fde-b673-62d988312b2d"
+ },
+ "Teleportal": {
+  "qty": 4,
+  "type": "Sorcery",
+  "cmc": 2,
+  "mana": "{U}{R}",
+  "scry": "b8322a64-f1a0-49c6-ad59-2b803598f7d1"
+ },
+ "Talrand's Invocation": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 4,
+  "mana": "{2}{U}{U}",
+  "scry": "4b153c2f-fc87-49bc-9d1e-d5e7e25b2142"
+ },
+ "Take Heart": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 1,
+  "mana": "{W}",
+  "scry": "b26f10d5-b826-45b0-abed-80d86e1335c9"
+ },
+ "Syncopate": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 1,
+  "mana": "{X}{U}",
+  "scry": "d6be7925-5466-4c75-9651-3a314baff72a"
+ },
+ "Sword Dancer": {
+  "qty": 2,
+  "type": "Creature \u2014 Human Rebel",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "ec270d53-042e-4b11-b0f4-6416348b8fff"
+ },
+ "Swathcutter Giant": {
+  "qty": 5,
+  "type": "Creature \u2014 Giant Soldier",
+  "cmc": 6,
+  "mana": "{4}{R}{W}",
+  "scry": "700b38c5-3fd2-4566-8d27-9a09d5ab02b2"
+ },
+ "Swarm Guildmage": {
+  "qty": 8,
+  "type": "Creature \u2014 Elf Shaman",
+  "cmc": 2,
+  "mana": "{B}{G}",
+  "scry": "7599adc7-72b2-4079-ac0a-1a821f9de925"
+ },
+ "Swamp": {
+  "qty": 20,
+  "type": "Basic Land \u2014 Swamp",
+  "cmc": 0,
+  "mana": "",
+  "scry": "02fe3fdf-1d21-4e35-b0f3-3bcde7b05e23"
+ },
+ "Survey the Wreckage": {
+  "qty": 4,
+  "type": "Sorcery",
+  "cmc": 5,
+  "mana": "{4}{R}",
+  "scry": "a6e750f9-ad86-4d60-98a3-78d11cd52cd1"
+ },
+ "Surveilling Sprite": {
+  "qty": 1,
+  "type": "Creature \u2014 Faerie Rogue",
+  "cmc": 2,
+  "mana": "{1}{U}",
+  "scry": "aec114de-bee9-4a4a-826c-82a836b4bda1"
+ },
+ "Suplex": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 2,
+  "mana": "{1}{R}",
+  "scry": "f61693a2-7042-44e0-85ba-9bf12ab94e7e"
+ },
+ "Sunspring Expedition": {
+  "qty": 1,
+  "type": "Enchantment",
+  "cmc": 1,
+  "mana": "{W}",
+  "scry": "b0811c4c-9e91-4785-b3d2-e4221c5d92d8"
+ },
+ "Sunhome Stalwart": {
+  "qty": 5,
+  "type": "Creature \u2014 Human Soldier",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "a431f183-17eb-4a6c-a137-d106bdc8c997"
+ },
+ "Sumala Woodshaper": {
+  "qty": 1,
+  "type": "Creature \u2014 Elf Druid",
+  "cmc": 4,
+  "mana": "{2}{G}{W}",
+  "scry": "8c4e427e-c061-43c5-9e8e-34bf5b447ab1"
+ },
+ "Submerged Boneyard": {
+  "qty": 2,
+  "type": "Land",
+  "cmc": 0,
+  "mana": "",
+  "scry": "6479a246-21ac-490a-aefb-6ed72aabdb88"
+ },
+ "Street Riot": {
+  "qty": 6,
+  "type": "Enchantment",
+  "cmc": 5,
+  "mana": "{4}{R}",
+  "scry": "80b352d5-4a57-41bc-b4c4-8b81255a9db8"
+ },
+ "Stoneshock Giant": {
+  "qty": 4,
+  "type": "Creature \u2014 Giant",
+  "cmc": 5,
+  "mana": "{3}{R}{R}",
+  "scry": "ff560915-5687-452f-983a-887929b44b65"
+ },
+ "Stone Quarry": {
+  "qty": 2,
+  "type": "Land",
+  "cmc": 0,
+  "mana": "",
+  "scry": "3c64d130-2864-4e1e-9024-58821eec3be5"
+ },
+ "Stir the Sands": {
+  "qty": 2,
+  "type": "Sorcery",
+  "cmc": 6,
+  "mana": "{4}{B}{B}",
+  "scry": "0cb84193-9648-46e5-a34d-c12cc3f1d7f2"
+ },
+ "Status // Statue": {
+  "qty": 6,
+  "type": "Instant // Instant",
+  "cmc": 5,
+  "mana": "{B/G} // {2}{B}{G}",
+  "scry": "44614c6d-5508-4077-b825-66d5d684086c"
+ },
+ "Stand Firm": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 1,
+  "mana": "{W}",
+  "scry": "93d3a024-6cf3-4008-a4f6-1d96ff5de22a"
+ },
+ "Sprouting Renewal": {
+  "qty": 7,
+  "type": "Sorcery",
+  "cmc": 3,
+  "mana": "{2}{G}",
+  "scry": "668232ab-5e58-49f3-804a-c938252ff177"
+ },
+ "Spring // Mind": {
+  "qty": 2,
+  "type": "Sorcery // Instant",
+  "cmc": 9,
+  "mana": "{2}{G} // {4}{U}{U}",
+  "scry": "6431d464-1f2b-42c4-ad38-67b7d0984080"
+ },
+ "Splatter Thug": {
+  "qty": 2,
+  "type": "Creature \u2014 Human Warrior",
+  "cmc": 3,
+  "mana": "{2}{R}",
+  "scry": "7c511805-3392-4033-8679-811711a0aaca"
+ },
+ "Spire Tracer": {
+  "qty": 1,
+  "type": "Creature \u2014 Elf Scout",
+  "cmc": 1,
+  "mana": "{G}",
+  "scry": "428b0d43-94c9-4f7f-b042-ea63f88ac697"
+ },
+ "Spinal Centipede": {
+  "qty": 2,
+  "type": "Creature \u2014 Insect",
+  "cmc": 3,
+  "mana": "{2}{B}",
+  "scry": "74d579fb-615a-43a6-a1c1-c535087abf2a"
+ },
+ "Spare from Evil": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "d01b5d97-b5ae-42a7-944a-feb12febd63c"
+ },
+ "Soul Tithe": {
+  "qty": 2,
+  "type": "Enchantment \u2014 Aura",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "77e546ce-f498-4136-9015-bb262c301716"
+ },
+ "Somberwald Vigilante": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Warrior",
+  "cmc": 1,
+  "mana": "{R}",
+  "scry": "9e69eb29-a7e4-4826-9535-9a073136c688"
+ },
+ "Solemn Offering": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "e30d14b8-b431-4764-9b30-f511bd40fd08"
+ },
+ "Smelt-Ward Minotaur": {
+  "qty": 7,
+  "type": "Creature \u2014 Minotaur Warrior",
+  "cmc": 3,
+  "mana": "{2}{R}",
+  "scry": "f851d74e-90ad-417f-8372-8437d2d68b0d"
+ },
+ "Sly Requisitioner": {
+  "qty": 2,
+  "type": "Creature \u2014 Human Artificer",
+  "cmc": 5,
+  "mana": "{4}{B}",
+  "scry": "c2d05324-6d85-40da-a087-b5822bc8f42e"
+ },
+ "Slime Molding": {
+  "qty": 2,
+  "type": "Sorcery",
+  "cmc": 1,
+  "mana": "{X}{G}",
+  "scry": "0daf6a74-57f7-4c44-9413-a28002f3de4c"
+ },
+ "Skyline Scout": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Scout",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "b052b641-fce9-45c1-a15b-1e22f1a64e4d"
+ },
+ "Skyline Predator": {
+  "qty": 3,
+  "type": "Creature \u2014 Drake",
+  "cmc": 6,
+  "mana": "{4}{U}{U}",
+  "scry": "5839556c-6635-44c4-96ed-666e4466b929"
+ },
+ "Skyknight Legionnaire": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Knight",
+  "cmc": 3,
+  "mana": "{1}{R}{W}",
+  "scry": "ae8c9948-b52e-4d07-a72a-99ab6be05cc6"
+ },
+ "Skullcrack": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{1}{R}",
+  "scry": "8068a146-f6fe-46f3-a42e-822fbc3502e6"
+ },
+ "Skillful Lunge": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "2a28abc1-3e75-4db4-baa1-b47abdb7453b"
+ },
+ "Skarrg Guildmage": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Shaman",
+  "cmc": 2,
+  "mana": "{R}{G}",
+  "scry": "00f206c0-a8a7-4ca0-b88f-4736c3dac588"
+ },
+ "Silverclaw Griffin": {
+  "qty": 1,
+  "type": "Creature \u2014 Griffin",
+  "cmc": 5,
+  "mana": "{3}{W}{W}",
+  "scry": "54528722-a6aa-4567-9cd1-e4a97adec7d0"
+ },
+ "Silent Dart": {
+  "qty": 6,
+  "type": "Artifact",
+  "cmc": 1,
+  "mana": "{1}",
+  "scry": "4e12530d-5509-46f1-8273-dce2c1f60965"
+ },
+ "Silent Artisan": {
+  "qty": 2,
+  "type": "Creature \u2014 Giant",
+  "cmc": 5,
+  "mana": "{3}{W}{W}",
+  "scry": "dce5647d-1546-4eff-a2a2-9e9ef26db533"
+ },
+ "Siege Modification": {
+  "qty": 2,
+  "type": "Enchantment \u2014 Aura",
+  "cmc": 3,
+  "mana": "{1}{R}{R}",
+  "scry": "e1a4e33f-53f0-4919-98a1-c832dcd32efb"
+ },
+ "Siege Mastodon": {
+  "qty": 2,
+  "type": "Creature \u2014 Elephant",
+  "cmc": 5,
+  "mana": "{4}{W}",
+  "scry": "71fd27a8-2de6-454f-8174-a60918bfe60e"
+ },
+ "Shriek Raptor": {
+  "qty": 2,
+  "type": "Creature \u2014 Phyrexian Bird",
+  "cmc": 5,
+  "mana": "{3}{W}{W}",
+  "scry": "73071a3b-9329-418e-9285-fa4765463d1f"
+ },
+ "Shipwreck Singer": {
+  "qty": 2,
+  "type": "Creature \u2014 Siren",
+  "cmc": 2,
+  "mana": "{U}{B}",
+  "scry": "b17cf2d7-454c-4103-8d98-11c65d0d76ef"
+ },
+ "Shielded Passage": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 1,
+  "mana": "{W}",
+  "scry": "6546b6c4-73b2-41b3-9ff9-316e9ce916e5"
+ },
+ "Shielded Aether Thief": {
+  "qty": 8,
+  "type": "Creature \u2014 Vedalken Rogue",
+  "cmc": 2,
+  "mana": "{1}{U}",
+  "scry": "e34be31b-eeb4-40e5-acf7-6cd0ba6d4bcf"
+ },
+ "Shadow Alley Denizen": {
+  "qty": 2,
+  "type": "Creature \u2014 Vampire Rogue",
+  "cmc": 1,
+  "mana": "{B}",
+  "scry": "985997ae-59bc-49d7-87ca-e63ed9706fdf"
+ },
+ "Setessan Griffin": {
+  "qty": 1,
+  "type": "Creature \u2014 Griffin",
+  "cmc": 5,
+  "mana": "{4}{W}",
+  "scry": "35d2ae77-b16c-4a01-84ce-5c78be5a54d8"
+ },
+ "Serra Angel": {
+  "qty": 1,
+  "type": "Creature \u2014 Angel",
+  "cmc": 5,
+  "mana": "{3}{W}{W}",
+  "scry": "d56afc99-5168-4853-afbb-eab32d62c472"
+ },
+ "Sentry of the Underworld": {
+  "qty": 2,
+  "type": "Creature \u2014 Griffin Skeleton",
+  "cmc": 5,
+  "mana": "{3}{W}{B}",
+  "scry": "018a9c98-1cb4-4c53-a765-c15808c4ab44"
+ },
+ "Sentinel Sliver": {
+  "qty": 2,
+  "type": "Creature \u2014 Sliver",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "74c28560-e6ac-4be9-a253-22c4613b0d90"
+ },
+ "Sensor Splicer": {
+  "qty": 2,
+  "type": "Creature \u2014 Phyrexian Artificer",
+  "cmc": 5,
+  "mana": "{4}{W}",
+  "scry": "f36f269c-4178-48be-b1f7-fc35fc5082f0"
+ },
+ "Self-Destruct": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{1}{R}",
+  "scry": "7661003c-bf83-46bb-bcc0-8fbf5819ffa8"
+ },
+ "Selesnya Locket": {
+  "qty": 1,
+  "type": "Artifact",
+  "cmc": 3,
+  "mana": "{3}",
+  "scry": "ea0c04b9-c7fc-4204-9af2-5d1987bdd97e"
+ },
+ "Selesnya Charm": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{G}{W}",
+  "scry": "5b01cfcd-fb1c-4f36-9cb7-79afabcdd766"
+ },
+ "Selective Snare": {
+  "qty": 5,
+  "type": "Sorcery",
+  "cmc": 1,
+  "mana": "{X}{U}",
+  "scry": "2adfc0ac-08a9-487a-b01c-5de52fae0312"
+ },
+ "Seek the Horizon": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 4,
+  "mana": "{3}{G}",
+  "scry": "3fe19e3f-d758-4a14-90bf-5bb592fb06a6"
+ },
+ "Security Blockade": {
+  "qty": 2,
+  "type": "Enchantment \u2014 Aura",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "e6250b31-8592-48b2-a877-3637c9ee7d49"
+ },
+ "Searing Spear": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{1}{R}",
+  "scry": "44c5f884-d071-40c2-bb2c-925dc2197ea3"
+ },
+ "Scroll Thief": {
+  "qty": 1,
+  "type": "Creature \u2014 Merfolk Rogue",
+  "cmc": 3,
+  "mana": "{2}{U}",
+  "scry": "19bc4f11-98d3-4f71-a50f-24eddd551147"
+ },
+ "Scrapper Champion": {
+  "qty": 2,
+  "type": "Creature \u2014 Human Artificer",
+  "cmc": 4,
+  "mana": "{3}{R}",
+  "scry": "117ef25c-e9cf-4801-a753-2c329c2a8bdb"
+ },
+ "Scholar of Athreos": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Cleric",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "95a36e06-39f3-47d0-b6a9-43728afceb4a"
+ },
+ "Savage Surge": {
+  "qty": 3,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{1}{G}",
+  "scry": "0fa74aae-e857-410c-8836-953c8623d0b0"
+ },
+ "Satyr Piper": {
+  "qty": 2,
+  "type": "Creature \u2014 Satyr Rogue",
+  "cmc": 3,
+  "mana": "{2}{G}",
+  "scry": "e244c4d0-2c30-4a56-94bb-0fff9ffe4a6a"
+ },
+ "Satyr Hedonist": {
+  "qty": 1,
+  "type": "Creature \u2014 Satyr",
+  "cmc": 2,
+  "mana": "{1}{G}",
+  "scry": "88c67e15-833c-406a-b75f-8de97fbacf5a"
+ },
+ "Sangrite Surge": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 6,
+  "mana": "{4}{R}{G}",
+  "scry": "16b4527e-e449-45d0-a551-634e2ceb21c4"
+ },
+ "Samurai's Katana": {
+  "qty": 1,
+  "type": "Artifact \u2014 Equipment",
+  "cmc": 3,
+  "mana": "{2}{R}",
+  "scry": "11f1d378-c78c-402a-ac46-2d32598c23e7"
+ },
+ "Salvage Scuttler": {
+  "qty": 6,
+  "type": "Creature \u2014 Crab",
+  "cmc": 5,
+  "mana": "{4}{U}",
+  "scry": "480be626-cf37-410d-a9c7-e5464345085f"
+ },
+ "Ruthless Sniper": {
+  "qty": 2,
+  "type": "Creature \u2014 Human Archer",
+  "cmc": 1,
+  "mana": "{B}",
+  "scry": "d916306a-5cb3-4a38-9038-a433525c5b7b"
+ },
+ "Rubblebelt Maaka": {
+  "qty": 1,
+  "type": "Creature \u2014 Cat",
+  "cmc": 4,
+  "mana": "{3}{R}",
+  "scry": "2f3f29fe-8985-4939-8ced-786145261085"
+ },
+ "Rosemane Centaur": {
+  "qty": 2,
+  "type": "Creature \u2014 Centaur Soldier",
+  "cmc": 5,
+  "mana": "{3}{G}{W}",
+  "scry": "e516b8f2-8c79-42c9-8e49-8e4f461c7ebe"
+ },
+ "Roc Charger": {
+  "qty": 6,
+  "type": "Creature \u2014 Bird",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "4932c635-b729-4348-92de-2c1b207ea460"
+ },
+ "Rix Maadi Guildmage": {
+  "qty": 3,
+  "type": "Creature \u2014 Human Shaman",
+  "cmc": 2,
+  "mana": "{B}{R}",
+  "scry": "eb737465-5de8-4015-befe-2bf386da2a89"
+ },
+ "Rites of Reaping": {
+  "qty": 2,
+  "type": "Sorcery",
+  "cmc": 6,
+  "mana": "{4}{B}{G}",
+  "scry": "115d504f-3aec-4374-8cd8-732d56c448f2"
+ },
+ "Risen Sanctuary": {
+  "qty": 2,
+  "type": "Creature \u2014 Elemental",
+  "cmc": 7,
+  "mana": "{5}{G}{W}",
+  "scry": "a0b6c136-2bbe-48c1-ac53-2a8221b96936"
+ },
+ "Riot Control": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "d7886607-86db-4221-8752-296104aaaef2"
+ },
+ "Righteous Charge": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 3,
+  "mana": "{1}{W}{W}",
+  "scry": "f1bde9d5-953f-4e8d-9a24-6185cef0a304"
+ },
+ "Righteous Blow": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 1,
+  "mana": "{W}",
+  "scry": "b4501520-acf4-438f-9e96-4a649875ffdd"
+ },
+ "Rhizome Lurcher": {
+  "qty": 1,
+  "type": "Creature \u2014 Fungus Zombie",
+  "cmc": 4,
+  "mana": "{2}{B}{G}",
+  "scry": "db9ce92b-79cc-4e26-b511-30ae8ea6a2a1"
+ },
+ "Restoration Specialist": {
+  "qty": 6,
+  "type": "Creature \u2014 Dwarf Artificer",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "63682db3-1a56-4d8e-a9b7-04465a577518"
+ },
+ "Repel the Darkness": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "90fa47c3-3209-4e01-920a-aed2184520c2"
+ },
+ "Renegade Rallier": {
+  "qty": 4,
+  "type": "Creature \u2014 Human Warrior",
+  "cmc": 3,
+  "mana": "{1}{G}{W}",
+  "scry": "90bad312-80e3-45b0-9556-60ce06808a47"
+ },
+ "Relm's Sketching": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 4,
+  "mana": "{2}{U}{U}",
+  "scry": "6aedac12-3714-4a81-bd4d-1d2555c66f78"
+ },
+ "Relentless X-ATM092": {
+  "qty": 1,
+  "type": "Artifact Creature \u2014 Robot Spider",
+  "cmc": 6,
+  "mana": "{6}",
+  "scry": "e09ee4c9-85ef-4d1e-864b-d659b8e8f51d"
+ },
+ "Reduce // Rubble": {
+  "qty": 2,
+  "type": "Instant // Sorcery",
+  "cmc": 6,
+  "mana": "{2}{U} // {2}{R}",
+  "scry": "d2f3035c-ca27-40f3-ad73-c4e54bb2bcd7"
+ },
+ "Reckless Racer": {
+  "qty": 2,
+  "type": "Creature \u2014 Human Pilot",
+  "cmc": 3,
+  "mana": "{2}{R}",
+  "scry": "21c0afd6-1242-42bf-a13f-9f218c9d9dfc"
+ },
+ "Reckless Brute": {
+  "qty": 2,
+  "type": "Creature \u2014 Ogre Warrior",
+  "cmc": 3,
+  "mana": "{2}{R}",
+  "scry": "5fd32a9e-1d39-4792-9657-69d17e5e0134"
+ },
+ "Ray of Dissolution": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "b55c31d1-6b05-4ea1-a444-51ad57ebcfa0"
+ },
+ "Ravenous Intruder": {
+  "qty": 2,
+  "type": "Creature \u2014 Gremlin",
+  "cmc": 2,
+  "mana": "{1}{R}",
+  "scry": "cd793778-f099-4b8e-af19-fc0ec4292824"
+ },
+ "Rampaging Monument": {
+  "qty": 5,
+  "type": "Artifact Creature \u2014 Cleric",
+  "cmc": 4,
+  "mana": "{4}",
+  "scry": "b5fbe445-a788-4624-8ecf-8bc06c3ca8f8"
+ },
+ "Rakdos Ringleader": {
+  "qty": 3,
+  "type": "Creature \u2014 Skeleton Warrior",
+  "cmc": 6,
+  "mana": "{4}{B}{R}",
+  "scry": "6b54fbe8-324a-4066-bed1-dda1dca319fc"
+ },
+ "Rakdos Ragemutt": {
+  "qty": 1,
+  "type": "Creature \u2014 Elemental Dog",
+  "cmc": 5,
+  "mana": "{3}{B}{R}",
+  "scry": "bb36840a-3f85-4fca-87ab-379dfce8e542"
+ },
+ "Rakdos Guildgate": {
+  "qty": 1,
+  "type": "Land \u2014 Gate",
+  "cmc": 0,
+  "mana": "",
+  "scry": "5e378faf-b1f2-46df-945a-37681d392104"
+ },
+ "Rakdos Cackler": {
+  "qty": 2,
+  "type": "Creature \u2014 Devil",
+  "cmc": 1,
+  "mana": "{B/R}",
+  "scry": "5f873c0b-e779-4f09-8e9c-94a1765eb5da"
+ },
+ "Rain of Blades": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 1,
+  "mana": "{W}",
+  "scry": "418476cd-94da-47a5-ba77-6bb4771e9c89"
+ },
+ "Rage Thrower": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Shaman",
+  "cmc": 6,
+  "mana": "{5}{R}",
+  "scry": "f16db004-3e0c-491b-b8b6-0ae046d11761"
+ },
+ "Radical Idea": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{1}{U}",
+  "scry": "c9570734-5e9b-46ff-b606-9759b5195756"
+ },
+ "Pursuit of Flight": {
+  "qty": 1,
+  "type": "Enchantment \u2014 Aura",
+  "cmc": 2,
+  "mana": "{1}{R}",
+  "scry": "37a6290c-a0a8-4032-972b-84a7eef04dae"
+ },
+ "Purphoros's Emissary": {
+  "qty": 6,
+  "type": "Enchantment Creature \u2014 Ox",
+  "cmc": 4,
+  "mana": "{3}{R}",
+  "scry": "4d4ddc30-844c-4860-b394-d3c807c31162"
+ },
+ "Psychic Strike": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 3,
+  "mana": "{1}{U}{B}",
+  "scry": "0d87927c-80a6-4146-92a5-58c510ce7958"
+ },
+ "Priests of Norn": {
+  "qty": 1,
+  "type": "Creature \u2014 Phyrexian Cleric",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "a978c49d-483a-42fe-971c-858288d07e40"
+ },
+ "Price of Fame": {
+  "qty": 6,
+  "type": "Instant",
+  "cmc": 4,
+  "mana": "{3}{B}",
+  "scry": "61b52152-0f7c-4466-9e49-033477028f67"
+ },
+ "Prey Upon": {
+  "qty": 3,
+  "type": "Sorcery",
+  "cmc": 1,
+  "mana": "{G}",
+  "scry": "863b34d3-fb6a-4a2a-8fb6-20041312b1d3"
+ },
+ "Predatory Sliver": {
+  "qty": 1,
+  "type": "Creature \u2014 Sliver",
+  "cmc": 2,
+  "mana": "{1}{G}",
+  "scry": "a2e37de8-66a1-4afa-aa6f-1151f849dfa8"
+ },
+ "Portent of Betrayal": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 4,
+  "mana": "{3}{R}",
+  "scry": "b9c2b855-5079-418e-bfb4-9fc575ebe4f7"
+ },
+ "Portcullis Vine": {
+  "qty": 1,
+  "type": "Creature \u2014 Plant Wall",
+  "cmc": 1,
+  "mana": "{G}",
+  "scry": "d1abd95a-4ecc-479c-b200-5aaf7c993ef8"
+ },
+ "Poison the Waters": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 2,
+  "mana": "{1}{B}",
+  "scry": "ff2bafe7-4d0f-464d-b7ba-55a54366fc68"
+ },
+ "Plummet": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{1}{G}",
+  "scry": "cb54add4-7e1d-4253-a13a-e00447ef2fff"
+ },
+ "Plains": {
+  "qty": 20,
+  "type": "Basic Land \u2014 Plains",
+  "cmc": 0,
+  "mana": "",
+  "scry": "a4446149-341b-449b-86e2-2b6b47b7a75e"
+ },
+ "Pillarfield Ox": {
+  "qty": 4,
+  "type": "Creature \u2014 Ox",
+  "cmc": 4,
+  "mana": "{3}{W}",
+  "scry": "53a5c7bd-7d08-421d-ad43-70bc0c2db4d4"
+ },
+ "Pilfering Imp": {
+  "qty": 4,
+  "type": "Creature \u2014 Imp",
+  "cmc": 1,
+  "mana": "{B}",
+  "scry": "646dedff-150c-4ed2-8f2e-3b2e6ba5521a"
+ },
+ "Pilfered Plans": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 3,
+  "mana": "{1}{U}{B}",
+  "scry": "c4628454-65f0-4cf7-82b5-3c33e0b3a705"
+ },
+ "Phoenix Down": {
+  "qty": 1,
+  "type": "Artifact",
+  "cmc": 1,
+  "mana": "{W}",
+  "scry": "62e299b0-9ef6-49d3-aa79-384325fed89e"
+ },
+ "Pharika's Cure": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{B}{B}",
+  "scry": "c0efc963-5848-44eb-a654-c08b5bd4501d"
+ },
+ "Perilous Predicament": {
+  "qty": 2,
+  "type": "Instant",
+  "cmc": 5,
+  "mana": "{4}{B}",
+  "scry": "f0edc708-0c76-4fcd-a175-d9c6f1ca3ac1"
+ },
+ "Peregrine Griffin": {
+  "qty": 1,
+  "type": "Creature \u2014 Griffin",
+  "cmc": 5,
+  "mana": "{4}{W}",
+  "scry": "0296eaa6-f9fe-4fb8-af9c-04928d99e2e2"
+ },
+ "Peema Aether-Seer": {
+  "qty": 2,
+  "type": "Creature \u2014 Elf Druid",
+  "cmc": 4,
+  "mana": "{3}{G}",
+  "scry": "fe1bc709-2157-4711-a027-c0ff00ff2728"
+ },
+ "Peak Eruption": {
+  "qty": 2,
+  "type": "Sorcery",
+  "cmc": 3,
+  "mana": "{2}{R}",
+  "scry": "ed0a00f7-aee0-4ab2-bab6-bc0949176a7a"
+ },
+ "Pay No Heed": {
+  "qty": 2,
+  "type": "Instant",
+  "cmc": 1,
+  "mana": "{W}",
+  "scry": "9520a1be-db77-4f31-a67d-6309a3ddc566"
+ },
+ "Pause for Reflection": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 3,
+  "mana": "{2}{G}",
+  "scry": "3cfcf84c-a30c-4c4f-9f8c-ee807661e499"
+ },
+ "Parhelion Patrol": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Knight",
+  "cmc": 4,
+  "mana": "{3}{W}",
+  "scry": "eef126f2-7e72-4338-8021-3ad95e4ab982"
+ },
+ "Pacifism": {
+  "qty": 1,
+  "type": "Enchantment \u2014 Aura",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "abbc73f1-efe4-44ed-a97f-9f099afaa5c7"
+ },
+ "Outland Boar": {
+  "qty": 2,
+  "type": "Creature \u2014 Boar",
+  "cmc": 4,
+  "mana": "{2}{R}{G}",
+  "scry": "135912b3-978b-4a9b-8758-7b138b190232"
+ },
+ "Orzhov Keyrune": {
+  "qty": 1,
+  "type": "Artifact",
+  "cmc": 3,
+  "mana": "{3}",
+  "scry": "fd5c0f38-916a-4f6c-b678-7447cb0709e0"
+ },
+ "Opera Love Song": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{1}{R}",
+  "scry": "0343916d-1b65-4e95-aef1-e72dbcebf0c4"
+ },
+ "Onward // Victory": {
+  "qty": 2,
+  "type": "Instant // Sorcery",
+  "cmc": 6,
+  "mana": "{2}{R} // {2}{W}",
+  "scry": "517b32e4-4b34-431f-8f3b-98a6cffc245a"
+ },
+ "One Thousand Lashes": {
+  "qty": 1,
+  "type": "Enchantment \u2014 Aura",
+  "cmc": 4,
+  "mana": "{2}{W}{B}",
+  "scry": "eef2d548-477b-4be1-b946-6df6aac2ee6e"
+ },
+ "Omenspeaker": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Wizard",
+  "cmc": 2,
+  "mana": "{1}{U}",
+  "scry": "ba50a1f1-2898-448c-a6dc-0860f49ba216"
+ },
+ "Ochran Assassin": {
+  "qty": 6,
+  "type": "Creature \u2014 Elf Assassin",
+  "cmc": 3,
+  "mana": "{1}{B}{G}",
+  "scry": "541ef933-64f8-4075-9bd3-97149ac84b2b"
+ },
+ "Nylea's Emissary": {
+  "qty": 2,
+  "type": "Enchantment Creature \u2014 Cat",
+  "cmc": 4,
+  "mana": "{3}{G}",
+  "scry": "2f133775-09b3-4df4-a97f-0df75809b724"
+ },
+ "Notion Rain": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 3,
+  "mana": "{1}{U}{B}",
+  "scry": "f4db287e-34c1-459b-882d-3db58f13eade"
+ },
+ "Nivix Guildmage": {
+  "qty": 3,
+  "type": "Creature \u2014 Human Wizard",
+  "cmc": 2,
+  "mana": "{U}{R}",
+  "scry": "92fb453e-6cbe-48c6-98ef-86069791c341"
+ },
+ "Nightveil Sprite": {
+  "qty": 5,
+  "type": "Creature \u2014 Faerie Rogue",
+  "cmc": 2,
+  "mana": "{1}{U}",
+  "scry": "534d1166-4e01-4ec8-b4d9-e76861ec51b9"
+ },
+ "Nightveil Predator": {
+  "qty": 6,
+  "type": "Creature \u2014 Vampire",
+  "cmc": 4,
+  "mana": "{U}{U}{B}{B}",
+  "scry": "193289c9-837d-4d18-9ef1-720e8e335e62"
+ },
+ "New Prahv Guildmage": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Wizard",
+  "cmc": 2,
+  "mana": "{W}{U}",
+  "scry": "698b47d1-c72e-4dc3-b28b-7421e0163f22"
+ },
+ "Never Happened": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 3,
+  "mana": "{2}{B}",
+  "scry": "edb2be3c-7a81-4a1c-9701-8446166b83e6"
+ },
+ "Nephalia Smuggler": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Rogue",
+  "cmc": 1,
+  "mana": "{U}",
+  "scry": "a67bcad1-b535-4e51-a5f4-50612b0346ce"
+ },
+ "Necrotic Wound": {
+  "qty": 4,
+  "type": "Instant",
+  "cmc": 1,
+  "mana": "{B}",
+  "scry": "9ab636af-5b30-4138-8e68-81f567f10417"
+ },
+ "Nature's Way": {
+  "qty": 2,
+  "type": "Sorcery",
+  "cmc": 2,
+  "mana": "{1}{G}",
+  "scry": "77cf9d11-936f-4e02-8595-0cbcabaafb1e"
+ },
+ "Mwonvuli Beast Tracker": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Scout",
+  "cmc": 3,
+  "mana": "{1}{G}{G}",
+  "scry": "0034d32c-cc82-48d7-a913-d58cc3d3afeb"
+ },
+ "Muse Drake": {
+  "qty": 2,
+  "type": "Creature \u2014 Drake",
+  "cmc": 4,
+  "mana": "{3}{U}",
+  "scry": "c5df7a96-6548-41c0-85a6-e0c4566e0fe6"
+ },
+ "Mountain": {
+  "qty": 20,
+  "type": "Basic Land \u2014 Mountain",
+  "cmc": 0,
+  "mana": "",
+  "scry": "a3a4da7d-a703-4f91-9ef7-ce269c0b63fb"
+ },
+ "Monstrous Onslaught": {
+  "qty": 6,
+  "type": "Sorcery",
+  "cmc": 5,
+  "mana": "{3}{G}{G}",
+  "scry": "2aebf95d-a231-402a-8888-9c50889a9556"
+ },
+ "Monk's Fist": {
+  "qty": 1,
+  "type": "Artifact \u2014 Equipment",
+  "cmc": 2,
+  "mana": "{2}",
+  "scry": "995033f0-873d-4e46-b0c9-98ec8ef270ff"
+ },
+ "Moment of Heroism": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "7bbc462b-3736-4441-96ee-8dc5615b4529"
+ },
+ "Molderhulk": {
+  "qty": 5,
+  "type": "Creature \u2014 Fungus Zombie",
+  "cmc": 9,
+  "mana": "{7}{B}{G}",
+  "scry": "ba88e031-b194-4621-9e97-2f33ee46f6d0"
+ },
+ "Mist Raven": {
+  "qty": 1,
+  "type": "Creature \u2014 Bird",
+  "cmc": 4,
+  "mana": "{2}{U}{U}",
+  "scry": "c0ea1af2-e86d-4c62-92b1-55473b622592"
+ },
+ "Miming Slime": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 3,
+  "mana": "{2}{G}",
+  "scry": "128d0584-89d2-499b-b6c2-2425c4ffcd13"
+ },
+ "Mighty Leap": {
+  "qty": 2,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "f0f53a0a-8d12-4271-afaf-7445573a4296"
+ },
+ "Might of the Masses": {
+  "qty": 8,
+  "type": "Instant",
+  "cmc": 1,
+  "mana": "{G}",
+  "scry": "38af7d5d-a4b7-4ea7-9b47-ee9f3f32bc3f"
+ },
+ "Maze Sentinel": {
+  "qty": 1,
+  "type": "Creature \u2014 Elemental",
+  "cmc": 6,
+  "mana": "{5}{W}",
+  "scry": "7a977e2d-a2bc-42d1-be7d-36a822c6a66e"
+ },
+ "Maximize Altitude": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 1,
+  "mana": "{U}",
+  "scry": "62c5cda2-3c4c-41bd-bcf8-882f1751e9a3"
+ },
+ "Maverick Thopterist": {
+  "qty": 2,
+  "type": "Creature \u2014 Human Artificer",
+  "cmc": 5,
+  "mana": "{3}{U}{R}",
+  "scry": "e2718058-16d5-49cb-8b05-b7a39ce7aa62"
+ },
+ "Maulfist Revolutionary": {
+  "qty": 6,
+  "type": "Creature \u2014 Human Warrior",
+  "cmc": 3,
+  "mana": "{1}{G}{G}",
+  "scry": "a83dcdba-419b-41e1-8c9d-8bca6fe2752b"
+ },
+ "Master of Diversion": {
+  "qty": 2,
+  "type": "Creature \u2014 Human Scout",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "2bec89b3-640e-4093-a6e9-5639610769b9"
+ },
+ "Marauding Looter": {
+  "qty": 2,
+  "type": "Creature \u2014 Human Pirate",
+  "cmc": 4,
+  "mana": "{2}{U}{R}",
+  "scry": "3c41fee8-7b03-4dc8-babb-f8c8369a74c2"
+ },
+ "Maniacal Rage": {
+  "qty": 1,
+  "type": "Enchantment \u2014 Aura",
+  "cmc": 2,
+  "mana": "{1}{R}",
+  "scry": "29a51b9b-881f-4f02-b49e-68fcca234161"
+ },
+ "Make Obsolete": {
+  "qty": 2,
+  "type": "Instant",
+  "cmc": 3,
+  "mana": "{2}{B}",
+  "scry": "e0a96feb-accc-4c30-8ecd-7d9272ebd45b"
+ },
+ "Magister Sphinx": {
+  "qty": 1,
+  "type": "Artifact Creature \u2014 Sphinx",
+  "cmc": 7,
+  "mana": "{4}{W}{U}{B}",
+  "scry": "be662808-e452-407d-b142-bf6f30990b5a"
+ },
+ "Loxodon Restorer": {
+  "qty": 1,
+  "type": "Creature \u2014 Elephant Cleric",
+  "cmc": 6,
+  "mana": "{4}{W}{W}",
+  "scry": "1ead2166-a7ca-49cb-bf93-2f59c37b4cb9"
+ },
+ "Lotleth Giant": {
+  "qty": 6,
+  "type": "Creature \u2014 Zombie Giant",
+  "cmc": 7,
+  "mana": "{6}{B}",
+  "scry": "c3a73aaf-3613-4ffb-ad04-3e22abe11937"
+ },
+ "Lost Leonin": {
+  "qty": 1,
+  "type": "Creature \u2014 Phyrexian Cat Soldier",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "8209fa5d-2c0e-4827-813b-fff123533f16"
+ },
+ "Lobber Crew": {
+  "qty": 2,
+  "type": "Creature \u2014 Goblin Warrior",
+  "cmc": 3,
+  "mana": "{2}{R}",
+  "scry": "b9d4aa15-a3c2-42a3-a87a-443e7dd20c04"
+ },
+ "Liturgy of Blood": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 5,
+  "mana": "{3}{B}{B}",
+  "scry": "fbe00ed2-d316-46f8-a5cf-6aad93fe88a0"
+ },
+ "Lifecrafter's Gift": {
+  "qty": 6,
+  "type": "Instant",
+  "cmc": 4,
+  "mana": "{3}{G}",
+  "scry": "6759f13b-e755-495d-87df-a685455cdf33"
+ },
+ "Lifecraft Awakening": {
+  "qty": 6,
+  "type": "Instant",
+  "cmc": 1,
+  "mana": "{X}{G}",
+  "scry": "63bc60c8-f0a3-4bbf-b570-7d98d0a3e2b0"
+ },
+ "Legion Guildmage": {
+  "qty": 5,
+  "type": "Creature \u2014 Human Wizard",
+  "cmc": 2,
+  "mana": "{R}{W}",
+  "scry": "b03423b2-faca-4b2e-8328-8b9b7fdb7ce3"
+ },
+ "Ledev Guardian": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Knight",
+  "cmc": 4,
+  "mana": "{3}{W}",
+  "scry": "cbeb4ae3-2a7a-44e1-923b-20c772fd1b8b"
+ },
+ "Ledev Champion": {
+  "qty": 8,
+  "type": "Creature \u2014 Elf Knight",
+  "cmc": 3,
+  "mana": "{1}{G}{W}",
+  "scry": "bc4f508b-a48d-4462-9d89-ee2ead3a0847"
+ },
+ "Leapfrog": {
+  "qty": 2,
+  "type": "Creature \u2014 Frog",
+  "cmc": 3,
+  "mana": "{2}{U}",
+  "scry": "b944aebc-88ab-40a6-a2cd-9af8438371cb"
+ },
+ "League Guildmage": {
+  "qty": 6,
+  "type": "Creature \u2014 Human Wizard",
+  "cmc": 2,
+  "mana": "{U}{R}",
+  "scry": "7439118d-4869-486e-8930-6e00db2634b2"
+ },
+ "Lay Bare the Heart": {
+  "qty": 2,
+  "type": "Sorcery",
+  "cmc": 2,
+  "mana": "{1}{B}",
+  "scry": "d4b76ff8-b26c-4567-9339-bb6a37713f4b"
+ },
+ "Last Breath": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "1857fc37-1e7e-4b93-9fa9-ec139f16b7fa"
+ },
+ "Lash of the Whip": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 5,
+  "mana": "{4}{B}",
+  "scry": "ba32cf1f-375c-4cc5-9963-c4f9510e3b39"
+ },
+ "Kraul Warrior": {
+  "qty": 1,
+  "type": "Creature \u2014 Insect Warrior",
+  "cmc": 2,
+  "mana": "{1}{G}",
+  "scry": "b180c9dc-b4f3-42f6-9afb-ba4464f5349f"
+ },
+ "Kraul Swarm": {
+  "qty": 5,
+  "type": "Creature \u2014 Insect Warrior",
+  "cmc": 5,
+  "mana": "{4}{B}",
+  "scry": "490dc165-b10d-4384-8c13-d7969844b2bb"
+ },
+ "Kraul Foragers": {
+  "qty": 2,
+  "type": "Creature \u2014 Insect Scout",
+  "cmc": 5,
+  "mana": "{4}{G}",
+  "scry": "9d70710c-4c4f-4a0e-b81b-f03d807aec63"
+ },
+ "Kor Hookmaster": {
+  "qty": 1,
+  "type": "Creature \u2014 Kor Soldier",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "a8f03803-d757-462e-8019-aac4b405bba2"
+ },
+ "Knight Watch": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 5,
+  "mana": "{4}{W}",
+  "scry": "cd492072-9a8c-4d55-ac71-3c8efaa3fc87"
+ },
+ "Knight of Obligation": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Knight",
+  "cmc": 4,
+  "mana": "{3}{W}",
+  "scry": "0c2a1100-a2e6-4ef5-a8e3-2aca552d6b66"
+ },
+ "Knight of Glory": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Knight",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "1646cb67-e0ac-4f2d-af21-618ff3613d69"
+ },
+ "Kessig Recluse": {
+  "qty": 1,
+  "type": "Creature \u2014 Spider",
+  "cmc": 4,
+  "mana": "{2}{G}{G}",
+  "scry": "695b8abe-796e-4d9b-aad3-4e03e925d2a7"
+ },
+ "Kefnet's Monument": {
+  "qty": 2,
+  "type": "Legendary Artifact",
+  "cmc": 3,
+  "mana": "{3}",
+  "scry": "f5d20f0a-aa7c-4d40-acb2-2b86666afd53"
+ },
+ "Karametra's Acolyte": {
+  "qty": 2,
+  "type": "Creature \u2014 Human Druid",
+  "cmc": 4,
+  "mana": "{3}{G}",
+  "scry": "374a1b7c-ce11-4734-aff2-b0bd00857fad"
+ },
+ "Judge's Familiar": {
+  "qty": 4,
+  "type": "Creature \u2014 Bird",
+  "cmc": 1,
+  "mana": "{W/U}",
+  "scry": "0fc51899-3970-416b-b7de-fadbc9678955"
+ },
+ "Janjeet Sentry": {
+  "qty": 2,
+  "type": "Creature \u2014 Vedalken Soldier",
+  "cmc": 3,
+  "mana": "{2}{U}",
+  "scry": "826b9080-2b6d-4f4e-93a6-cf977d40654f"
+ },
+ "Izzet Keyrune": {
+  "qty": 1,
+  "type": "Artifact",
+  "cmc": 3,
+  "mana": "{3}",
+  "scry": "83e4e83b-cbb8-4efd-b6c4-4459a29177ac"
+ },
+ "Island": {
+  "qty": 20,
+  "type": "Basic Land \u2014 Island",
+  "cmc": 0,
+  "mana": "",
+  "scry": "0e443748-edf1-4499-9507-3649dd57ee95"
+ },
+ "Ironshell Beetle": {
+  "qty": 3,
+  "type": "Creature \u2014 Insect",
+  "cmc": 2,
+  "mana": "{1}{G}",
+  "scry": "57f8b6b0-f858-41d5-9839-fd1247b9477f"
+ },
+ "Ironclad Revolutionary": {
+  "qty": 2,
+  "type": "Creature \u2014 Aetherborn Artificer",
+  "cmc": 6,
+  "mana": "{4}{B}{B}",
+  "scry": "43a5535b-b1d1-4648-aa72-4f64e9fcd95d"
+ },
+ "Iona's Judgment": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 5,
+  "mana": "{4}{W}",
+  "scry": "9b7ebc7a-4f11-42ba-9c10-6303833bec36"
+ },
+ "Invigorated Rampage": {
+  "qty": 2,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{1}{R}",
+  "scry": "69f53fff-7e63-4977-899e-02dfa36ccb54"
+ },
+ "Invert // Invent": {
+  "qty": 6,
+  "type": "Instant // Instant",
+  "cmc": 7,
+  "mana": "{U/R} // {4}{U}{R}",
+  "scry": "054a4e4f-8baa-41cf-b24c-d068e8b9a070"
+ },
+ "Invasive Surgery": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 1,
+  "mana": "{U}",
+  "scry": "6e644e38-39bf-40bd-9be1-5eb80f472e81"
+ },
+ "Integrity // Intervention": {
+  "qty": 5,
+  "type": "Instant // Instant",
+  "cmc": 5,
+  "mana": "{R/W} // {2}{R}{W}",
+  "scry": "4a82084e-b178-442b-8007-7b2a70f3fbba"
+ },
+ "Inspiring Unicorn": {
+  "qty": 5,
+  "type": "Creature \u2014 Unicorn",
+  "cmc": 4,
+  "mana": "{2}{W}{W}",
+  "scry": "ce8b745e-1e62-4c54-9e73-e2d0a40568a0"
+ },
+ "Insomnia, Crown City": {
+  "qty": 1,
+  "type": "Land \u2014 Town",
+  "cmc": 0,
+  "mana": "",
+  "scry": "07fca511-a65c-4779-82c0-9215b0dcd068"
+ },
+ "Inescapable Blaze": {
+  "qty": 5,
+  "type": "Instant",
+  "cmc": 6,
+  "mana": "{4}{R}{R}",
+  "scry": "46651efd-0906-4350-a1b8-52e3f8aff45d"
+ },
+ "Illusionist's Stratagem": {
+  "qty": 4,
+  "type": "Instant",
+  "cmc": 4,
+  "mana": "{3}{U}",
+  "scry": "a7eede83-6f1b-4054-b01c-0da17b197bad"
+ },
+ "Ikiral Outrider": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Soldier",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "7e1532b1-6f3b-48d3-ada9-ec395e842b96"
+ },
+ "Hypothesizzle": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 5,
+  "mana": "{3}{U}{R}",
+  "scry": "ba2447be-3636-4f95-92a6-79be5d61db79"
+ },
+ "Hunted Witness": {
+  "qty": 1,
+  "type": "Creature \u2014 Human",
+  "cmc": 1,
+  "mana": "{W}",
+  "scry": "8c31b8e5-2349-4119-9dc2-3e41c5364a78"
+ },
+ "Hunt the Hunter": {
+  "qty": 2,
+  "type": "Sorcery",
+  "cmc": 1,
+  "mana": "{G}",
+  "scry": "61d4899f-11a4-4a2c-a499-3a447b792f86"
+ },
+ "Hungry Flames": {
+  "qty": 2,
+  "type": "Instant",
+  "cmc": 3,
+  "mana": "{2}{R}",
+  "scry": "4ca23676-f36f-4266-ba4f-5e9ebf3adb57"
+ },
+ "House Guildmage": {
+  "qty": 7,
+  "type": "Creature \u2014 Human Wizard",
+  "cmc": 2,
+  "mana": "{U}{B}",
+  "scry": "45ee7bc8-d5cf-47b1-93c2-7e1d5f536c85"
+ },
+ "Holy Mantle": {
+  "qty": 1,
+  "type": "Enchantment \u2014 Aura",
+  "cmc": 4,
+  "mana": "{2}{W}{W}",
+  "scry": "95567596-c5b1-426f-bc2c-43306f7221b0"
+ },
+ "Hollowhenge Beast": {
+  "qty": 1,
+  "type": "Creature \u2014 Beast",
+  "cmc": 5,
+  "mana": "{3}{G}{G}",
+  "scry": "052ab91f-ac01-43f4-9276-9af35dbfbf71"
+ },
+ "Hold the Gates": {
+  "qty": 1,
+  "type": "Enchantment",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "48fd52d0-0e41-48d5-b96f-4c6409788c18"
+ },
+ "Hitchclaw Recluse": {
+  "qty": 1,
+  "type": "Creature \u2014 Spider",
+  "cmc": 3,
+  "mana": "{2}{G}",
+  "scry": "fe349432-8726-49cf-ad07-6f8add8f78c8"
+ },
+ "Hired Poisoner": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Assassin",
+  "cmc": 1,
+  "mana": "{B}",
+  "scry": "bf97e572-90d6-46fc-81c3-956a7ef88983"
+ },
+ "Hindervines": {
+  "qty": 2,
+  "type": "Instant",
+  "cmc": 3,
+  "mana": "{2}{G}",
+  "scry": "f6b85a09-6d43-4798-8164-131d35b65836"
+ },
+ "Hidden Strings": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 2,
+  "mana": "{1}{U}",
+  "scry": "216e8047-6f54-49ce-bf86-27dc8fc8c8f7"
+ },
+ "Hidden Herbalists": {
+  "qty": 2,
+  "type": "Creature \u2014 Human Druid",
+  "cmc": 2,
+  "mana": "{1}{G}",
+  "scry": "9ec8db01-415e-42a1-8eb2-57280d58b38e"
+ },
+ "Heroes' Reunion": {
+  "qty": 2,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{G}{W}",
+  "scry": "135d6043-5ec1-4ad4-8296-41fe23f11cb9"
+ },
+ "Hellkite Whelp": {
+  "qty": 8,
+  "type": "Creature \u2014 Dragon",
+  "cmc": 5,
+  "mana": "{4}{R}",
+  "scry": "65e902e8-bbd5-40fe-a655-45d3d3bc9fde"
+ },
+ "Hellhole Flailer": {
+  "qty": 1,
+  "type": "Creature \u2014 Ogre Warrior",
+  "cmc": 3,
+  "mana": "{1}{B}{R}",
+  "scry": "4984a089-84af-4387-9a0d-819b119b5565"
+ },
+ "Healer of the Pride": {
+  "qty": 1,
+  "type": "Creature \u2014 Cat Cleric",
+  "cmc": 4,
+  "mana": "{3}{W}",
+  "scry": "35716e37-1bb2-41e2-bb55-e65126b01ce3"
+ },
+ "Haunted Guardian": {
+  "qty": 5,
+  "type": "Artifact Creature \u2014 Construct",
+  "cmc": 2,
+  "mana": "{2}",
+  "scry": "7d97f8b8-bdb0-4d4b-b077-9affe2f9cd91"
+ },
+ "Harsh Scrutiny": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 1,
+  "mana": "{B}",
+  "scry": "fe68b484-cc8d-4a0b-94c2-1fec9090dfcd"
+ },
+ "Harmless Assault": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 4,
+  "mana": "{2}{W}{W}",
+  "scry": "a77fef2c-227e-474e-896e-c0ebe227f494"
+ },
+ "Haazda Snare Squad": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Soldier",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "85d3c012-f356-424d-a960-60e95f395134"
+ },
+ "Haazda Marshal": {
+  "qty": 5,
+  "type": "Creature \u2014 Human Soldier",
+  "cmc": 1,
+  "mana": "{W}",
+  "scry": "5c561d89-b02d-4f1a-b49a-cdf2def3404d"
+ },
+ "Guildscorn Ward": {
+  "qty": 2,
+  "type": "Enchantment \u2014 Aura",
+  "cmc": 1,
+  "mana": "{W}",
+  "scry": "89c5c496-0a3e-40e1-84ac-8ad3a9d8352b"
+ },
+ "Guild Summit": {
+  "qty": 4,
+  "type": "Enchantment",
+  "cmc": 3,
+  "mana": "{2}{U}",
+  "scry": "d952259f-9e0a-49af-9dfb-3cad1a1bb3a8"
+ },
+ "Guardian Lions": {
+  "qty": 1,
+  "type": "Creature \u2014 Cat",
+  "cmc": 5,
+  "mana": "{4}{W}",
+  "scry": "3defc506-537e-4659-815d-5dab15fbf199"
+ },
+ "Guard Duty": {
+  "qty": 1,
+  "type": "Enchantment \u2014 Aura",
+  "cmc": 1,
+  "mana": "{W}",
+  "scry": "f77efd36-f9e7-4c34-a6ee-9e1c9b273fb7"
+ },
+ "Groundshaker Sliver": {
+  "qty": 1,
+  "type": "Creature \u2014 Sliver",
+  "cmc": 7,
+  "mana": "{6}{G}",
+  "scry": "712f0ce4-9189-4c75-9c2b-d370bce89052"
+ },
+ "Griffin Sentinel": {
+  "qty": 1,
+  "type": "Creature \u2014 Griffin",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "cb13aaa4-d40a-4fb2-9fd6-62bf76db6a13"
+ },
+ "Gremlin Infestation": {
+  "qty": 2,
+  "type": "Enchantment \u2014 Aura",
+  "cmc": 4,
+  "mana": "{3}{R}",
+  "scry": "b51438f5-c4d4-434a-b7ea-dee0b60303e4"
+ },
+ "Gravitic Punch": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 4,
+  "mana": "{3}{R}",
+  "scry": "05fe0428-6e7d-49d4-9a29-80a3589f565a"
+ },
+ "Gravedigger": {
+  "qty": 1,
+  "type": "Creature \u2014 Zombie",
+  "cmc": 4,
+  "mana": "{3}{B}",
+  "scry": "382c39ea-e36b-4dcc-88f0-e65ea93fc92e"
+ },
+ "Grasping Dunes": {
+  "qty": 6,
+  "type": "Land \u2014 Desert",
+  "cmc": 0,
+  "mana": "",
+  "scry": "a8fcc939-6a31-4fb3-abe7-7663b85868dd"
+ },
+ "Grappling Sundew": {
+  "qty": 7,
+  "type": "Creature \u2014 Plant",
+  "cmc": 2,
+  "mana": "{1}{G}",
+  "scry": "f74d8d76-8091-424d-ad11-e8a1faae584d"
+ },
+ "Gore-House Chainwalker": {
+  "qty": 4,
+  "type": "Creature \u2014 Human Warrior",
+  "cmc": 2,
+  "mana": "{1}{R}",
+  "scry": "56ba132f-95fc-4b99-a1dc-ebe6f622bb41"
+ },
+ "Gorehorn Minotaurs": {
+  "qty": 3,
+  "type": "Creature \u2014 Minotaur Warrior",
+  "cmc": 4,
+  "mana": "{2}{R}{R}",
+  "scry": "7dc76d47-e9c1-4bcf-9134-70052aafa67f"
+ },
+ "Gonti's Machinations": {
+  "qty": 4,
+  "type": "Enchantment",
+  "cmc": 1,
+  "mana": "{B}",
+  "scry": "6c97f5a9-6e04-45c3-aa8d-dcf0fd81d5b9"
+ },
+ "Golgari Raiders": {
+  "qty": 5,
+  "type": "Creature \u2014 Elf Warrior",
+  "cmc": 4,
+  "mana": "{3}{G}",
+  "scry": "37284ba8-441c-4cf6-95c6-6a0f52e6d36d"
+ },
+ "Golgari Findbroker": {
+  "qty": 6,
+  "type": "Creature \u2014 Elf Shaman",
+  "cmc": 4,
+  "mana": "{B}{B}{G}{G}",
+  "scry": "e12bd0e5-db96-4340-9b04-6855fd0fd8b9"
+ },
+ "Golgari Decoy": {
+  "qty": 1,
+  "type": "Creature \u2014 Elf Rogue",
+  "cmc": 4,
+  "mana": "{3}{G}",
+  "scry": "511a42a8-71ce-476f-98fa-fc0dc822edcf"
+ },
+ "Goldnight Redeemer": {
+  "qty": 4,
+  "type": "Creature \u2014 Angel",
+  "cmc": 6,
+  "mana": "{4}{W}{W}",
+  "scry": "df5656e3-5f53-41f8-9f24-04caad5e4ca3"
+ },
+ "Goldnight Commander": {
+  "qty": 4,
+  "type": "Creature \u2014 Human Cleric Soldier",
+  "cmc": 4,
+  "mana": "{3}{W}",
+  "scry": "80be2fea-3fe6-477e-bcb8-63f441d6cfc1"
+ },
+ "Golden Urn": {
+  "qty": 1,
+  "type": "Artifact",
+  "cmc": 1,
+  "mana": "{1}",
+  "scry": "ec7abeca-da01-4962-b107-dd7a77469753"
+ },
+ "Goblin Locksmith": {
+  "qty": 1,
+  "type": "Creature \u2014 Goblin Rogue",
+  "cmc": 2,
+  "mana": "{1}{R}",
+  "scry": "3f879a30-a3e8-4bdf-9900-97f2a85054f0"
+ },
+ "Goblin Electromancer": {
+  "qty": 1,
+  "type": "Creature \u2014 Goblin Wizard",
+  "cmc": 2,
+  "mana": "{U}{R}",
+  "scry": "0ae987da-e4b5-4b82-843c-6aaa87262fc8"
+ },
+ "Goblin Banneret": {
+  "qty": 5,
+  "type": "Creature \u2014 Goblin Soldier",
+  "cmc": 1,
+  "mana": "{R}",
+  "scry": "90b3b56c-5236-4319-b17e-5f71143a7906"
+ },
+ "Gobbling Ooze": {
+  "qty": 2,
+  "type": "Creature \u2014 Ooze",
+  "cmc": 5,
+  "mana": "{4}{G}",
+  "scry": "465d8a63-0ced-4aec-be34-2098b72c8af6"
+ },
+ "Glowspore Shaman": {
+  "qty": 6,
+  "type": "Creature \u2014 Elf Shaman",
+  "cmc": 2,
+  "mana": "{B}{G}",
+  "scry": "08fe260a-d204-4e75-b3e5-0cd9b4ca7084"
+ },
+ "Glory Seeker": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Soldier",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "dc5a3110-0081-4dee-b7b1-597dfd568eed"
+ },
+ "Glissa's Courier": {
+  "qty": 1,
+  "type": "Creature \u2014 Phyrexian Horror",
+  "cmc": 3,
+  "mana": "{1}{G}{G}",
+  "scry": "45da44df-a83a-4974-bc22-5243dcda7cbd"
+ },
+ "Glaive of the Guildpact": {
+  "qty": 4,
+  "type": "Artifact \u2014 Equipment",
+  "cmc": 2,
+  "mana": "{2}",
+  "scry": "e19723ad-7bd2-49ee-a57a-ece99018f4e8"
+ },
+ "Gird for Battle": {
+  "qty": 6,
+  "type": "Sorcery",
+  "cmc": 1,
+  "mana": "{W}",
+  "scry": "f9f731df-eb40-44c8-a72d-f377c824584d"
+ },
+ "Giott, King of the Dwarves": {
+  "qty": 1,
+  "type": "Legendary Creature \u2014 Dwarf Noble",
+  "cmc": 2,
+  "mana": "{R}{W}",
+  "scry": "6a7784de-a10d-4ce6-98a5-aaf3e85773b6"
+ },
+ "Gideon's Lawkeeper": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Soldier",
+  "cmc": 1,
+  "mana": "{W}",
+  "scry": "5ce30429-1d7a-4616-92e8-f8f48f0acc17"
+ },
+ "Ghor-Clan Savage": {
+  "qty": 1,
+  "type": "Creature \u2014 Centaur Berserker",
+  "cmc": 5,
+  "mana": "{3}{G}{G}",
+  "scry": "4ba15588-01ae-431b-a846-f44df88ca134"
+ },
+ "Ghalma's Warden": {
+  "qty": 2,
+  "type": "Creature \u2014 Elephant Soldier",
+  "cmc": 4,
+  "mana": "{3}{W}",
+  "scry": "efbf5ff1-6539-4116-ad4f-ce412ae20640"
+ },
+ "Generous Stray": {
+  "qty": 1,
+  "type": "Creature \u2014 Cat",
+  "cmc": 3,
+  "mana": "{2}{G}",
+  "scry": "3289db66-231f-4370-aca6-644d75bee293"
+ },
+ "Gearshift Ace": {
+  "qty": 2,
+  "type": "Creature \u2014 Dwarf Pilot",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "2e8c6a9d-6169-40f8-8b3e-53ebf75be663"
+ },
+ "Gavony Ironwright": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Soldier",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "05d8de75-b169-4426-94a4-b19cdfdffd89"
+ },
+ "Gatekeeper Gargoyle": {
+  "qty": 5,
+  "type": "Artifact Creature \u2014 Gargoyle",
+  "cmc": 6,
+  "mana": "{6}",
+  "scry": "4bbdd54e-5d7e-4e4b-8d59-4e3f46877d39"
+ },
+ "Gate to the Afterlife": {
+  "qty": 1,
+  "type": "Artifact",
+  "cmc": 3,
+  "mana": "{3}",
+  "scry": "8b544a59-86b9-447d-b54d-b94a262b6866"
+ },
+ "Garrison Sergeant": {
+  "qty": 1,
+  "type": "Creature \u2014 Lizard Soldier",
+  "cmc": 5,
+  "mana": "{3}{R}{W}",
+  "scry": "2bd957a1-a354-48e9-80ad-66e49aa845fc"
+ },
+ "Gaelicat": {
+  "qty": 1,
+  "type": "Creature \u2014 Cat",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "29606c49-e1a4-49c3-883b-9122c08bbbc7"
+ },
+ "Frontier Guide": {
+  "qty": 1,
+  "type": "Creature \u2014 Elf Scout",
+  "cmc": 2,
+  "mana": "{1}{G}",
+  "scry": "b99a418a-2386-49b9-b48d-67a52448e65c"
+ },
+ "Fretwork Colony": {
+  "qty": 2,
+  "type": "Creature \u2014 Insect",
+  "cmc": 2,
+  "mana": "{1}{B}",
+  "scry": "ec38a8a2-b73b-43da-9dec-f862a2d03db3"
+ },
+ "Freewind Equenaut": {
+  "qty": 2,
+  "type": "Creature \u2014 Human Archer",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "1b82b76d-697b-4312-aab5-bf741c207438"
+ },
+ "Foundry Hornet": {
+  "qty": 4,
+  "type": "Creature \u2014 Insect",
+  "cmc": 4,
+  "mana": "{3}{B}",
+  "scry": "f6dc7865-16ed-4d12-bdb4-d40fbdd48a23"
+ },
+ "Forsaken Sanctuary": {
+  "qty": 2,
+  "type": "Land",
+  "cmc": 0,
+  "mana": "",
+  "scry": "b376c8c9-cd35-4c2b-8b5b-95ea9735b366"
+ },
+ "Forest": {
+  "qty": 20,
+  "type": "Basic Land \u2014 Forest",
+  "cmc": 0,
+  "mana": "",
+  "scry": "7df94d2c-7c1f-4461-8f70-c2bd4ebb95be"
+ },
+ "Fog Bank": {
+  "qty": 1,
+  "type": "Creature \u2014 Wall",
+  "cmc": 2,
+  "mana": "{1}{U}",
+  "scry": "d134eeed-61ee-4b18-b720-7d10438eb2ff"
+ },
+ "Flower // Flourish": {
+  "qty": 7,
+  "type": "Sorcery // Sorcery",
+  "cmc": 7,
+  "mana": "{G/W} // {4}{G}{W}",
+  "scry": "feb4b39f-d309-49ba-b427-240b7fdc1099"
+ },
+ "Flinthoof Boar": {
+  "qty": 1,
+  "type": "Creature \u2014 Boar",
+  "cmc": 2,
+  "mana": "{1}{G}",
+  "scry": "873be98f-e263-4e84-afa0-1e329aa47550"
+ },
+ "Flight of Equenauts": {
+  "qty": 5,
+  "type": "Creature \u2014 Human Knight",
+  "cmc": 8,
+  "mana": "{7}{W}",
+  "scry": "accfc430-114e-4ce0-93ea-e8900955a71e"
+ },
+ "Fleetfeather Sandals": {
+  "qty": 5,
+  "type": "Artifact \u2014 Equipment",
+  "cmc": 2,
+  "mana": "{2}",
+  "scry": "2222f499-09f9-45a6-8255-9de79df76f1c"
+ },
+ "Flamespeaker Adept": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Shaman",
+  "cmc": 3,
+  "mana": "{2}{R}",
+  "scry": "b84b90b6-71e2-429e-9853-50bcbd6538db"
+ },
+ "Flamecast Wheel": {
+  "qty": 2,
+  "type": "Artifact",
+  "cmc": 1,
+  "mana": "{1}",
+  "scry": "5cfa31c9-5a11-4366-9063-056a659f3d0d"
+ },
+ "Firefist Striker": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Soldier",
+  "cmc": 2,
+  "mana": "{1}{R}",
+  "scry": "ccbc2f22-4500-4c74-a1a2-51d8238c1d16"
+ },
+ "Fire Elemental": {
+  "qty": 1,
+  "type": "Creature \u2014 Elemental",
+  "cmc": 5,
+  "mana": "{3}{R}{R}",
+  "scry": "3e83e706-067f-41a9-8ffb-e3cd308282c0"
+ },
+ "Festerhide Boar": {
+  "qty": 1,
+  "type": "Creature \u2014 Boar",
+  "cmc": 4,
+  "mana": "{3}{G}",
+  "scry": "1cb8cf51-12e0-4727-9f97-5e471ace8278"
+ },
+ "Feral Animist": {
+  "qty": 1,
+  "type": "Creature \u2014 Goblin Shaman",
+  "cmc": 3,
+  "mana": "{1}{R}{G}",
+  "scry": "108a9ef2-c74a-450b-8148-4fdf9f09843f"
+ },
+ "Fencing Ace": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Soldier",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "c2452306-1bd8-442e-a482-b0e3b61eb530"
+ },
+ "Fearless Halberdier": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Warrior",
+  "cmc": 3,
+  "mana": "{2}{R}",
+  "scry": "89f08297-f477-4330-a99e-3f0847c31364"
+ },
+ "Fall of the Gavel": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 5,
+  "mana": "{3}{W}{U}",
+  "scry": "64f42848-963b-4b16-aeec-66d0f349758b"
+ },
+ "Fade into Antiquity": {
+  "qty": 5,
+  "type": "Sorcery",
+  "cmc": 3,
+  "mana": "{2}{G}",
+  "scry": "59d6bdf8-f06f-43b7-b0c6-012fa989ba79"
+ },
+ "Ezuri's Archers": {
+  "qty": 1,
+  "type": "Creature \u2014 Elf Archer",
+  "cmc": 1,
+  "mana": "{G}",
+  "scry": "32cc93af-d9a0-4ed8-8c22-686d005ea77e"
+ },
+ "Experimental Aviator": {
+  "qty": 2,
+  "type": "Creature \u2014 Human Artificer",
+  "cmc": 5,
+  "mana": "{3}{U}{U}",
+  "scry": "962dc573-612d-434b-82fb-af9c3e3c9aca"
+ },
+ "Experiment One": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Ooze",
+  "cmc": 1,
+  "mana": "{G}",
+  "scry": "62fa3357-05cd-428a-9775-08cdf6462f20"
+ },
+ "Escarpment Fortress": {
+  "qty": 2,
+  "type": "Creature \u2014 Wall",
+  "cmc": 5,
+  "mana": "{4}{W}",
+  "scry": "c11c9e60-fc14-48fe-bca9-b74f82301835"
+ },
+ "Era of Innovation": {
+  "qty": 2,
+  "type": "Enchantment",
+  "cmc": 2,
+  "mana": "{1}{U}",
+  "scry": "5dae3b1f-6a31-4a8a-9e44-063f8f670134"
+ },
+ "Ephara's Warden": {
+  "qty": 2,
+  "type": "Creature \u2014 Human Cleric",
+  "cmc": 4,
+  "mana": "{3}{W}",
+  "scry": "71f7f788-2795-46a7-82ae-270f1e9415ca"
+ },
+ "Enraged Giant": {
+  "qty": 2,
+  "type": "Creature \u2014 Giant",
+  "cmc": 6,
+  "mana": "{5}{R}",
+  "scry": "40dc3b59-baae-4bf0-b5ce-fa9a915af066"
+ },
+ "Enhanced Surveillance": {
+  "qty": 5,
+  "type": "Enchantment",
+  "cmc": 2,
+  "mana": "{1}{U}",
+  "scry": "971d254e-da25-494b-a16d-3d7d6bb75c73"
+ },
+ "Embalmer's Tools": {
+  "qty": 2,
+  "type": "Artifact",
+  "cmc": 2,
+  "mana": "{2}",
+  "scry": "7c044f47-7435-4cb4-b4ad-48bb146daa9f"
+ },
+ "Emancipation Angel": {
+  "qty": 10,
+  "type": "Creature \u2014 Angel",
+  "cmc": 3,
+  "mana": "{1}{W}{W}",
+  "scry": "189e0728-94e3-43af-a341-d2bbb33b6b32"
+ },
+ "Electrickery": {
+  "qty": 6,
+  "type": "Instant",
+  "cmc": 1,
+  "mana": "{R}",
+  "scry": "5ed81ee8-d5e4-4127-876e-9bff81f9c726"
+ },
+ "Edifice of Authority": {
+  "qty": 2,
+  "type": "Artifact",
+  "cmc": 3,
+  "mana": "{3}",
+  "scry": "66e6fa29-087f-4da6-9114-30feec708560"
+ },
+ "Dryad Militant": {
+  "qty": 1,
+  "type": "Creature \u2014 Dryad Soldier",
+  "cmc": 1,
+  "mana": "{G/W}",
+  "scry": "2bb8cb8c-0d03-4cbf-b7f2-a97324817698"
+ },
+ "Dragon Hatchling": {
+  "qty": 2,
+  "type": "Creature \u2014 Dragon",
+  "cmc": 2,
+  "mana": "{1}{R}",
+  "scry": "83cb9ea2-ce64-437e-afac-5029a34bf10f"
+ },
+ "Douser of Lights": {
+  "qty": 2,
+  "type": "Creature \u2014 Horror",
+  "cmc": 5,
+  "mana": "{4}{B}",
+  "scry": "7c554be7-6fd4-4642-aaa0-2781d9c388e4"
+ },
+ "Divine Verdict": {
+  "qty": 3,
+  "type": "Instant",
+  "cmc": 4,
+  "mana": "{3}{W}",
+  "scry": "d6686a8d-9cf9-4787-9cf4-1aff8366f7ca"
+ },
+ "Divine Favor": {
+  "qty": 1,
+  "type": "Enchantment \u2014 Aura",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "29008990-495d-4706-9c8f-630f46b741c4"
+ },
+ "District Guide": {
+  "qty": 6,
+  "type": "Creature \u2014 Elf Scout",
+  "cmc": 3,
+  "mana": "{2}{G}",
+  "scry": "c150deec-3287-40ef-9b9c-c22bf5d70b02"
+ },
+ "Disinformation Campaign": {
+  "qty": 6,
+  "type": "Enchantment",
+  "cmc": 3,
+  "mana": "{1}{U}{B}",
+  "scry": "69a79ff3-58ed-4cc2-9ebc-0edbb86cd6fb"
+ },
+ "Disdainful Stroke": {
+  "qty": 3,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{1}{U}",
+  "scry": "5f6677e9-cd9a-4690-8f1c-6c5910c5605a"
+ },
+ "Disciple of Phenax": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Cleric",
+  "cmc": 4,
+  "mana": "{2}{B}{B}",
+  "scry": "81c1137c-1cbd-4918-9d1c-a9d2bd88562e"
+ },
+ "Disappearing Act": {
+  "qty": 2,
+  "type": "Instant",
+  "cmc": 3,
+  "mana": "{1}{U}{U}",
+  "scry": "9a4a6d56-9bed-444c-aae8-383c315779a0"
+ },
+ "Dimir Spybug": {
+  "qty": 6,
+  "type": "Creature \u2014 Insect",
+  "cmc": 2,
+  "mana": "{U}{B}",
+  "scry": "7c18c450-0bfb-4ba6-9212-b5833fce63a2"
+ },
+ "Dimir Locket": {
+  "qty": 1,
+  "type": "Artifact",
+  "cmc": 3,
+  "mana": "{3}",
+  "scry": "08e3dd7a-8378-4368-a5e4-a1ca7899a67b"
+ },
+ "Devout Chaplain": {
+  "qty": 6,
+  "type": "Creature \u2014 Human Cleric",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "4be0f70c-6bee-4208-8111-735b2fa31b4d"
+ },
+ "Devious Cover-Up": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 4,
+  "mana": "{2}{U}{U}",
+  "scry": "21ac6b0a-b1a5-439d-b65e-5f04e1826c80"
+ },
+ "Destined // Lead": {
+  "qty": 2,
+  "type": "Instant // Sorcery",
+  "cmc": 6,
+  "mana": "{1}{B} // {3}{G}",
+  "scry": "5cf5c549-1e2a-4c47-baf7-e608661b3088"
+ },
+ "Demotion": {
+  "qty": 7,
+  "type": "Enchantment \u2014 Aura",
+  "cmc": 1,
+  "mana": "{W}",
+  "scry": "69202217-ef36-4d6c-bbd0-ebbb2ade51f7"
+ },
+ "Deft Dismissal": {
+  "qty": 5,
+  "type": "Instant",
+  "cmc": 4,
+  "mana": "{3}{W}",
+  "scry": "5cb26d5b-ffeb-4dac-ad61-f85e5e7b1675"
+ },
+ "Defiant Greatmaw": {
+  "qty": 2,
+  "type": "Creature \u2014 Hippo",
+  "cmc": 3,
+  "mana": "{2}{G}",
+  "scry": "b74cb0ba-c691-4823-aa94-399b1aaeaf0b"
+ },
+ "Defend the Hearth": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{1}{G}",
+  "scry": "c3e4c4c3-db3c-49d4-8080-1c93470f8b4d"
+ },
+ "Debtor's Pulpit": {
+  "qty": 1,
+  "type": "Enchantment \u2014 Aura",
+  "cmc": 5,
+  "mana": "{4}{W}",
+  "scry": "fafb0372-6860-4b0b-b92e-873735489006"
+ },
+ "Deathcult Rogue": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Rogue",
+  "cmc": 3,
+  "mana": "{1}{U/B}{U/B}",
+  "scry": "a4c186d2-e631-4811-83ea-fdb54e730a5d"
+ },
+ "Deadly Visit": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 5,
+  "mana": "{3}{B}{B}",
+  "scry": "462fe190-5264-42d8-bd27-23c5aa0c641f"
+ },
+ "Deadeye Harpooner": {
+  "qty": 4,
+  "type": "Creature \u2014 Dwarf Warrior",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "a018decf-25e1-45fc-be7d-2523dcfb7a4c"
+ },
+ "Dead Weight": {
+  "qty": 1,
+  "type": "Enchantment \u2014 Aura",
+  "cmc": 1,
+  "mana": "{B}",
+  "scry": "f09a09de-35c9-4a4e-a4ac-1ce24e166ad9"
+ },
+ "Dawnstrike Paladin": {
+  "qty": 2,
+  "type": "Creature \u2014 Human Knight",
+  "cmc": 5,
+  "mana": "{3}{W}{W}",
+  "scry": "93cf5fb3-bb41-4efa-9721-2c2d169b05cd"
+ },
+ "Darkblade Agent": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Assassin",
+  "cmc": 3,
+  "mana": "{1}{U}{B}",
+  "scry": "f0b610c5-61e5-43df-a87b-3eaaa915402b"
+ },
+ "Cystbearer": {
+  "qty": 1,
+  "type": "Creature \u2014 Phyrexian Beast",
+  "cmc": 3,
+  "mana": "{2}{G}",
+  "scry": "b6c10302-f0b3-4076-ae5c-a8c8c09a7d41"
+ },
+ "Crypt of the Eternals": {
+  "qty": 2,
+  "type": "Land",
+  "cmc": 0,
+  "mana": "",
+  "scry": "cab5b199-e79d-4ca9-970c-cfd9df8fd1e4"
+ },
+ "Crush Contraband": {
+  "qty": 6,
+  "type": "Instant",
+  "cmc": 4,
+  "mana": "{3}{W}",
+  "scry": "13e162b3-2e5a-4235-a2a7-1c8e3e9f2c19"
+ },
+ "Crowned Ceratok": {
+  "qty": 1,
+  "type": "Creature \u2014 Rhino",
+  "cmc": 4,
+  "mana": "{3}{G}",
+  "scry": "e63308fc-40b6-40f5-a0a8-d0ca06d83de5"
+ },
+ "Crocodile of the Crossing": {
+  "qty": 2,
+  "type": "Creature \u2014 Crocodile",
+  "cmc": 4,
+  "mana": "{3}{G}",
+  "scry": "2f64ca9c-99c4-45d4-bd21-3ede61702250"
+ },
+ "Crocanura": {
+  "qty": 1,
+  "type": "Creature \u2014 Crocodile Frog",
+  "cmc": 3,
+  "mana": "{2}{G}",
+  "scry": "b459a988-97b0-4370-b89a-2565f8721b60"
+ },
+ "Craterize": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 4,
+  "mana": "{3}{R}",
+  "scry": "e5459409-5103-4a97-a6fb-3e3ab896eb66"
+ },
+ "Crackling Triton": {
+  "qty": 1,
+  "type": "Creature \u2014 Merfolk Wizard",
+  "cmc": 3,
+  "mana": "{2}{U}",
+  "scry": "8d6bb19c-3610-4609-b23c-21d4d80e4582"
+ },
+ "Cower in Fear": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 3,
+  "mana": "{1}{B}{B}",
+  "scry": "32d70b86-053a-47f2-8075-078a41114b0b"
+ },
+ "Courtly Provocateur": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Wizard",
+  "cmc": 3,
+  "mana": "{2}{U}",
+  "scry": "ba912207-a8bf-4ffb-9967-34029cb09f7f"
+ },
+ "Court Street Denizen": {
+  "qty": 3,
+  "type": "Creature \u2014 Human Soldier",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "7eed8c7a-cd9b-4a02-90c6-f8c5c2ad95a7"
+ },
+ "Counterspell": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{U}{U}",
+  "scry": "8493131c-0a7b-4be6-a8a2-0b425f4f67fb"
+ },
+ "Corrupted Shapeshifter": {
+  "qty": 2,
+  "type": "Creature \u2014 Eldrazi Shapeshifter",
+  "cmc": 4,
+  "mana": "{3}{U}",
+  "scry": "27534c8a-cb71-43bc-b706-80a525396222"
+ },
+ "Corpse Traders": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Rogue",
+  "cmc": 4,
+  "mana": "{3}{B}",
+  "scry": "005ae9a2-b235-49ee-ae54-6875e087f43d"
+ },
+ "Consign // Oblivion": {
+  "qty": 2,
+  "type": "Instant // Sorcery",
+  "cmc": 7,
+  "mana": "{1}{U} // {4}{B}",
+  "scry": "74b3d532-f5fa-40a5-8bee-46ef62457d7e"
+ },
+ "Conclave Guildmage": {
+  "qty": 6,
+  "type": "Creature \u2014 Elf Cleric",
+  "cmc": 2,
+  "mana": "{G}{W}",
+  "scry": "279e551d-3ac3-48d5-9822-1d05159c8905"
+ },
+ "Conclave Cavalier": {
+  "qty": 6,
+  "type": "Creature \u2014 Centaur Knight",
+  "cmc": 4,
+  "mana": "{G}{G}{W}{W}",
+  "scry": "b658a309-d14c-4e20-8c76-e7b3c5156bf2"
+ },
+ "Cobblebrute": {
+  "qty": 1,
+  "type": "Creature \u2014 Elemental",
+  "cmc": 4,
+  "mana": "{3}{R}",
+  "scry": "2d450105-7655-452e-9fe8-3dee579c082d"
+ },
+ "Clinging Anemones": {
+  "qty": 1,
+  "type": "Creature \u2014 Jellyfish",
+  "cmc": 4,
+  "mana": "{3}{U}",
+  "scry": "4e183069-096d-4977-8154-e7b60f17a787"
+ },
+ "Claustrophobia": {
+  "qty": 1,
+  "type": "Enchantment \u2014 Aura",
+  "cmc": 3,
+  "mana": "{1}{U}{U}",
+  "scry": "c718b70c-8bad-442b-b3cd-fb2df6e1836a"
+ },
+ "Citywatch Sphinx": {
+  "qty": 7,
+  "type": "Creature \u2014 Sphinx",
+  "cmc": 6,
+  "mana": "{5}{U}",
+  "scry": "d34a3b8a-d4fb-4044-8362-aa1b808cfeee"
+ },
+ "Circuitous Route": {
+  "qty": 6,
+  "type": "Sorcery",
+  "cmc": 4,
+  "mana": "{3}{G}",
+  "scry": "a806dec2-d4f9-4f8d-a1dd-170777941131"
+ },
+ "Cinder Barrens": {
+  "qty": 2,
+  "type": "Land",
+  "cmc": 0,
+  "mana": "",
+  "scry": "08136a39-bf9f-493c-92d6-178567647fb2"
+ },
+ "Chronicler of Heroes": {
+  "qty": 2,
+  "type": "Creature \u2014 Centaur Wizard",
+  "cmc": 3,
+  "mana": "{1}{G}{W}",
+  "scry": "21d4d6cc-bbd1-471e-888b-33e20a96ce60"
+ },
+ "Child of Night": {
+  "qty": 3,
+  "type": "Creature \u2014 Vampire",
+  "cmc": 2,
+  "mana": "{1}{B}",
+  "scry": "1796088b-83b5-4151-8dcb-90df21e9a283"
+ },
+ "Charging Griffin": {
+  "qty": 2,
+  "type": "Creature \u2014 Griffin",
+  "cmc": 4,
+  "mana": "{3}{W}",
+  "scry": "88637cc0-3b2a-402c-b491-26fcc2d21fb8"
+ },
+ "Centaur's Herald": {
+  "qty": 1,
+  "type": "Creature \u2014 Elf Scout",
+  "cmc": 1,
+  "mana": "{G}",
+  "scry": "08598b2b-6fd2-4a1d-8d74-7ca6d93ad382"
+ },
+ "Centaur Peacemaker": {
+  "qty": 1,
+  "type": "Creature \u2014 Centaur Cleric",
+  "cmc": 3,
+  "mana": "{1}{G}{W}",
+  "scry": "0e630e9b-7817-4255-9de1-795b2a788d80"
+ },
+ "Centaur Courser": {
+  "qty": 1,
+  "type": "Creature \u2014 Centaur Warrior",
+  "cmc": 3,
+  "mana": "{2}{G}",
+  "scry": "eb7eb6f0-a329-4fcd-ba23-ec435659441d"
+ },
+ "Centaur Battlemaster": {
+  "qty": 2,
+  "type": "Creature \u2014 Centaur Warrior",
+  "cmc": 5,
+  "mana": "{3}{G}{G}",
+  "scry": "2975a0b4-7436-4588-8f79-c001a291c459"
+ },
+ "Cavalry Pegasus": {
+  "qty": 1,
+  "type": "Creature \u2014 Pegasus",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "c552cb9e-41f2-4006-8ff4-5e214b91652e"
+ },
+ "Caravan Hurda": {
+  "qty": 1,
+  "type": "Creature \u2014 Giant",
+  "cmc": 5,
+  "mana": "{4}{W}",
+  "scry": "ffdf3a3d-292d-40b9-b28c-34ad33a76bb4"
+ },
+ "Call of the Conclave": {
+  "qty": 1,
+  "type": "Sorcery",
+  "cmc": 2,
+  "mana": "{G}{W}",
+  "scry": "476f0994-10a0-422b-8031-069d5b06064f"
+ },
+ "Burning-Tree Emissary": {
+  "qty": 2,
+  "type": "Creature \u2014 Human Shaman",
+  "cmc": 2,
+  "mana": "{R/G}{R/G}",
+  "scry": "22e3e874-a0ec-4459-b78d-abef6b9232b9"
+ },
+ "Burglar Rat": {
+  "qty": 1,
+  "type": "Creature \u2014 Rat",
+  "cmc": 2,
+  "mana": "{1}{B}",
+  "scry": "e9f7f218-fd2a-4233-8753-065ddc314f2d"
+ },
+ "Brushstrider": {
+  "qty": 2,
+  "type": "Creature \u2014 Beast",
+  "cmc": 2,
+  "mana": "{1}{G}",
+  "scry": "59bd1534-52d1-4946-b430-d26f039a9067"
+ },
+ "Brindle Boar": {
+  "qty": 1,
+  "type": "Creature \u2014 Boar",
+  "cmc": 3,
+  "mana": "{2}{G}",
+  "scry": "f2bc665c-d507-4de3-a8e8-731cc8487840"
+ },
+ "Breath Weapon": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 3,
+  "mana": "{2}{R}",
+  "scry": "0174e40a-0ef5-4439-91e6-3fc39f482520"
+ },
+ "Boros Mastiff": {
+  "qty": 2,
+  "type": "Creature \u2014 Dog",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "27a3bfb6-3843-4bda-bbcb-905e4b351dea"
+ },
+ "Boros Elite": {
+  "qty": 3,
+  "type": "Creature \u2014 Human Soldier",
+  "cmc": 1,
+  "mana": "{W}",
+  "scry": "a03974e6-aced-4664-8c5c-3190bb1eb233"
+ },
+ "Boros Challenger": {
+  "qty": 6,
+  "type": "Creature \u2014 Human Soldier",
+  "cmc": 2,
+  "mana": "{R}{W}",
+  "scry": "9b37cc84-8f6b-48e7-9d68-eb33247b49f4"
+ },
+ "Borderland Ranger": {
+  "qty": 3,
+  "type": "Creature \u2014 Human Scout Ranger",
+  "cmc": 3,
+  "mana": "{2}{G}",
+  "scry": "d5b9689f-e146-4b00-bcad-10e4112109a5"
+ },
+ "Book Devourer": {
+  "qty": 6,
+  "type": "Creature \u2014 Beast",
+  "cmc": 6,
+  "mana": "{5}{R}",
+  "scry": "01dfe640-5bd2-4d0b-8977-887b2ed4c2dd"
+ },
+ "Bomat Bazaar Barge": {
+  "qty": 2,
+  "type": "Artifact \u2014 Vehicle",
+  "cmc": 4,
+  "mana": "{4}",
+  "scry": "0f32be75-979d-43a9-9132-2cf013ddaf3b"
+ },
+ "Blustersquall": {
+  "qty": 2,
+  "type": "Instant",
+  "cmc": 1,
+  "mana": "{U}",
+  "scry": "d998847b-323d-406a-b08e-0da66edcc7b3"
+ },
+ "Blur Sliver": {
+  "qty": 1,
+  "type": "Creature \u2014 Sliver",
+  "cmc": 3,
+  "mana": "{2}{R}",
+  "scry": "63227937-86cc-45e0-9e9e-8c7ab80cbaef"
+ },
+ "Blistercoil Weird": {
+  "qty": 1,
+  "type": "Creature \u2014 Weird",
+  "cmc": 1,
+  "mana": "{U/R}",
+  "scry": "d2a8e716-ea33-4ae2-9ff8-5e78b0e50459"
+ },
+ "Blightwidow": {
+  "qty": 1,
+  "type": "Creature \u2014 Phyrexian Spider",
+  "cmc": 4,
+  "mana": "{3}{G}",
+  "scry": "26da4278-ba44-4555-8837-e24627b46533"
+ },
+ "Blighted Woodland": {
+  "qty": 1,
+  "type": "Land",
+  "cmc": 0,
+  "mana": "",
+  "scry": "94e0ad38-31b3-46ba-9999-9b6ff57906ae"
+ },
+ "Bioshift": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 1,
+  "mana": "{G/U}",
+  "scry": "6e18f7a9-2af6-467a-8f62-5f7da83a3c92"
+ },
+ "Benalish Veteran": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Soldier",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "09a5603a-88c8-4b0c-b091-6d97e873859a"
+ },
+ "Bellows Lizard": {
+  "qty": 4,
+  "type": "Creature \u2014 Lizard",
+  "cmc": 1,
+  "mana": "{R}",
+  "scry": "6e1b8569-3743-485c-a0ee-4ec52d65b31e"
+ },
+ "Beamsplitter Mage": {
+  "qty": 6,
+  "type": "Creature \u2014 Vedalken Wizard",
+  "cmc": 2,
+  "mana": "{U}{R}",
+  "scry": "8f1801f2-ea6e-4196-858e-2afc456cf6a0"
+ },
+ "Beacon Bolt": {
+  "qty": 5,
+  "type": "Sorcery",
+  "cmc": 3,
+  "mana": "{1}{U}{R}",
+  "scry": "39c9e4b5-364b-4c0b-bb47-266563a6abf2"
+ },
+ "Bazaar Krovod": {
+  "qty": 5,
+  "type": "Creature \u2014 Beast",
+  "cmc": 5,
+  "mana": "{4}{W}",
+  "scry": "b07bb2fe-3a9b-47d0-864b-99a662d9544b"
+ },
+ "Battlewise Valor": {
+  "qty": 2,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "7d967a4c-2323-4361-a907-5ca9140d8793"
+ },
+ "Battlewise Hoplite": {
+  "qty": 2,
+  "type": "Creature \u2014 Human Soldier",
+  "cmc": 2,
+  "mana": "{W}{U}",
+  "scry": "4c929a57-2c23-4bbf-b265-666630a4fde8"
+ },
+ "Batterhorn": {
+  "qty": 4,
+  "type": "Creature \u2014 Beast",
+  "cmc": 5,
+  "mana": "{4}{R}",
+  "scry": "a7b40f74-893f-4bfc-87b2-7f8df4c912d8"
+ },
+ "Barrier of Bones": {
+  "qty": 1,
+  "type": "Creature \u2014 Skeleton Wall",
+  "cmc": 1,
+  "mana": "{B}",
+  "scry": "28129aaf-aaff-47f4-8dd2-8c576c55052c"
+ },
+ "Barging Sergeant": {
+  "qty": 2,
+  "type": "Creature \u2014 Minotaur Soldier",
+  "cmc": 5,
+  "mana": "{4}{R}",
+  "scry": "9d41f61e-8b0c-4dea-b39b-faf93c4c847f"
+ },
+ "Bard's Bow": {
+  "qty": 1,
+  "type": "Artifact \u2014 Equipment",
+  "cmc": 3,
+  "mana": "{2}{G}",
+  "scry": "2ac03e90-1e16-453f-88e4-a0448db73403"
+ },
+ "Balamb T-Rexaur": {
+  "qty": 1,
+  "type": "Creature \u2014 Dinosaur",
+  "cmc": 6,
+  "mana": "{4}{G}{G}",
+  "scry": "e5857b1b-73bc-458e-b26b-7ed8bef785f3"
+ },
+ "Azorius Guildgate": {
+  "qty": 2,
+  "type": "Land \u2014 Gate",
+  "cmc": 0,
+  "mana": "",
+  "scry": "093bdc0f-bf04-48d3-91d1-28bc8a0f25be"
+ },
+ "Axebane Stag": {
+  "qty": 2,
+  "type": "Creature \u2014 Elk",
+  "cmc": 7,
+  "mana": "{6}{G}",
+  "scry": "bfce7c02-ccc3-44cd-8087-627eaa6a072e"
+ },
+ "Avenging Arrow": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "696678ff-44dc-4fe4-bf17-024e86cd0220"
+ },
+ "Auriok Sunchaser": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Soldier",
+  "cmc": 2,
+  "mana": "{1}{W}",
+  "scry": "e274a8b3-2d92-43d9-a436-d3f6f619ca95"
+ },
+ "Auramancer": {
+  "qty": 2,
+  "type": "Creature \u2014 Human Wizard",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "b542f253-36d1-4824-8534-6242aaf502c6"
+ },
+ "Assault Griffin": {
+  "qty": 4,
+  "type": "Creature \u2014 Griffin",
+  "cmc": 4,
+  "mana": "{3}{W}",
+  "scry": "704286a5-e3a8-4517-85e5-6447c5c2530f"
+ },
+ "Artisan's Sorrow": {
+  "qty": 2,
+  "type": "Instant",
+  "cmc": 4,
+  "mana": "{3}{G}",
+  "scry": "b4f38f7e-2369-48c9-9121-4b13c29ea869"
+ },
+ "Artful Takedown": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 4,
+  "mana": "{2}{U}{B}",
+  "scry": "4c9e8f24-af62-4d13-bfed-a8b3294b64c3"
+ },
+ "Arrest": {
+  "qty": 5,
+  "type": "Enchantment \u2014 Aura",
+  "cmc": 3,
+  "mana": "{2}{W}",
+  "scry": "1ac9da8a-0061-4978-b361-ee048a9bf572"
+ },
+ "Armory Guard": {
+  "qty": 5,
+  "type": "Creature \u2014 Giant Soldier",
+  "cmc": 4,
+  "mana": "{3}{W}",
+  "scry": "c03498c1-b7f7-41fb-8e2a-1c087d4e9990"
+ },
+ "Armored Wolf-Rider": {
+  "qty": 1,
+  "type": "Creature \u2014 Elf Knight",
+  "cmc": 5,
+  "mana": "{3}{G}{W}",
+  "scry": "e43d959f-6055-4578-a69a-0ec93e993e21"
+ },
+ "Archweaver": {
+  "qty": 4,
+  "type": "Creature \u2014 Spider",
+  "cmc": 7,
+  "mana": "{5}{G}{G}",
+  "scry": "f99dc8ff-932c-4d56-9253-99ce9e145306"
+ },
+ "Archaeomancer": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Wizard",
+  "cmc": 4,
+  "mana": "{2}{U}{U}",
+  "scry": "93f5e67f-6013-47c8-8905-6a70c9f28faf"
+ },
+ "Arboretum Elemental": {
+  "qty": 8,
+  "type": "Creature \u2014 Elemental",
+  "cmc": 9,
+  "mana": "{7}{G}{G}",
+  "scry": "6f4400bf-134b-4011-985d-eed4e5ba1de8"
+ },
+ "Arbor Elf": {
+  "qty": 2,
+  "type": "Creature \u2014 Elf Druid",
+  "cmc": 1,
+  "mana": "{G}",
+  "scry": "e092bdd5-af65-44ce-8f72-519801115d82"
+ },
+ "Aquus Steed": {
+  "qty": 4,
+  "type": "Creature \u2014 Beast",
+  "cmc": 4,
+  "mana": "{3}{U}",
+  "scry": "af643949-7a9b-4195-8ab8-d43b1928b85a"
+ },
+ "Apostle's Blessing": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 2,
+  "mana": "{1}{W/P}",
+  "scry": "616b0dba-0b8c-406d-87e5-f0055fadccbb"
+ },
+ "Anvilwrought Raptor": {
+  "qty": 2,
+  "type": "Artifact Creature \u2014 Bird",
+  "cmc": 4,
+  "mana": "{4}",
+  "scry": "aa6d7bbe-0418-4a58-a97b-13b50eb0b642"
+ },
+ "Annul": {
+  "qty": 3,
+  "type": "Instant",
+  "cmc": 1,
+  "mana": "{U}",
+  "scry": "5e71b6ad-4b81-4277-8512-0a3f2266cd23"
+ },
+ "Annihilating Fire": {
+  "qty": 1,
+  "type": "Instant",
+  "cmc": 3,
+  "mana": "{1}{R}{R}",
+  "scry": "ae12fd10-c13e-4777-a233-96204ec75ac1"
+ },
+ "Angel's Tomb": {
+  "qty": 6,
+  "type": "Artifact",
+  "cmc": 3,
+  "mana": "{3}",
+  "scry": "28226303-7e67-4b88-adae-2386aff033ec"
+ },
+ "Angelic Edict": {
+  "qty": 2,
+  "type": "Sorcery",
+  "cmc": 5,
+  "mana": "{4}{W}",
+  "scry": "e24b62d3-c200-4330-a255-92d77f01ba44"
+ },
+ "Ambush Viper": {
+  "qty": 1,
+  "type": "Creature \u2014 Snake",
+  "cmc": 2,
+  "mana": "{1}{G}",
+  "scry": "0c082aa8-bf7f-47f2-baf8-43ad253fd7d7"
+ },
+ "Akroan Hoplite": {
+  "qty": 2,
+  "type": "Creature \u2014 Human Soldier",
+  "cmc": 2,
+  "mana": "{R}{W}",
+  "scry": "7f82800a-2382-432d-ab85-e19c7b40f736"
+ },
+ "Airdrop Aeronauts": {
+  "qty": 6,
+  "type": "Creature \u2014 Dwarf Scout",
+  "cmc": 5,
+  "mana": "{3}{W}{W}",
+  "scry": "49827a57-cf10-4a44-a1fd-ac611da39dc9"
+ },
+ "Ahn-Crop Crasher": {
+  "qty": 2,
+  "type": "Creature \u2014 Minotaur Warrior",
+  "cmc": 3,
+  "mana": "{2}{R}",
+  "scry": "2afe4ab9-2213-4b73-9735-83e1d6c33b04"
+ },
+ "Agent of Horizons": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Rogue",
+  "cmc": 3,
+  "mana": "{2}{G}",
+  "scry": "cc08576f-1d48-4db4-9bb9-e039f75c98b8"
+ },
+ "Affectionate Indrik": {
+  "qty": 5,
+  "type": "Creature \u2014 Beast",
+  "cmc": 6,
+  "mana": "{5}{G}",
+  "scry": "f0bc344c-9a61-4ba8-91a1-147298472e19"
+ },
+ "Aether Meltdown": {
+  "qty": 2,
+  "type": "Enchantment \u2014 Aura",
+  "cmc": 2,
+  "mana": "{1}{U}",
+  "scry": "91f99614-45e2-4688-8403-f3a6b9162b08"
+ },
+ "Aether Adept": {
+  "qty": 1,
+  "type": "Creature \u2014 Human Wizard",
+  "cmc": 3,
+  "mana": "{1}{U}{U}",
+  "scry": "1640b76d-15d6-4b08-a34b-c5432259d570"
+ },
+ "Aeronaut Admiral": {
+  "qty": 6,
+  "type": "Creature \u2014 Human Pilot",
+  "cmc": 4,
+  "mana": "{3}{W}",
+  "scry": "943f7244-aa62-423f-aaaa-680bdfb4f47e"
+ },
+ "Aerial Modification": {
+  "qty": 6,
+  "type": "Enchantment \u2014 Aura",
+  "cmc": 5,
+  "mana": "{4}{W}",
+  "scry": "b89cab47-25fb-49ea-bb43-90a0089b6b20"
+ },
+ "Advocate of the Beast": {
+  "qty": 1,
+  "type": "Creature \u2014 Elf Shaman",
+  "cmc": 3,
+  "mana": "{2}{G}",
+  "scry": "b1320400-5aa8-48d6-be84-197b4559456f"
+ },
+ "Adventurer's Inn": {
+  "qty": 1,
+  "type": "Land \u2014 Town",
+  "cmc": 0,
+  "mana": "",
+  "scry": "f0da2ee1-986e-4cbf-92eb-d96fdb572ca5"
+ },
+ "Acidic Slime": {
+  "qty": 1,
+  "type": "Creature \u2014 Ooze",
+  "cmc": 5,
+  "mana": "{3}{G}{G}",
+  "scry": "144e6997-c6b6-4604-b8ff-ad06c4528f4f"
+ }
+}

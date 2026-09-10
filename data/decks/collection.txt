@@ -1,0 +1,482 @@
+1 Acidic Slime
+1 Adventurer's Inn
+1 Advocate of the Beast
+6 Aerial Modification
+6 Aeronaut Admiral
+1 Aether Adept
+2 Aether Meltdown
+5 Affectionate Indrik
+1 Agent of Horizons
+2 Ahn-Crop Crasher
+6 Airdrop Aeronauts
+2 Akroan Hoplite
+1 Ambush Viper
+6 Angel's Tomb
+2 Angelic Edict
+1 Annihilating Fire
+3 Annul
+2 Anvilwrought Raptor
+1 Apostle's Blessing
+4 Aquus Steed
+2 Arbor Elf
+8 Arboretum Elemental
+1 Archaeomancer
+4 Archweaver
+1 Armored Wolf-Rider
+5 Armory Guard
+5 Arrest
+1 Artful Takedown
+2 Artisan's Sorrow
+4 Assault Griffin
+2 Auramancer
+1 Auriok Sunchaser
+1 Avenging Arrow
+2 Axebane Stag
+2 Azorius Guildgate
+1 Balamb T-Rexaur
+1 Bard's Bow
+2 Barging Sergeant
+1 Barrier of Bones
+4 Batterhorn
+2 Battlewise Hoplite
+2 Battlewise Valor
+5 Bazaar Krovod
+5 Beacon Bolt
+6 Beamsplitter Mage
+4 Bellows Lizard
+1 Benalish Veteran
+1 Bioshift
+1 Blighted Woodland
+1 Blightwidow
+1 Blistercoil Weird
+1 Blur Sliver
+2 Blustersquall
+2 Bomat Bazaar Barge
+6 Book Devourer
+3 Borderland Ranger
+6 Boros Challenger
+3 Boros Elite
+2 Boros Mastiff
+1 Breath Weapon
+1 Brindle Boar
+2 Brushstrider
+1 Burglar Rat
+2 Burning-Tree Emissary
+1 Call of the Conclave
+1 Caravan Hurda
+1 Cavalry Pegasus
+2 Centaur Battlemaster
+1 Centaur Courser
+1 Centaur Peacemaker
+1 Centaur's Herald
+2 Charging Griffin
+3 Child of Night
+2 Chronicler of Heroes
+2 Cinder Barrens
+6 Circuitous Route
+7 Citywatch Sphinx
+1 Claustrophobia
+1 Clinging Anemones
+1 Cobblebrute
+6 Conclave Cavalier
+6 Conclave Guildmage
+2 Consign // Oblivion
+1 Corpse Traders
+2 Corrupted Shapeshifter
+1 Counterspell
+3 Court Street Denizen
+1 Courtly Provocateur
+1 Cower in Fear
+1 Crackling Triton
+1 Craterize
+1 Crocanura
+2 Crocodile of the Crossing
+1 Crowned Ceratok
+6 Crush Contraband
+2 Crypt of the Eternals
+1 Cystbearer
+1 Darkblade Agent
+2 Dawnstrike Paladin
+1 Dead Weight
+4 Deadeye Harpooner
+1 Deadly Visit
+1 Deathcult Rogue
+1 Debtor's Pulpit
+1 Defend the Hearth
+2 Defiant Greatmaw
+5 Deft Dismissal
+7 Demotion
+2 Destined // Lead
+1 Devious Cover-Up
+6 Devout Chaplain
+1 Dimir Locket
+6 Dimir Spybug
+2 Disappearing Act
+1 Disciple of Phenax
+3 Disdainful Stroke
+6 Disinformation Campaign
+6 District Guide
+1 Divine Favor
+3 Divine Verdict
+2 Douser of Lights
+2 Dragon Hatchling
+1 Dryad Militant
+2 Edifice of Authority
+6 Electrickery
+10 Emancipation Angel
+2 Embalmer's Tools
+5 Enhanced Surveillance
+2 Enraged Giant
+2 Ephara's Warden
+2 Era of Innovation
+2 Escarpment Fortress
+1 Experiment One
+2 Experimental Aviator
+1 Ezuri's Archers
+5 Fade into Antiquity
+1 Fall of the Gavel
+1 Fearless Halberdier
+1 Fencing Ace
+1 Feral Animist
+1 Festerhide Boar
+1 Fire Elemental
+1 Firefist Striker
+2 Flamecast Wheel
+1 Flamespeaker Adept
+5 Fleetfeather Sandals
+5 Flight of Equenauts
+1 Flinthoof Boar
+7 Flower // Flourish
+1 Fog Bank
+20 Forest
+2 Forsaken Sanctuary
+4 Foundry Hornet
+2 Freewind Equenaut
+2 Fretwork Colony
+1 Frontier Guide
+1 Gaelicat
+1 Garrison Sergeant
+1 Gate to the Afterlife
+5 Gatekeeper Gargoyle
+1 Gavony Ironwright
+2 Gearshift Ace
+1 Generous Stray
+2 Ghalma's Warden
+1 Ghor-Clan Savage
+1 Gideon's Lawkeeper
+1 Giott, King of the Dwarves
+6 Gird for Battle
+4 Glaive of the Guildpact
+1 Glissa's Courier
+1 Glory Seeker
+6 Glowspore Shaman
+2 Gobbling Ooze
+5 Goblin Banneret
+1 Goblin Electromancer
+1 Goblin Locksmith
+1 Golden Urn
+4 Goldnight Commander
+4 Goldnight Redeemer
+1 Golgari Decoy
+6 Golgari Findbroker
+5 Golgari Raiders
+4 Gonti's Machinations
+4 Gore-House Chainwalker
+3 Gorehorn Minotaurs
+7 Grappling Sundew
+6 Grasping Dunes
+1 Gravedigger
+1 Gravitic Punch
+2 Gremlin Infestation
+1 Griffin Sentinel
+1 Groundshaker Sliver
+1 Guard Duty
+1 Guardian Lions
+4 Guild Summit
+2 Guildscorn Ward
+5 Haazda Marshal
+1 Haazda Snare Squad
+1 Harmless Assault
+1 Harsh Scrutiny
+5 Haunted Guardian
+1 Healer of the Pride
+1 Hellhole Flailer
+8 Hellkite Whelp
+2 Heroes' Reunion
+2 Hidden Herbalists
+1 Hidden Strings
+2 Hindervines
+1 Hired Poisoner
+1 Hitchclaw Recluse
+1 Hold the Gates
+1 Hollowhenge Beast
+1 Holy Mantle
+7 House Guildmage
+2 Hungry Flames
+2 Hunt the Hunter
+1 Hunted Witness
+1 Hypothesizzle
+1 Ikiral Outrider
+4 Illusionist's Stratagem
+5 Inescapable Blaze
+1 Insomnia, Crown City
+5 Inspiring Unicorn
+5 Integrity // Intervention
+1 Invasive Surgery
+6 Invert // Invent
+2 Invigorated Rampage
+1 Iona's Judgment
+2 Ironclad Revolutionary
+3 Ironshell Beetle
+20 Island
+1 Izzet Keyrune
+2 Janjeet Sentry
+4 Judge's Familiar
+2 Karametra's Acolyte
+2 Kefnet's Monument
+1 Kessig Recluse
+1 Knight Watch
+1 Knight of Glory
+1 Knight of Obligation
+1 Kor Hookmaster
+2 Kraul Foragers
+5 Kraul Swarm
+1 Kraul Warrior
+1 Lash of the Whip
+1 Last Breath
+2 Lay Bare the Heart
+6 League Guildmage
+2 Leapfrog
+8 Ledev Champion
+1 Ledev Guardian
+5 Legion Guildmage
+6 Lifecraft Awakening
+6 Lifecrafter's Gift
+1 Liturgy of Blood
+2 Lobber Crew
+1 Lost Leonin
+6 Lotleth Giant
+1 Loxodon Restorer
+1 Magister Sphinx
+2 Make Obsolete
+1 Maniacal Rage
+2 Marauding Looter
+2 Master of Diversion
+6 Maulfist Revolutionary
+2 Maverick Thopterist
+1 Maximize Altitude
+1 Maze Sentinel
+8 Might of the Masses
+2 Mighty Leap
+1 Miming Slime
+1 Mist Raven
+5 Molderhulk
+1 Moment of Heroism
+1 Monk's Fist
+6 Monstrous Onslaught
+20 Mountain
+2 Muse Drake
+1 Mwonvuli Beast Tracker
+2 Nature's Way
+4 Necrotic Wound
+1 Nephalia Smuggler
+1 Never Happened
+1 New Prahv Guildmage
+6 Nightveil Predator
+5 Nightveil Sprite
+3 Nivix Guildmage
+1 Notion Rain
+2 Nylea's Emissary
+6 Ochran Assassin
+1 Omenspeaker
+1 One Thousand Lashes
+2 Onward // Victory
+1 Opera Love Song
+1 Orzhov Keyrune
+2 Outland Boar
+1 Pacifism
+1 Parhelion Patrol
+1 Pause for Reflection
+2 Pay No Heed
+2 Peak Eruption
+2 Peema Aether-Seer
+1 Peregrine Griffin
+2 Perilous Predicament
+1 Pharika's Cure
+1 Phoenix Down
+1 Pilfered Plans
+4 Pilfering Imp
+4 Pillarfield Ox
+20 Plains
+1 Plummet
+1 Poison the Waters
+1 Portcullis Vine
+1 Portent of Betrayal
+1 Predatory Sliver
+3 Prey Upon
+6 Price of Fame
+1 Priests of Norn
+1 Psychic Strike
+6 Purphoros's Emissary
+1 Pursuit of Flight
+1 Radical Idea
+1 Rage Thrower
+1 Rain of Blades
+2 Rakdos Cackler
+1 Rakdos Guildgate
+1 Rakdos Ragemutt
+3 Rakdos Ringleader
+5 Rampaging Monument
+2 Ravenous Intruder
+1 Ray of Dissolution
+2 Reckless Brute
+2 Reckless Racer
+2 Reduce // Rubble
+1 Relentless X-ATM092
+1 Relm's Sketching
+4 Renegade Rallier
+1 Repel the Darkness
+6 Restoration Specialist
+1 Rhizome Lurcher
+1 Righteous Blow
+1 Righteous Charge
+1 Riot Control
+2 Risen Sanctuary
+2 Rites of Reaping
+3 Rix Maadi Guildmage
+6 Roc Charger
+2 Rosemane Centaur
+1 Rubblebelt Maaka
+2 Ruthless Sniper
+6 Salvage Scuttler
+1 Samurai's Katana
+1 Sangrite Surge
+1 Satyr Hedonist
+2 Satyr Piper
+3 Savage Surge
+1 Scholar of Athreos
+2 Scrapper Champion
+1 Scroll Thief
+1 Searing Spear
+2 Security Blockade
+1 Seek the Horizon
+5 Selective Snare
+1 Selesnya Charm
+1 Selesnya Locket
+1 Self-Destruct
+2 Sensor Splicer
+2 Sentinel Sliver
+2 Sentry of the Underworld
+1 Serra Angel
+1 Setessan Griffin
+2 Shadow Alley Denizen
+8 Shielded Aether Thief
+1 Shielded Passage
+2 Shipwreck Singer
+2 Shriek Raptor
+2 Siege Mastodon
+2 Siege Modification
+2 Silent Artisan
+6 Silent Dart
+1 Silverclaw Griffin
+1 Skarrg Guildmage
+1 Skillful Lunge
+1 Skullcrack
+1 Skyknight Legionnaire
+3 Skyline Predator
+1 Skyline Scout
+2 Slime Molding
+2 Sly Requisitioner
+7 Smelt-Ward Minotaur
+1 Solemn Offering
+1 Somberwald Vigilante
+2 Soul Tithe
+1 Spare from Evil
+2 Spinal Centipede
+1 Spire Tracer
+2 Splatter Thug
+2 Spring // Mind
+7 Sprouting Renewal
+1 Stand Firm
+6 Status // Statue
+2 Stir the Sands
+2 Stone Quarry
+4 Stoneshock Giant
+6 Street Riot
+2 Submerged Boneyard
+1 Sumala Woodshaper
+5 Sunhome Stalwart
+1 Sunspring Expedition
+1 Suplex
+1 Surveilling Sprite
+4 Survey the Wreckage
+20 Swamp
+8 Swarm Guildmage
+5 Swathcutter Giant
+2 Sword Dancer
+1 Syncopate
+1 Take Heart
+1 Talrand's Invocation
+4 Teleportal
+2 Tenement Crasher
+1 Tenth District Guard
+2 Terashi's Verdict
+1 The Crystal's Chosen
+1 The Final Days
+5 Thoughtbound Phantasm
+1 Thraben Purebloods
+1 Thraben Valiant
+1 Thunder Magic
+1 Timber Gorge
+1 Timberland Guide
+1 Tireless Missionaries
+2 Torch Courier
+5 Tormentor's Trident
+2 Totally Lost
+1 Totem-Guide Hartebeest
+3 Tower Defense
+2 Traitorous Instinct
+4 Treasured Find
+7 Truefire Captain
+1 Trusted Forcemage
+1 Turn to Slag
+8 Undercity Necrolisk
+1 Undercity Uprising
+1 Unexplained Disappearance
+1 Unsummon
+1 Urban Evolution
+1 Urban Utopia
+2 Urbis Protector
+1 Vedalken Mesmerist
+1 Veiled Shade
+2 Vengeful Rebel
+6 Vessel of Endless Rest
+3 Viashino Racketeer
+1 Viashino Shanktail
+1 Vigean Hydropon
+2 Viridian Emissary
+1 Vizkopa Confessor
+2 Volt Charge
+1 Vorstclaw
+1 Wall of Fire
+7 Wand of Vertebrae
+1 War Report
+2 Warfire Javelineer
+1 Wary Okapi
+6 Watchers of the Dead
+4 Wee Dragonauts
+1 Whisper Agent
+4 Whispering Snitch
+1 White Mage's Staff
+3 Wild Ceratok
+1 Wild Guess
+1 Wildwood Geist
+4 Wind-Kin Raiders
+1 Windurst, Federation Center
+1 Wishcoin Crab
+2 Witches' Eye
+1 Wojek Bodyguard
+7 Worldsoul Colossus
+1 Yoked Ox
+1 Zephyr Sprite
+1 Zhur-Taa Druid
