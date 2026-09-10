@@ -2,11 +2,11 @@
 
 482 unique cards.
 
-- **implemented**: 41
-- **partial**: 33
+- **implemented**: 44
+- **partial**: 34
 - **keyword**: 48
 - **vanilla**: 17
-- **unsupported**: 343
+- **unsupported**: 339
 
 > Every card is castable in a game. `keyword`/`vanilla` have no non-keyword text; `partial` wires the clauses the engine supports and drops the rest; `unsupported` plays as a vanilla/keyword permanent.
 
@@ -28,6 +28,7 @@
 - Dead Weight — ok
 - Devout Chaplain — ok
 - Divine Favor — ok
+- Divine Verdict — ok
 - Era of Innovation — ok
 - Escarpment Fortress — ok
 - Fade into Antiquity — ok
@@ -43,6 +44,7 @@
 - Maniacal Rage — ok
 - Pursuit of Flight — ok
 - Ray of Dissolution — ok
+- Repel the Darkness — ok
 - Righteous Blow — ok
 - Searing Spear — ok
 - Shielded Aether Thief — ok
@@ -50,6 +52,7 @@
 - Solemn Offering — ok
 - Stand Firm — ok
 - Survey the Wreckage — ok
+- Sword Dancer — ok
 - Talrand's Invocation — ok
 - Unsummon — ok
 - Vessel of Endless Rest — ok
@@ -69,6 +72,7 @@
 - League Guildmage — 1/2 clauses
 - Legion Guildmage — 1/2 clauses
 - Liturgy of Blood — 1/2 clauses
+- Nature's Way — 1/2 clauses
 - Never Happened — 1/2 clauses
 - New Prahv Guildmage — 1/2 clauses
 - Pilfered Plans — 1/2 clauses
@@ -76,8 +80,8 @@
 - Price of Fame — 1/3 clauses
 - Psychic Strike — 1/2 clauses
 - Radical Idea — 1/2 clauses
-- Repel the Darkness — 1/2 clauses
 - Rites of Reaping — 1/2 clauses
+- Rix Maadi Guildmage — 1/2 clauses
 - Savage Surge — 1/2 clauses
 - Stir the Sands — 1/3 clauses
 - Swarm Guildmage — 1/2 clauses
@@ -172,7 +176,6 @@
 - Disdainful Stroke — Counter target spell with mana value 4 or greater.
 - Disinformation Campaign — When this enchantment enters, you draw a card and each opponent discar
 - District Guide — When this creature enters, you may search your library for a basic lan
-- Divine Verdict — Destroy target attacking or blocking creature.
 - Dragon Hatchling — Flying
 - Dryad Militant — If an instant or sorcery card would be put into a graveyard from anywh
 - Edifice of Authority — {1}, {T}: Target creature can't attack this turn. Put a brick counter 
@@ -292,7 +295,6 @@
 - Mountain — 
 - Muse Drake — Flying
 - Mwonvuli Beast Tracker — When this creature enters, search your library for a creature card wit
-- Nature's Way — Target creature you control gains vigilance and trample until end of t
 - Necrotic Wound — Undergrowth — Target creature gets -X/-X until end of turn, where X is
 - Nephalia Smuggler — {3}{U}, {T}: Exile another target creature you control, then return th
 - Nightveil Sprite — Flying
@@ -338,7 +340,6 @@
 - Rhizome Lurcher — Undergrowth — This creature enters with a number of +1/+1 counters on 
 - Righteous Charge — Creatures you control get +2/+2 until end of turn.
 - Riot Control — You gain 1 life for each creature your opponents control. Prevent all 
-- Rix Maadi Guildmage — {B}{R}: Target blocking creature gets -1/-1 until end of turn.
 - Roc Charger — Flying
 - Rubblebelt Maaka — Bloodrush — {R}, Discard this card: Target attacking creature gets +3/
 - Ruthless Sniper — Whenever you cycle or discard a card, you may pay {1}. If you do, put 
@@ -389,7 +390,6 @@
 - Surveilling Sprite — Flying
 - Swamp — 
 - Swathcutter Giant — Vigilance
-- Sword Dancer — {W}{W}: Target attacking creature gets -1/-0 until end of turn.
 - Syncopate — Counter target spell unless its controller pays {X}. If that spell is 
 - Teleportal — Target creature you control gets +1/+0 until end of turn and can't be 
 - Tenth District Guard — When this creature enters, target creature gets +0/+1 until end of tur

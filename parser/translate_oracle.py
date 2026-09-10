@@ -43,44 +43,72 @@ def face(c):
 
 
 # ---------------------------------------------------------------------------
-# clause -> code.  ctx = "spell" (actor self.controller) or "etb" (self.controller)
-# a clause that needs a target returns ("TARGET", criteria, code_with_targets0)
+# clause -> code.
+#   * a no-target clause returns a code string (acts via `actor`)
+#   * a targeted clause returns ("TARGET", spec_string, per_target_expr) where
+#     per_target_expr uses the loop variable `t`; the caller wraps it as
+#     `[<expr> for t in self.legal_targets]` so it works for 1..N targets and
+#     silently drops targets that became illegal before resolution.
 # ---------------------------------------------------------------------------
 
-def _dmg_target(word):
-    return {
-        "any target": "'creature or player'",
-        "target creature": "'creature'",
-        "target creature or player": "'creature or player'",
-        "target creature or planeswalker": "'creature or planeswalker'",
-        "target player": "'player'",
-        "target attacking creature": "'attacking creature'",
-        "target blocking creature": "'blocking creature'",
-        "target attacking or blocking creature": "'attacking or blocking creature'",
-    }.get(word)
+# bare noun (after stripping any "up to N" / "target" prefix) -> engine shortcut
+_CORE = {
+    "any target": "any target",
+    "creature": "creature",
+    "player": "player",
+    "opponent": "opponent",
+    "creature or player": "creature or player",
+    "creature or planeswalker": "creature or planeswalker",
+    "creature or enchantment": "creature or enchantment",
+    "artifact": "artifact",
+    "enchantment": "enchantment",
+    "land": "land",
+    "permanent": "permanent",
+    "nonland permanent": "nonland permanent",
+    "artifact or enchantment": "artifact or enchantment",
+    "artifact or creature": "artifact or creature",
+    "nonblack creature": "nonblack creature",
+    "nonwhite creature": "nonwhite creature",
+    "tapped creature": "tapped creature",
+    "attacking creature": "attacking creature",
+    "blocking creature": "blocking creature",
+    "attacking or blocking creature": "attacking or blocking creature",
+    "creature you control": "your creature",
+    "card in your graveyard": "card in your graveyard",
+    "creature card in your graveyard": "creature card in your graveyard",
+    "artifact card in your graveyard": "artifact card in your graveyard",
+    "instant or sorcery card in your graveyard": "instant or sorcery card in your graveyard",
+}
+
+_UPTO_RE = re.compile(r"^(up to (?:\w+)|up to|any number of|(?:two|three|four|five)) ")
 
 
-def _destroy_target(word):
-    return {
-        "target creature": "'creature'",
-        "target artifact": "'artifact'",
-        "target enchantment": "'enchantment'",
-        "target land": "'land'",
-        "target nonland permanent": "'nonland permanent'",
-        "target artifact or enchantment": "'artifact or enchantment'",
-        "target artifact or creature": "'artifact or creature'",
-        "target creature or enchantment": "'creature or enchantment'",
-        "target creature or planeswalker": "'creature or planeswalker'",
-        "target nonblack creature": "'nonblack creature'",
-        "target nonwhite creature": "'nonwhite creature'",
-        "target tapped creature": "'tapped creature'",
-        "target permanent": "'permanent'",
-    }.get(word)
+def _spec_for(phrase):
+    """"up to two target creatures" / "target creature" / "any number of target
+    lands" / "any target" -> a criteria string the engine grammar accepts,
+    or None if the noun isn't one we model."""
+    w = phrase.strip().lower().rstrip(".")
+    prefix = ""
+    m = _UPTO_RE.match(w + " ")
+    if m:
+        prefix = m.group(1).strip() + " "
+        w = w[len(m.group(1)):].strip()
+    if w.startswith("target "):
+        w = w[len("target "):]
+    core = w.strip()
+    if core not in _CORE and core.endswith("s") and core[:-1] in _CORE:
+        core = core[:-1]
+    if core not in _CORE:
+        return None
+    shortcut = _CORE[core]
+    if shortcut == "any target" and not prefix:
+        return "'any target'"
+    return "'%starget %s'" % (prefix, shortcut)
 
 
 def clause_to_code(cl, actor):
     """actor: python expr for the acting player. Returns code string,
-    or ('TARGET', criteria, code) for single-target clauses, or None."""
+    or ('TARGET', spec, per_target_expr) for targeted clauses, or None."""
     s = cl.strip().rstrip(".").strip()
     low = s.lower()
 
@@ -135,53 +163,65 @@ def clause_to_code(cl, actor):
                 col = w
         return "%s.create_token('%s %s', %d)" % (actor, col, typ, cnt)
 
-    # --- single-target clauses ---
-    m = re.fullmatch(r"~ deals (\d+) damage to (.+)", low.replace("this creature", "~").replace("this spell", "~"))
-    if m and _dmg_target(m.group(2)):
-        return ("TARGET", _dmg_target(m.group(2)),
-                "targets[0].take_damage(self, %d)" % int(m.group(1)))
+    # --- targeted clauses (per_target_expr uses loop var `t`) ---
+    m = re.fullmatch(r"~ deals (\d+) damage to (.+)",
+                     low.replace("this creature", "~").replace("this spell", "~"))
+    if m and _spec_for(m.group(2)):
+        return ("TARGET", _spec_for(m.group(2)), "t.take_damage(self, %d)" % int(m.group(1)))
     m = re.fullmatch(r"destroy (.+)", low)
-    if m and _destroy_target(m.group(1)):
-        return ("TARGET", _destroy_target(m.group(1)), "targets[0].destroy()")
+    if m and _spec_for(m.group(1)):
+        return ("TARGET", _spec_for(m.group(1)), "t.destroy()")
     m = re.fullmatch(r"exile (.+)", low)
-    if m and _destroy_target(m.group(1)):
-        return ("TARGET", _destroy_target(m.group(1)), "targets[0].exile()")
+    if m and _spec_for(m.group(1)):
+        return ("TARGET", _spec_for(m.group(1)), "t.exile()")
     m = re.fullmatch(r"return (.+?) to (?:its|their) owner['’]s hand", low)
-    if m and _destroy_target(m.group(1)):
-        return ("TARGET", _destroy_target(m.group(1)), "targets[0].bounce()")
+    if m and _spec_for(m.group(1)):
+        return ("TARGET", _spec_for(m.group(1)), "t.bounce()")
+    m = re.fullmatch(r"return (.+?) (?:from your graveyard )?to your hand", low)
+    if m and _spec_for(m.group(1)) and "graveyard" in _spec_for(m.group(1)):
+        return ("TARGET", _spec_for(m.group(1)), "t.change_zone(self.controller.hand)")
     m = re.fullmatch(r"tap (.+)", low)
-    if m and _destroy_target(m.group(1)):
-        return ("TARGET", _destroy_target(m.group(1)), "targets[0].tap()")
+    if m and _spec_for(m.group(1)):
+        return ("TARGET", _spec_for(m.group(1)), "t.tap()")
     m = re.fullmatch(r"untap (.+)", low)
-    if m and _destroy_target(m.group(1)):
-        return ("TARGET", _destroy_target(m.group(1)), "targets[0].untap()")
+    if m and _spec_for(m.group(1)):
+        return ("TARGET", _spec_for(m.group(1)), "t.untap()")
     m = re.fullmatch(r"counter (.+)", low)
     if m:
-        kind = m.group(1).replace("target ", "").replace(" spell", "").strip()
+        w = m.group(1).rstrip(".")
+        pref = ""
+        mm = _UPTO_RE.match(w + " ")
+        if mm:
+            pref, w = mm.group(1).strip() + " ", w[len(mm.group(1)):].strip()
+        kind = w.replace("target ", "").replace(" spell", "").strip()
         crit = {
-            "": "'spell'", "spell": "'spell'",
-            "instant or sorcery": "'instant or sorcery spell'",
-            "creature": "'creature spell'", "noncreature": "'noncreature spell'",
-            "artifact": "'artifact spell'",
-            "enchantment": "'enchantment spell'",
-            "artifact or enchantment": "'artifact or enchantment spell'",
-            "activated or triggered": "'spell'",
+            "": "spell", "spell": "spell",
+            "instant or sorcery": "instant or sorcery spell",
+            "creature": "creature spell", "noncreature": "noncreature spell",
+            "artifact": "artifact spell", "enchantment": "enchantment spell",
+            "artifact or enchantment": "artifact or enchantment spell",
+            "activated or triggered": "spell",
         }.get(kind)
         if crit:
-            return ("TARGET", crit, "targets[0].counter(source=self)")
-    m = re.fullmatch(r"target creature gets ([+-]\d+)/([+-]\d+) until end of turn", low)
-    if m:
-        return ("TARGET", "'creature'",
-                "targets[0].add_effect('modifyPT', (%d, %d), self, self.game.eot_time)"
-                % (int(m.group(1)), int(m.group(2))))
-    m = re.fullmatch(r"put (\w+) \+1/\+1 counters? on target creature", low)
-    if m and n(m.group(1)):
-        return ("TARGET", "'creature'", "targets[0].add_counter('+1/+1', %d)" % n(m.group(1)))
-    m = re.fullmatch(r"target creature gains ([\w ]+?) until end of turn", low)
-    if m:
-        ab = m.group(1).replace("and ", "").strip().title().replace(" ", "_")
-        return ("TARGET", "'creature'",
-                "targets[0].add_effect('gainAbility', %r, self, self.game.eot_time)" % ab)
+            spec = "'%starget %s'" % (pref, crit) if pref else "'%s'" % crit
+            return ("TARGET", spec, "t.counter(source=self)")
+    m = re.fullmatch(r"(.+?) gets ([+-]\d+)/([+-]\d+) until end of turn", low)
+    if m and _spec_for(m.group(1)):
+        return ("TARGET", _spec_for(m.group(1)),
+                "t.add_effect('modifyPT', (%d, %d), self, self.game.eot_time)"
+                % (int(m.group(2)), int(m.group(3))))
+    m = re.fullmatch(r"put (\w+) \+1/\+1 counters? on (.+)", low)
+    if m and n(m.group(1)) and _spec_for(m.group(2)):
+        return ("TARGET", _spec_for(m.group(2)),
+                "t.add_counter('+1/+1', %d)" % n(m.group(1)))
+    m = re.fullmatch(r"(.+?) gains? (.+?) until end of turn", low)
+    if m and _spec_for(m.group(1)):
+        abs_ = [a.strip().title().replace(" ", "_")
+                for a in re.split(r",| and ", m.group(2)) if a.strip()]
+        parts = ["t.add_effect('gainAbility', %r, self, self.game.eot_time)" % a
+                 for a in abs_]
+        expr = parts[0] if len(parts) == 1 else "(%s)" % ", ".join(parts)
+        return ("TARGET", _spec_for(m.group(1)), expr)
     return None
 
 
@@ -253,8 +293,8 @@ def translate(card):
         if code is None:
             continue
         if isinstance(code, tuple):
-            _, crit, tcode = code
-            abilities.append((cost, tcode.replace("targets[0]", "self.targets_chosen[0]"), crit))
+            _, crit, per_target = code
+            abilities.append((cost, "[%s for t in self.legal_targets]" % per_target, crit))
         else:
             abilities.append((cost, code, None))
         matched += 1
@@ -270,8 +310,8 @@ def translate(card):
         if code is None:
             continue
         if isinstance(code, tuple):
-            _, crit, tcode = code
-            triggers.append(("onEtB", tcode.replace("targets[0]", "self.targets_chosen[0]"), crit))
+            _, crit, per_target = code
+            triggers.append(("onEtB", "[%s for t in self.legal_targets]" % per_target, crit))
         else:
             triggers.append(("onEtB", code, None))
         matched += 1
@@ -308,18 +348,23 @@ def translate(card):
             if code is None:
                 continue
             if isinstance(code, tuple):
-                _, crit, tcode = code
-                spell_target = crit
-                spell_effects.append(tcode)
+                _, crit, per_target = code
+                # single target clause per spell (this collection has ~no
+                # multi-"target" instant/sorcery); if a later clause wants a
+                # DIFFERENT target, drop it rather than mis-apply.
+                if spell_target is None:
+                    spell_target = crit
+                elif crit != spell_target:
+                    matched -= 1
+                    continue
+                spell_effects.append("[%s for t in self.legal_targets]" % per_target)
             else:
                 spell_effects.append(code)
             matched += 1
         if spell_effects:
+            effects = spell_effects
             if spell_target:
                 targets = [spell_target]
-                effects = spell_effects
-            else:
-                effects = spell_effects
 
     # ---- aura ----
     if is_aura:

@@ -327,6 +327,79 @@ class Player():
             print(ans)
         return ans
 
+    # --- higher-level choice helpers -------------------------------------
+    # Thin wrappers over make_choice(); tests drive them with the same
+    # mock.patch('builtins.input') pattern as everything else.
+
+    def may(self, prompt):
+        """Optional yes/no ("you may ..."). Blank / y / yes -> True."""
+        ans = str(self.make_choice(prompt.rstrip() + " (yes/no)\n")).strip().lower()
+        return ans in ("", "y", "yes")
+
+    def choose(self, prompt, options, min=1, max=1):
+        """Choose between ``min`` and ``max`` of ``options`` (a list of anything;
+        shown by str()). Returns the chosen options as a list. ``max`` may be
+        ``-1`` for "any number". Blank ends the choice once ``min`` is met."""
+        import math as _math
+        if max == -1:
+            max = len(options)
+        listing = "\n".join("  %d: %s" % (i, o) for i, o in enumerate(options))
+        picked = []
+        while len(picked) < max:
+            need = len(picked) < min
+            ans = str(self.make_choice(
+                "%s\n%s\n[%d/%d chosen%s]\n"
+                % (prompt.rstrip(), listing, len(picked), max,
+                   "" if need else ", blank to stop"))).strip()
+            if not ans:
+                if need:
+                    print("Choose at least %d." % min)
+                    continue
+                break
+            try:
+                idx = int(ans)
+                opt = options[idx]
+            except (ValueError, IndexError):
+                print("Bad choice.")
+                continue
+            if opt in picked:
+                print("Already chosen.")
+                continue
+            picked.append(opt)
+        return picked
+
+    def choose_one(self, prompt, options):
+        """Pick exactly one of ``options`` (e.g. a mode of a modal spell)."""
+        got = self.choose(prompt, options, min=1, max=1)
+        return got[0] if got else options[0]
+
+    def choose_number(self, prompt, lo=0, hi=None):
+        while True:
+            ans = str(self.make_choice(prompt.rstrip() + "\n")).strip()
+            try:
+                v = int(ans)
+            except ValueError:
+                print("Enter a number.")
+                continue
+            if v < lo or (hi is not None and v > hi):
+                print("Out of range.")
+                continue
+            return v
+
+    def choose_color(self, prompt="Choose a color"):
+        return self.choose_one(prompt, ["white", "blue", "black", "red", "green"])
+
+    def choose_card_type(self, prompt="Choose a card type"):
+        return self.choose_one(
+            prompt, ["artifact", "creature", "enchantment", "instant",
+                     "land", "planeswalker", "sorcery"])
+
+    def choose_creature_type(self, prompt="Choose a creature type"):
+        return str(self.make_choice(prompt.rstrip() + "\n")).strip()
+
+    def choose_name(self, prompt="Name a card"):
+        return str(self.make_choice(prompt.rstrip() + "\n")).strip()
+
     def make_choice_items_in_list(self, items, num=1, up_to=False, repetition=False):
         print(items)
         l = len(items)

@@ -226,37 +226,43 @@ class GameObject():
         return targets_chosen
 
 
-    ''' Returns a list of booleans, signifying each target's legality '''
     def target_legality(self):
-        if (not isinstance(self.targets_chosen, list) or 
-            not isinstance(self.target_criterias, list)):
-            return []
+        """List of bools, one per chosen target, in ``targets_chosen`` order:
+        is that target still a legal target now?
 
-        return [c(self, t) for c, t in 
+        Uses the ``(spec, obj)`` bindings recorded at choosing time so each
+        target is re-checked against the exact clause that picked it (matters
+        once a spell has more than one "target" clause)."""
+        bindings = getattr(self, '_target_bindings', None)
+        if bindings:
+            return [bool(spec.criteria(self, obj)) for spec, obj in bindings]
+
+        if (not isinstance(self.targets_chosen, list) or
+                not isinstance(self.target_criterias, list)):
+            return []
+        return [bool(c(self, t)) for c, t in
                 zip(self.target_criterias, self.targets_chosen)]
 
+    @property
+    def legal_targets(self):
+        """The subset of ``targets_chosen`` that is still legal right now."""
+        chosen = self.targets_chosen or []
+        return [t for t, ok in zip(chosen, self.target_legality()) if ok]
+
     def has_valid_target(self):
+        """True iff every mandatory target clause has enough legal targets to
+        be satisfiable. Optional clauses (min == 0) never block."""
         if self.target_criterias is None:
             return True
 
-        # for each target criteria, check if at least one TARGETABLE OBJECT
-        # somewhere satisfies this criteria (i.e. is targetable)
+        pool = utils._all_targetable_objects(self.game)
         for crit in self.target_criterias:
-            has_valid_target = False
-            for _zone in ['battlefield', 'stack',
-                          'graveyard', 'exile']:
-                has_valid_target = self.game.apply_to_zone(lambda _: True, _zone, lambda card: crit(self, card))
-                if has_valid_target:
-                    break
-
-            # see if it can target players
-            if not has_valid_target:
-                has_valid_target = self.game.apply_to_players(lambda p: crit(self, p))
-
-            if not has_valid_target:
-                print(f"{self}: No valid targets.")
+            spec = utils.as_target_spec(crit)
+            if spec.min == 0:
+                continue
+            if len(utils._legal_targets_for(self, spec, pool)) < spec.min:
+                print(f"{self}: not enough legal targets.")
                 return False
-
         return True
 
 

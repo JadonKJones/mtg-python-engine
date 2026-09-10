@@ -9,21 +9,31 @@ Regenerate the per-card breakdown with `python -m parser.translate_oracle`
 
 ---
 
-## 1. Targeting & choice system  *(blocks ~150 cards — foundational)*
+## 1. Targeting & choice system  *(foundational)*
 
-`utils.choose_targets` demands **exactly one legal target per criteria**. That
-single limitation is the biggest blocker.
+**Done** (`utils.TargetSpec` + `choose_targets` rewrite, `player.choose*`):
+
+- ✅ "up to one/two/N target", "any number of target", "N target" — cardinality
+  via `TargetSpec(min, max)`, parsed from the text grammar
+- ✅ per-clause distinctness; legal-target-pool precheck (CR 601.2c — a spell
+  with too few legal targets is uncastable)
+- ✅ correct fizzle: a partially-legal targeted spell resolves against its
+  surviving targets, fizzles only when all are illegal (CR 608.2b);
+  `Play.legal_targets` / `GameObject.legal_targets`
+- ✅ multiple distinct target clauses on one source, cross-zone target pools,
+  targeting cards in graveyards (`'creature card in your graveyard'` etc.)
+- ✅ choice primitives: `Player.may()`, `.choose()`, `.choose_one()` (modal),
+  `.choose_number/color/card_type/creature_type/name()`
+
+**Still open:**
 
 | missing | example cards | scope |
 |---|---|---|
-| **"up to one/two/N target"** (optional targets) | Ephemeral Shields, Fungal Infection, most modern removal | medium |
-| **"any number of target"** | Fanning the Flames, Rolling Thunder | medium |
-| **Optional targeting / "you may"** on triggers and spells | Bogardan Lancer, Scrapper Champion, half of ETB creatures | medium |
+| **Optional targeting / "you may"** wired into the *translator* for ETB triggers | half of ETB creatures | small |
 | **Divide N damage/counters among targets** | Forked Bolt, Arc Trail, Rites of Reaping | medium |
-| **Multi-target with distinct effects** (already half-wired) | Gravitic Punch ("target creature deals dmg to target player") | medium |
-| **Choose from a list that isn't a game object** — colors, card types, names, numbers, modes | anything with "choose a color", "name a card" | medium |
-| **Modal spells** — "Choose one —", "Choose one or both —", escalate, entwine | Consign // Oblivion, Iona's Judgment-style, Repel the Darkness | large |
-| **Targeting cards in graveyard / exile / library / hand** as the actual target | every graveyard-recursion spell, Beacon Bolt | medium |
+| **Multi-target with distinct effects per clause** in the translator (engine supports it) | Gravitic Punch | medium |
+| **Modal spells** — "Choose one —", "one or both", escalate, entwine — engine has `choose_one`, translator doesn't emit modes yet | Consign // Oblivion | medium |
+| **Choosing a value and acting on it** — name a card / color / type then filter | Duress-likes | medium |
 
 ## 2. Casting — alternative & additional costs  *(~40 cards)*
 

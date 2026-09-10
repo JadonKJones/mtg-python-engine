@@ -41,12 +41,17 @@ class Play(gameobject.GameObject):
         if self.characteristics and name:
             self.characteristics.name = name
 
+        origin = None
         if not targets_chosen and card:
-            self.targets_chosen = card.targets_chosen
-            self.target_criterias = card.target_criterias
+            origin = card
         elif not targets_chosen and source:
-            self.targets_chosen = source.targets_chosen
-            self.target_criterias = source.target_criterias
+            origin = source
+        if origin is not None:
+            self.targets_chosen = origin.targets_chosen
+            self.target_criterias = origin.target_criterias
+            # (spec, obj) pairs recorded by utils.choose_targets, so resolution
+            # re-checks each target against the clause that actually chose it.
+            self._target_bindings = getattr(origin, '_target_bindings', None)
 
         if self.targets_chosen:
             self.target_timestamps = [t.timestamp for t in self.targets_chosen]
@@ -68,6 +73,30 @@ class Play(gameobject.GameObject):
             return True
         return False
 
+    def _still_legal(self):
+        """Per chosen target: still the same object (timestamp) AND still a
+        legal target for the clause that chose it."""
+        chosen = self.targets_chosen or []
+        stamps = getattr(self, 'target_timestamps', [None] * len(chosen))
+        bindings = getattr(self, '_target_bindings', None)
+        if bindings:
+            checks = [(spec.criteria, obj) for spec, obj in bindings]
+        else:
+            crits = self.target_criterias or []
+            checks = list(zip(crits, chosen))
+        out = []
+        for (crit, obj), stamp in zip(checks, stamps):
+            try:
+                ok = bool(crit(self, obj)) and obj.timestamp == stamp
+            except Exception:
+                ok = False
+            out.append(ok)
+        return out
+
+    @property
+    def legal_targets(self):
+        return [t for t, ok in zip(self.targets_chosen or [], self._still_legal()) if ok]
+
     def apply(self):
         fizzles = False
 
@@ -75,14 +104,12 @@ class Play(gameobject.GameObject):
             print("%r was countered" % self)
             fizzles = True
 
-        # check target validity by affirming that at least one timestamp is the same
-        # AND targets are still valid (e.g. still a creature)
-        # TODO: shroud/hexproof/protection
-        elif self.targets_chosen and not any([c(self, t) and t.timestamp == time for c, t, time in zip(self.target_criterias,
-                                           self.targets_chosen, self.target_timestamps)]):
+        # A targeted spell/ability fizzles only if EVERY target is now illegal
+        # (CR 608.2b). Partially-legal targeting still resolves; the effect code
+        # should act on ``self.legal_targets``.
+        elif self.targets_chosen and not any(self._still_legal()):
             print("All targets invalid. %r fizzles." % self)
             fizzles = True
-
 
         elif not self.apply_condition():
             print("Intervening-if for %r not satisfied" % self)
