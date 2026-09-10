@@ -211,6 +211,14 @@ def clause_to_code(cl, actor):
         return "%s.create_token('%s %s', %d)" % (actor, col, typ, cnt)
 
     # --- single-target clauses ---
+    m = re.fullmatch(r"~ deals (\d+) damage (?:divided (?:evenly )?among (.+)|to (.+))", low.replace("this creature", "~").replace("this spell", "~"))
+    if m:
+        target_group = m.group(2) or m.group(3)
+        if _dmg_target(target_group):
+            # If divided, it's a simplification in this engine
+            return ("TARGET", _dmg_target(target_group),
+                    "[t.take_damage(self, %d) for t in targets]" % int(m.group(1)))
+
     m = re.fullmatch(r"~ deals (\d+) damage to (.+)", low.replace("this creature", "~").replace("this spell", "~"))
     if m and _dmg_target(m.group(2)):
         return ("TARGET", _dmg_target(m.group(2)),
@@ -271,31 +279,28 @@ def clause_to_code(cl, actor):
 
     m = re.fullmatch(r"(.+) gains (.+) until end of turn", low)
     if m and _destroy_target(m.group(1)):
-        ab = m.group(2).title().replace(" ", "_")
-        return ("TARGET", _destroy_target(m.group(1)),
-                "[t.add_effect('gainAbility', %r, self, self.game.eot_time) for t in targets]" % ab)
+        abs_list = m.group(2).split(" and ")
+        abs_formatted = [ab.strip().title().replace(" ", "_") for ab in abs_list]
+        code = ", ".join(f"[t.add_effect('gainAbility', %r, self, self.game.eot_time) for t in targets]" % ab for ab in abs_formatted)
+        return ("TARGET", _destroy_target(m.group(1)), code)
 
     m = re.fullmatch(r"target (.+) gets ([+-]\d+)/([+-]\d+) and gains (.+) until end of turn", low)
     if m:
-        ab = m.group(4).title().replace(" ", "_")
-        return ("TARGET", "'creature'",
-                "[t.add_effect('modifyPT', (%d, %d), self, self.game.eot_time) for t in targets], [t.add_effect('gainAbility', %r, self, self.game.eot_time) for t in targets]" % (int(m.group(2)), int(m.group(3)), ab))
-
-    m = re.fullmatch(r"target (.+) gains (.+) and (.+) until end of turn", low)
-    if m:
-        ab1 = m.group(2).title().replace(" ", "_")
-        ab2 = m.group(3).title().replace(" ", "_")
-        return ("TARGET", "'creature'",
-                "[t.add_effect('gainAbility', %r, self, self.game.eot_time) for t in targets], [t.add_effect('gainAbility', %r, self, self.game.eot_time) for t in targets]" % (ab1, ab2))
+        abs_list = m.group(4).split(" and ")
+        abs_formatted = [ab.strip().title().replace(" ", "_") for ab in abs_list]
+        code = "[t.add_effect('modifyPT', (%d, %d), self, self.game.eot_time) for t in targets], " % (int(m.group(2)), int(m.group(3)))
+        code += ", ".join(f"[t.add_effect('gainAbility', %r, self, self.game.eot_time) for t in targets]" % ab for ab in abs_formatted)
+        return ("TARGET", "'creature'", code)
 
     m = re.fullmatch(r"put (\w+) \+1/\+1 counters? on target creature", low)
     if m and n(m.group(1)):
         return ("TARGET", "'creature'", "[t.add_counter('+1/+1', %d) for t in targets]" % n(m.group(1)))
     m = re.fullmatch(r"target creature gains ([\w ]+?) until end of turn", low)
     if m:
-        ab = m.group(1).replace("and ", "").strip().title().replace(" ", "_")
-        return ("TARGET", "'creature'",
-                "[t.add_effect('gainAbility', %r, self, self.game.eot_time) for t in targets]" % ab)
+        abs_list = m.group(1).split(" and ")
+        abs_formatted = [ab.strip().title().replace(" ", "_") for ab in abs_list]
+        code = ", ".join(f"[t.add_effect('gainAbility', %r, self, self.game.eot_time) for t in targets]" % ab for ab in abs_formatted)
+        return ("TARGET", "'creature'", code)
     return None
 
 

@@ -76,7 +76,8 @@ def choose_targets(source):
         min_targets = getattr(criteria, 'min_targets', 1)
         max_targets = getattr(criteria, 'max_targets', 1)
 
-        for i in range(max_targets if max_targets != float('inf') else 999):
+        limit = max_targets if max_targets != float('inf') else 999
+        for i in range(limit):
             card = None
             try:
                 while not card:
@@ -161,8 +162,9 @@ _TARGET_SHORTCUTS = {
 _WORD_NUM = {"one": 1, "two": 2, "three": 3, "four": 4,
              "five": 5, "six": 6, "seven": 7, "eight": 8, "ten": 10}
 
+import math
+
 def parse_targets(criterias):
-    import math
     for i, v in enumerate(criterias):
         if isinstance(v, str):
             min_t = 1

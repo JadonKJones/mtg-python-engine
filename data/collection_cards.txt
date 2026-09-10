@@ -401,15 +401,6 @@ Moment of Heroism
 
 
 ##############################
-Nature's Way
-
-	Targets:
-		'creature'
-
-	[t.add_effect('gainAbility', 'Vigilance', self, self.game.eot_time) for t in targets], [t.add_effect('gainAbility', 'Trample', self, self.game.eot_time) for t in targets]
-
-
-##############################
 Never Happened
 
 	None
