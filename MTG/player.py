@@ -36,6 +36,8 @@ class Player():
         self.autoOrderTriggers = True
         self.autoDiscard = False
 
+        self.poison = 0
+
         self.library = zone.Library(self, deck)
         for card in self.library:
             card.controller = self
@@ -239,7 +241,27 @@ class Player():
                                     print("error processing creature for convoke")
                                     pass
 
-                        can_pay = self.mana.canPay(cost) 
+                        if card.has_ability("Improvise"):
+                            untapped_artifacts = [
+                                a for a in self.battlefield
+                                if a.is_artifact and not a.status.tapped]
+                            if untapped_artifacts:
+                                print("Your artifacts: {}".format(untapped_artifacts))
+                                ans = self.make_choice(
+                                    "Which artifacts to tap for %s? (Improvise) " % card)
+                                for ind in str(ans).split():
+                                    try:
+                                        art = untapped_artifacts[int(ind)]
+                                    except (IndexError, ValueError):
+                                        continue
+                                    if art in creatures_to_tap or art.status.tapped:
+                                        continue
+                                    # each tapped artifact pays {1} generic only
+                                    if cost[mana.Mana.GENERIC] > 0:
+                                        cost[mana.Mana.GENERIC] -= 1
+                                        creatures_to_tap.append(art)
+
+                        can_pay = self.mana.canPay(cost)
 
                     if can_play and can_target and can_pay:
                         self.hand.remove(card)
@@ -289,6 +311,40 @@ class Player():
                         _play = card.activate_ability(nums[1])
                     else:
                         raise ResetGameException
+
+                # activate a from-hand ability -- 'c Cycling Card' / 'c 3'
+                # (cycling, bloodrush, ...). The card is discarded as a cost.
+                elif answer[:2] == 'c ':
+                    try:
+                        card = self.hand[int(answer[2:])]
+                    except (ValueError, IndexError):
+                        card = self.hand.get_card_by_name(answer[2:])
+                    if not card or not getattr(card, 'hand_abilities', None):
+                        print("No from-hand ability there.\n")
+                        continue
+                    mana_cost, effect, tspecs = card.hand_abilities[0]
+                    if tspecs is not None:
+                        card.target_criterias = tspecs
+                        card.target_prompts = ["Choose a target\n"] * len(tspecs)
+                        if not card.targets():
+                            print("No legal target.\n")
+                            continue
+                    else:
+                        card.target_criterias = None
+                    can_pay = self.mana.canPay(mana_cost) if mana_cost else True
+                    if can_pay is False:
+                        print("Cannot pay for the from-hand ability.\n")
+                        continue
+                    if mana_cost:
+                        self.mana.pay(can_pay)
+                    self.hand.remove(card)
+                    self.graveyard.add(card)   # discard cost
+                    _code = effect
+                    _play = play.Play(
+                        (lambda c=card, code=_code: eval(
+                            code, {"self": c, "targets": c.targets_chosen,
+                                   "mana": mana})),
+                        card=card, name="%s (from hand)" % card)
 
                 # skip priority until something happens / certain step
                 elif answer[:2] == 's ':
@@ -641,6 +697,23 @@ class Player():
         self.library.elements = bottom + self.library.elements + list(reversed(keep))
         return True
 
+    def surveil(self, num=1):
+        """Look at the top `num` cards; put any into your graveyard, rest back
+        on top in any order. Minimal implementation: keep-on-top or to-graveyard."""
+        num = min(num, len(self.library))
+        if num <= 0:
+            return True
+        top = self.library.elements[-num:]
+        del self.library.elements[-num:]
+        keep, grave = [], []
+        for card in reversed(top):
+            ans = self.make_choice("Surveil: keep %r on top? (yes/no)" % card)
+            (keep if str(ans).strip().lower() in ("", "y", "yes") else grave).append(card)
+        self.library.elements = self.library.elements + list(reversed(keep))
+        for card in grave:
+            self.graveyard.add(card)
+        return True
+
     def create_token(self, attributes, num=1, keyword_abilities=[], activated_abilities=[]):
         token.create_token(attributes, self, num, keyword_abilities, activated_abilities)
 
@@ -738,7 +811,14 @@ class Player():
     def take_damage(self, source, dmg, is_combat=False):
         # trigger
         print("{} takes {} damage from {}\n".format(self, dmg, source))
-        self.life -= dmg
+        # Infect: damage to players is dealt as poison counters instead.
+        if dmg > 0 and source is not None and getattr(source, "has_ability", None) \
+                and source.has_ability("Infect"):
+            self.poison += dmg
+        else:
+            self.life -= dmg
+        if dmg > 0:
+            self.turn_events['damaged'] = (self.turn_events['damaged'] or 0) + dmg
 
     def gain_life(self, amount):
         self.trigger(triggers.triggerConditions.onControllerLifeGain, amount=amount)

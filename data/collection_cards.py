@@ -47,7 +47,7 @@ class c9198126280(card.Card):
 class c9744126460(card.Card):
     "Wind-Kin Raiders"
     def __init__(self):
-        super(c9744126460, self).__init__(gameobject.Characteristics(**{'name': 'Wind-Kin Raiders', 'text': "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nFlying", 'color': ['U'], 'mana_cost': '4UU', 'power': 4, 'toughness': 3, 'subtype': ['Human', 'Artificer']}, supertype=[], types=[cardtype.CardType.CREATURE], abilities=[static_abilities.StaticAbilities.Flying]))
+        super(c9744126460, self).__init__(gameobject.Characteristics(**{'name': 'Wind-Kin Raiders', 'text': "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nFlying", 'color': ['U'], 'mana_cost': '4UU', 'power': 4, 'toughness': 3, 'subtype': ['Human', 'Artificer']}, supertype=[], types=[cardtype.CardType.CREATURE], abilities=[static_abilities.StaticAbilities.Flying, static_abilities.StaticAbilities.Improvise]))
 
 class c240098(card.Card):
     "Wildwood Geist"
@@ -472,7 +472,7 @@ class c452866(card.Card):
 class c423739(card.Card):
     "Sly Requisitioner"
     def __init__(self):
-        super(c423739, self).__init__(gameobject.Characteristics(**{'name': 'Sly Requisitioner', 'text': "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nWhenever a nontoken artifact you control is put into a graveyard from the battlefield, create a 1/1 colorless Servo artifact creature token.", 'color': ['B'], 'mana_cost': '4B', 'power': 2, 'toughness': 2, 'subtype': ['Human', 'Artificer']}, supertype=[], types=[cardtype.CardType.CREATURE], abilities=[]))
+        super(c423739, self).__init__(gameobject.Characteristics(**{'name': 'Sly Requisitioner', 'text': "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nWhenever a nontoken artifact you control is put into a graveyard from the battlefield, create a 1/1 colorless Servo artifact creature token.", 'color': ['B'], 'mana_cost': '4B', 'power': 2, 'toughness': 2, 'subtype': ['Human', 'Artificer']}, supertype=[], types=[cardtype.CardType.CREATURE], abilities=[static_abilities.StaticAbilities.Improvise]))
 
 class c425962(card.Card):
     "Slime Molding"
@@ -537,7 +537,7 @@ class c469865(card.Card):
 class c217994(card.Card):
     "Shriek Raptor"
     def __init__(self):
-        super(c217994, self).__init__(gameobject.Characteristics(**{'name': 'Shriek Raptor', 'text': 'Flying\nInfect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)', 'color': ['W'], 'mana_cost': '3WW', 'power': 2, 'toughness': 3, 'subtype': ['Phyrexian', 'Bird']}, supertype=[], types=[cardtype.CardType.CREATURE], abilities=[static_abilities.StaticAbilities.Flying]))
+        super(c217994, self).__init__(gameobject.Characteristics(**{'name': 'Shriek Raptor', 'text': 'Flying\nInfect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)', 'color': ['W'], 'mana_cost': '3WW', 'power': 2, 'toughness': 3, 'subtype': ['Phyrexian', 'Bird']}, supertype=[], types=[cardtype.CardType.CREATURE], abilities=[static_abilities.StaticAbilities.Flying, static_abilities.StaticAbilities.Infect]))
 
 class c9868402489(card.Card):
     "Shipwreck Singer"
@@ -827,7 +827,7 @@ class c366296(card.Card):
 class c213814(card.Card):
     "Priests of Norn"
     def __init__(self):
-        super(c213814, self).__init__(gameobject.Characteristics(**{'name': 'Priests of Norn', 'text': 'Vigilance\nInfect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)', 'color': ['W'], 'mana_cost': '2W', 'power': 1, 'toughness': 4, 'subtype': ['Phyrexian', 'Cleric']}, supertype=[], types=[cardtype.CardType.CREATURE], abilities=[static_abilities.StaticAbilities.Vigilance]))
+        super(c213814, self).__init__(gameobject.Characteristics(**{'name': 'Priests of Norn', 'text': 'Vigilance\nInfect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)', 'color': ['W'], 'mana_cost': '2W', 'power': 1, 'toughness': 4, 'subtype': ['Phyrexian', 'Cleric']}, supertype=[], types=[cardtype.CardType.CREATURE], abilities=[static_abilities.StaticAbilities.Vigilance, static_abilities.StaticAbilities.Infect]))
 
 class c452833(card.Card):
     "Price of Fame"
@@ -1087,7 +1087,7 @@ class c9708910649(card.Card):
 class c9716126448(card.Card):
     "Maverick Thopterist"
     def __init__(self):
-        super(c9716126448, self).__init__(gameobject.Characteristics(**{'name': 'Maverick Thopterist', 'text': "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nWhen this creature enters, create two 1/1 colorless Thopter artifact creature tokens with flying.", 'color': ['R', 'U'], 'mana_cost': '3UR', 'power': 2, 'toughness': 2, 'subtype': ['Human', 'Artificer']}, supertype=[], types=[cardtype.CardType.CREATURE], abilities=[]))
+        super(c9716126448, self).__init__(gameobject.Characteristics(**{'name': 'Maverick Thopterist', 'text': "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nWhen this creature enters, create two 1/1 colorless Thopter artifact creature tokens with flying.", 'color': ['R', 'U'], 'mana_cost': '3UR', 'power': 2, 'toughness': 2, 'subtype': ['Human', 'Artificer']}, supertype=[], types=[cardtype.CardType.CREATURE], abilities=[static_abilities.StaticAbilities.Improvise]))
 
 class c423782(card.Card):
     "Maulfist Revolutionary"
@@ -1132,7 +1132,7 @@ class c9501367949(card.Card):
 class c218053(card.Card):
     "Lost Leonin"
     def __init__(self):
-        super(c218053, self).__init__(gameobject.Characteristics(**{'name': 'Lost Leonin', 'text': 'Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)', 'color': ['W'], 'mana_cost': '1W', 'power': 2, 'toughness': 1, 'subtype': ['Phyrexian', 'Cat', 'Soldier']}, supertype=[], types=[cardtype.CardType.CREATURE], abilities=[]))
+        super(c218053, self).__init__(gameobject.Characteristics(**{'name': 'Lost Leonin', 'text': 'Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)', 'color': ['W'], 'mana_cost': '1W', 'power': 2, 'toughness': 1, 'subtype': ['Phyrexian', 'Cat', 'Soldier']}, supertype=[], types=[cardtype.CardType.CREATURE], abilities=[static_abilities.StaticAbilities.Infect]))
 
 class c289218(card.Card):
     "Lobber Crew"
@@ -1772,7 +1772,7 @@ class c373724(card.Card):
 class c423747(card.Card):
     "Enraged Giant"
     def __init__(self):
-        super(c423747, self).__init__(gameobject.Characteristics(**{'name': 'Enraged Giant', 'text': "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nTrample, haste", 'color': ['R'], 'mana_cost': '5R', 'power': 4, 'toughness': 4, 'subtype': ['Giant']}, supertype=[], types=[cardtype.CardType.CREATURE], abilities=[static_abilities.StaticAbilities.Haste, static_abilities.StaticAbilities.Trample]))
+        super(c423747, self).__init__(gameobject.Characteristics(**{'name': 'Enraged Giant', 'text': "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nTrample, haste", 'color': ['R'], 'mana_cost': '5R', 'power': 4, 'toughness': 4, 'subtype': ['Giant']}, supertype=[], types=[cardtype.CardType.CREATURE], abilities=[static_abilities.StaticAbilities.Improvise, static_abilities.StaticAbilities.Haste, static_abilities.StaticAbilities.Trample]))
 
 class c452790(card.Card):
     "Enhanced Surveillance"
@@ -1932,7 +1932,7 @@ class c452914(card.Card):
 class c205477(card.Card):
     "Cystbearer"
     def __init__(self):
-        super(c205477, self).__init__(gameobject.Characteristics(**{'name': 'Cystbearer', 'text': 'Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)', 'color': ['G'], 'mana_cost': '2G', 'power': 2, 'toughness': 3, 'subtype': ['Phyrexian', 'Beast']}, supertype=[], types=[cardtype.CardType.CREATURE], abilities=[]))
+        super(c205477, self).__init__(gameobject.Characteristics(**{'name': 'Cystbearer', 'text': 'Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)', 'color': ['G'], 'mana_cost': '2G', 'power': 2, 'toughness': 3, 'subtype': ['Phyrexian', 'Beast']}, supertype=[], types=[cardtype.CardType.CREATURE], abilities=[static_abilities.StaticAbilities.Infect]))
 
 class c430858(card.Card):
     "Crypt of the Eternals"
@@ -2167,7 +2167,7 @@ class c289222(card.Card):
 class c213820(card.Card):
     "Blightwidow"
     def __init__(self):
-        super(c213820, self).__init__(gameobject.Characteristics(**{'name': 'Blightwidow', 'text': 'Reach (This creature can block creatures with flying.)\nInfect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)', 'color': ['G'], 'mana_cost': '3G', 'power': 2, 'toughness': 4, 'subtype': ['Phyrexian', 'Spider']}, supertype=[], types=[cardtype.CardType.CREATURE], abilities=[static_abilities.StaticAbilities.Reach]))
+        super(c213820, self).__init__(gameobject.Characteristics(**{'name': 'Blightwidow', 'text': 'Reach (This creature can block creatures with flying.)\nInfect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)', 'color': ['G'], 'mana_cost': '3G', 'power': 2, 'toughness': 4, 'subtype': ['Phyrexian', 'Spider']}, supertype=[], types=[cardtype.CardType.CREATURE], abilities=[static_abilities.StaticAbilities.Reach, static_abilities.StaticAbilities.Infect]))
 
 class c567698(card.Card):
     "Blighted Woodland"

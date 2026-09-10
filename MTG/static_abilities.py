@@ -26,5 +26,7 @@ class StaticAbilities(Enum):
 
     # TODO: protection
 
+    Infect = 22
 
     Convoke = 30
+    Improvise = 31

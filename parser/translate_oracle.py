@@ -74,6 +74,8 @@ _CORE = {
     "blocking creature": "blocking creature",
     "attacking or blocking creature": "attacking or blocking creature",
     "creature you control": "your creature",
+    "creature an opponent controls": "opponent creature",
+    "creature you don't control": "opponent creature",
     "card in your graveyard": "card in your graveyard",
     "creature card in your graveyard": "creature card in your graveyard",
     "artifact card in your graveyard": "artifact card in your graveyard",
@@ -140,11 +142,27 @@ def clause_to_code(cl, actor):
     m = re.fullmatch(r"(?:you )?scry (\w+)", low)
     if m and n(m.group(1)):
         return "%s.scry(%d)" % (actor, n(m.group(1)))
+    m = re.fullmatch(r"(?:you )?surveil (\w+)", low)
+    if m and n(m.group(1)):
+        return "%s.surveil(%d)" % (actor, n(m.group(1)))
+    m = re.fullmatch(r"add ((?:\{[wubrgc]\})+)", low)
+    if m:
+        from collections import Counter as _C
+        syms = re.findall(r"\{([wubrgc])\}", m.group(1))
+        return ", ".join("%s.mana.add(mana.Mana.%s, %d)" % (actor, _COLOR[s.upper()], k)
+                         for s, k in _C(syms).items())
+    m = re.fullmatch(r"~ gets ([+-]\d+)/([+-]\d+) until end of turn", low)
+    if m:
+        return "self.card.add_effect('modifyPT', (%d, %d), self, self.game.eot_time)" % (
+            int(m.group(1)), int(m.group(2)))
+    m = re.fullmatch(r"~ gains? (.+?) until end of turn", low)
+    if m:
+        abs_ = [a.strip().title().replace(" ", "_") for a in re.split(r",| and ", m.group(1)) if a.strip()]
+        return ", ".join("self.card.add_effect('gainAbility', %r, self, self.game.eot_time)" % a
+                         for a in abs_)
     m = re.fullmatch(r"(?:target opponent|each opponent) discards (\w+) cards?", low)
     if m and n(m.group(1)):
         return "%s.opponent.discard(%d, rand=True)" % (actor, n(m.group(1)))
-    if re.fullmatch(r"(?:target opponent|each opponent) reveals their hand", low):
-        return "None"  # informational; safe no-op
     m = re.fullmatch(r"(?:you )?create (\w+) (\d+/\d+) (white|blue|black|red|green|colorless) ([\w ]+?) (?:creature )?tokens?"
                      r"(?: with [\w, ]+)?", low)
     if m:
@@ -233,6 +251,165 @@ def sentences(body):
     return [p.strip() for p in parts if p.strip()]
 
 
+def _kw_extras(card, body, is_creature, is_spell):
+    """Named keyword mechanics -> engine DSL fragments.
+
+    Returns (triggers, abilities, statics, effects, target, matched, total).
+    `matched`/`total` feed the implemented/partial classification.
+    """
+    kws = {k.lower() for k in card.get("keywords", [])}
+    low = body.lower()
+    triggers, abilities, statics, effects = [], [], [], []
+    target = None
+    matched = total = 0
+    G_CREATURES = ("len([_c for _c in self.card.controller.graveyard if _c.is_creature])")
+
+    # --- Mentor: on attack, +1/+1 counter on a lesser-power attacking creature ---
+    if "mentor" in kws and is_creature:
+        total += 1
+        triggers.append((
+            "onAttack",
+            "[t.add_counter('+1/+1') for t in self.legal_targets]",
+            "p.is_creature and p.status.is_attacking "
+            "and p is not self.card and p.power < self.card.power",
+        ))
+        matched += 1
+
+    # --- Evolve: bigger creature ETB -> +1/+1 counter on this ---
+    if "evolve" in kws and is_creature:
+        total += 1
+        triggers.append((
+            "onControllerCreatureEtB",
+            "self.card.add_counter('+1/+1')",
+            None,
+            None,
+            "self.trigger_source is not self.card and (self.trigger_source.power > self.card.power "
+            "or self.trigger_source.toughness > self.card.toughness)",
+        ))
+        matched += 1
+
+    # --- Unleash: may ETB with a +1/+1 counter; can't block while it has one ---
+    if "unleash" in kws and is_creature:
+        total += 1
+        triggers.append((
+            "onEtB",
+            "self.card.add_counter('+1/+1') if self.card.controller.may"
+            "('Have ~ enter with a +1/+1 counter (Unleash)?') else None",
+        ))
+        statics.append(("'self'", '"cantBlock"', "True",
+                        "lambda eff: eff.apply_target.num_counters('+1/+1') > 0"))
+        matched += 1
+
+    # --- Bloodthirst N: ETB with N +1/+1 counters if an opponent took damage this turn ---
+    m = re.search(r"bloodthirst (\d+)", low)
+    if m and is_creature:
+        total += 1
+        triggers.append((
+            "onEtB",
+            "self.card.add_counter('+1/+1', %s)" % m.group(1),
+            None, None,
+            "bool(self.card.controller.opponent.turn_events['damaged'])",
+        ))
+        matched += 1
+
+    # --- Undergrowth: ETB with a +1/+1 counter per creature card in your graveyard ---
+    if "undergrowth" in kws and is_creature and re.search(
+            r"enters?.*\+1/\+1 counter.*for each creature card in your graveyard", low):
+        total += 1
+        triggers.append((
+            "onEtB", "self.card.add_counter('+1/+1', %s)" % G_CREATURES))
+        matched += 1
+
+    # --- Metalcraft: static self bonus while you control 3+ artifacts ---
+    if "metalcraft" in kws and is_creature:
+        total += 1
+        mm = re.search(r"metalcraft\s*[—-]\s*(.+?)(?:\.|$)", body, re.I)
+        got = False
+        if mm:
+            pump = re.search(r"gets \+(\d+)/\+(\d+)", mm.group(1))
+            fly = "flying" in mm.group(1).lower()
+            tog = ("lambda eff: len([_a for _a in eff.apply_target.controller.battlefield "
+                   "if _a.is_artifact]) >= 3")
+            if pump:
+                statics.append(("'self'", '"modifyPT"',
+                                "(%d, %d)" % (int(pump.group(1)), int(pump.group(2))), tog))
+                got = True
+            if fly:
+                statics.append(("'self'", '"gainAbility"', "'Flying'", tog))
+                got = True
+        if got:
+            matched += 1
+
+    # --- Fateful hour: static self bonus while you have 5 or less life ---
+    if "fateful hour" in kws and is_creature:
+        total += 1
+        mm = re.search(r"fateful hour\s*[—-]\s*(.+?)(?:\.|$)", body, re.I)
+        if mm:
+            pump = re.search(r"gets \+(\d+)/\+(\d+)", mm.group(1))
+            tog = "lambda eff: eff.apply_target.controller.life <= 5"
+            if pump:
+                statics.append(("'self'", '"modifyPT"',
+                                "(%d, %d)" % (int(pump.group(1)), int(pump.group(2))), tog))
+                matched += 1
+
+    # --- Morbid: ETB with N +1/+1 counters if a creature died this turn ---
+    m = re.search(r"morbid\s*[—-]\s*~ enters with (\w+) \+1/\+1 counters?"
+                  r".*if a creature died this turn", body, re.I | re.S)
+    if m and n(m.group(1)) and is_creature:
+        total += 1
+        triggers.append(("onEtB", "self.card.add_counter('+1/+1', %d)" % n(m.group(1)),
+                         None, None, "bool(self.card.controller.turn_events['creature_died'])"))
+        matched += 1
+
+    # --- Battalion: on attack with 2+ other creatures ---
+    if "battalion" in kws and is_creature:
+        total += 1
+        mm = re.search(r"battalion\s*[—-]\s*whenever ~ and at least two other creatures attack,?\s*(.+?)(?:\.|$)",
+                       body, re.I)
+        inner = clause_to_code(mm.group(1), "self.card.controller") if mm else None
+        if isinstance(inner, str):
+            triggers.append((
+                "onAttack", inner, None,
+                "len([_c for _c in self.card.controller.battlefield "
+                "if _c.is_creature and _c.status.is_attacking]) >= 3"))
+            matched += 1
+        elif isinstance(inner, tuple):
+            _, crit, per = inner
+            triggers.append((
+                "onAttack", "[%s for t in self.legal_targets]" % per, crit,
+                "len([_c for _c in self.card.controller.battlefield "
+                "if _c.is_creature and _c.status.is_attacking]) >= 3"))
+            matched += 1
+
+    # --- Revolt / Morbid / Raid: a leading condition on an ETB clause ---
+    COND = {
+        "revolt": "bool(self.card.controller.turn_events['permanent_left'])",
+        "morbid": "bool(self.card.controller.turn_events['creature_died'])",
+        "raid": "bool(self.card.controller.turn_events['attacked'])",
+    }
+    for kw, cond in COND.items():
+        if kw not in kws:
+            continue
+        mm = re.search(kw + r"\s*[—-]\s*when ~ enters(?: the battlefield)?,\s*(.+?)\.\s*$",
+                       body, re.I | re.S)
+        if not mm:
+            continue
+        total += 1
+        inner = mm.group(1)
+        inner = re.sub(r"^if [\w' ]+ this turn,\s*", "", inner, flags=re.I)
+        inner = clause_to_code(inner, "self.card.controller")
+        if isinstance(inner, str):
+            triggers.append(("onEtB", inner, None, None, cond))
+            matched += 1
+        elif isinstance(inner, tuple):
+            _, crit, per = inner
+            triggers.append(("onEtB", "[%s for t in self.legal_targets]" % per,
+                             crit, None, cond))
+            matched += 1
+
+    return triggers, abilities, statics, effects, target, matched, total
+
+
 def translate(card):
     c = face(card)
     name = card["name"].split(" // ")[0]
@@ -247,20 +424,36 @@ def translate(card):
 
     body = re.sub(re.escape(name), "~", text)
     body = re.sub(r"\s*\([^)]*\)", "", body).strip()
+    # "this creature" / "this permanent" / ... also refers to the card itself
+    body = re.sub(r"\bthis (creature|permanent|artifact|enchantment|land|spell)\b",
+                  "~", body, flags=re.I)
 
     kws = {k.lower() for k in card.get("keywords", [])}
     lines = [l for l in body.split("\n") if l.strip()]
-    if lines and all(
+    keyword_only = bool(lines) and all(
         all(w.strip(",").lower() in kws or w.strip(",").lower() in
             {"first", "double", "strike", "and"}
             for w in re.split(r"[ ,]+", l.strip()) if w)
         for l in lines
-    ):
-        return None, "keyword", "keyword abilities only"
+    )
 
     targets, effects, triggers, abilities, statics, auras = [], [], [], [], [], []
     matched = 0
     total = 0
+
+    # named keyword mechanics run even for "keyword-only" cards (Unleash, etc.)
+    k_tr, k_ab, k_st, k_ef, k_tg, k_m, k_t = _kw_extras(card, body, is_creature, is_spell)
+    triggers += k_tr
+    abilities += k_ab
+    statics += k_st
+    effects += k_ef
+    if k_tg:
+        targets = [k_tg]
+    matched += k_m
+    total += k_t
+
+    if keyword_only and not (triggers or abilities or statics or effects):
+        return None, "keyword", "keyword abilities only"
 
     # ---- lands that enter tapped ----
     if "Land" in tl and re.search(r"~ enters(?: the battlefield)? tapped", body):
@@ -281,7 +474,7 @@ def translate(card):
         code = clause_to_code(eff_raw, "self.controller")
         if code is None and re.fullmatch(r"add (?:\{[WUBRGC]\})+", eff_raw.lower()):
             syms = re.findall(r"\{([WUBRGC])\}", eff_raw)
-            code = "; ".join("self.controller.mana.add(mana.Mana.%s, %d)" % (_COLOR[s], k)
+            code = ", ".join("self.controller.mana.add(mana.Mana.%s, %d)" % (_COLOR[s], k)
                              for s, k in Counter(syms).items())
         elif code is None and re.fullmatch(r"add one mana of any color", eff_raw.lower()):
             code = "self.controller.mana.add(mana.Mana.COLORLESS, 1)"
@@ -337,6 +530,18 @@ def translate(card):
                             "lambda eff: eff.apply_target.is_creature and "
                             "eff.apply_target.controller != eff.source.controller"))
         matched += 1
+
+    # ---- Fight (spell): two creatures deal damage equal to power to each other ----
+    if is_spell and re.search(
+            r"target creature you control fights target creature you don't control", body, re.I):
+        total += 1
+        targets = ["'target your creature'", "'target opponent creature'"]
+        effects = ["(targets[0].deals_damage(targets[1], targets[0].power), "
+                   "targets[1].deals_damage(targets[0], targets[1].power)) "
+                   "if len(targets) == 2 and all(is_legal_target) else None"]
+        matched += 1
+        block = _emit(name, targets, effects, abilities, triggers, statics, auras)
+        return block, ("implemented" if matched >= total else "partial"), "fight"
 
     # ---- spell body (instant / sorcery) ----
     if is_spell:
@@ -419,9 +624,19 @@ def _emit(name, targets, effects, abilities, triggers, statics, auras):
         out.append("")
     if triggers:
         out.append("\tTriggers:")
-        for cond, eff, crit in triggers:
+        for trig in triggers:
+            cond, eff = trig[0], trig[1]
+            crit = trig[2] if len(trig) > 2 else None
+            cond_on = trig[3] if len(trig) > 3 else None
+            iff = trig[4] if len(trig) > 4 else None
             out.append("\t\t%s" % cond)
             out.append("\t\t\t%s" % eff)
+            if cond_on:
+                out.append("\t\t\t\tConditioned On:")
+                out.append("\t\t\t\t\t%s" % cond_on)
+            if iff:
+                out.append("\t\t\t\tIf:")
+                out.append("\t\t\t\t\t%s" % iff)
             if crit:
                 out.append("\t\t\t\tTargets:")
                 out.append("\t\t\t\t\t%s" % crit)
@@ -457,18 +672,69 @@ def _emit(name, targets, effects, abilities, triggers, statics, auras):
     return "\n".join(out) + "\n"
 
 
+_LANDCYCLE = {"plains": "Plains", "island": "Island", "swamp": "Swamp",
+              "mountain": "Mountain", "forest": "Forest"}
+
+
+def hand_abilities(card):
+    """From-hand activated abilities (cycling, bloodrush) -> HAND_ABILITIES rows.
+
+    Each row: (card_name, mana_cost_str, effect_code, target_spec_list_or_None)."""
+    c = face(card)
+    name = card["name"].split(" // ")[0]
+    text = (c.get("oracle_text") or "")
+    body = re.sub(r"\s*\([^)]*\)", "", text)
+    rows = []
+
+    # Bloodrush -- "{cost}, Discard ~: Target attacking creature gets +X/+Y ..."
+    m = re.search(r"bloodrush\s*[—-]\s*\{?([WUBRGC0-9}{ ]+?)\}?,?\s*discard [\w~' ]+:\s*"
+                  r"target attacking creature gets \+(\d+)/\+(\d+)", body, re.I)
+    if m:
+        cost = m.group(1).replace("{", "").replace("}", "").replace(" ", "")
+        eff = ("[t.add_effect('modifyPT', (%d, %d), self, self.game.eot_time) "
+               "for t in self.legal_targets]" % (int(m.group(2)), int(m.group(3))))
+        rows.append((name, cost, eff, ["'target attacking creature'"]))
+        return rows
+
+    # Landcycling / <type>cycling {cost}
+    m = re.search(r"(\w+)cycling \{?([WUBRGC0-9}{ ]+?)\}?(?:\.|\n|$)", body, re.I)
+    if m and m.group(1).lower() in _LANDCYCLE:
+        land = _LANDCYCLE[m.group(1).lower()]
+        cost = m.group(2).replace("{", "").replace("}", "").replace(" ", "")
+        eff = ("self.controller.search_lib(lambda _c: _c.is_land and "
+               "_c.has_subtype(%r))" % land)
+        rows.append((name, cost, eff, None))
+        return rows
+
+    # plain Cycling {cost}
+    m = re.search(r"cycling \{?([WUBRGC0-9}{ ]+?)\}?(?:\.|\n|$)", body, re.I)
+    if m:
+        cost = m.group(1).replace("{", "").replace("}", "").replace(" ", "")
+        rows.append((name, cost, "self.controller.draw(1)", None))
+    return rows
+
+
 def run():
     cards = sorted(json.load(open(IN)), key=lambda c: c["name"])
     blocks = ["# AUTO-GENERATED by parser/translate_oracle.py -- do not hand-edit.\n"
               "# Regenerate: python -m parser.parse_scryfall && python -m parser.translate_oracle\n"]
     cats = Counter()
     rows = []
+    hand_rows = []
     for c in cards:
         block, cat, note = translate(c)
         cats[cat] += 1
         rows.append((c["name"], cat, note))
         if block:
             blocks.append(block)
+        hand_rows.extend(hand_abilities(c))
+
+    with open("data/collection_hand_abilities.py", "w") as f:
+        f.write("# AUTO-GENERATED by parser/translate_oracle.py -- do not hand-edit.\n")
+        f.write("HAND_ABILITIES = [\n")
+        for r in hand_rows:
+            f.write("    %r,\n" % (r,))
+        f.write("]\n")
 
     with open(OUT_TXT, "w") as f:
         f.write("\n".join(blocks))

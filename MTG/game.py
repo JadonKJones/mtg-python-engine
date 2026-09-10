@@ -131,6 +131,8 @@ class Game(object):
         for _player in self.players_list:
             if _player.life <= 0:
                 _player.lose()
+            if getattr(_player, 'poison', 0) >= 10:
+                _player.lose()
             if _player.lost:  # TODO: PROBLEM with multiplayer -- maybe skip over rest of turn / destroy all cards owned by that player?
                 any_action()
                 self.players_list.remove(_player)

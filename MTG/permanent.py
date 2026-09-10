@@ -434,10 +434,15 @@ class Permanent(gameobject.GameObject):
                 # TODO: other blocking restrictions (e.g. can't block alone)
                 pass
 
+        # "can't block" (Unleash, Goblin War Drums, ...)
+        if self.get_effect('cantBlock'):
+            return False
+
         return self.is_creature and not self.status.tapped
 
     def attacks(self, player):
         self.trigger("onAttack", player)
+        self.controller.turn_events['attacked'] = True
         self.status.is_attacking = player
         if not self.has_ability("Vigilance"):
             self.tap()
@@ -473,8 +478,13 @@ class Permanent(gameobject.GameObject):
         if is_combat:
             self.trigger('onTakeCombatDamage', source, dmg)
 
-        self.status.damage_taken += dmg
-        print("{} takes {} damage from {}\n".format(self, dmg, source))
+        # Infect: damage to creatures is dealt as -1/-1 counters instead.
+        if dmg > 0 and source is not None and source.has_ability("Infect"):
+            self.add_counter("-1/-1", dmg)
+            print("{} gets {} -1/-1 counter(s) from {} (infect)\n".format(self, dmg, source))
+        else:
+            self.status.damage_taken += dmg
+            print("{} takes {} damage from {}\n".format(self, dmg, source))
         if source and source.has_ability("Deathtouch"):
             self.destroy()
         # pdb.set_trace()
@@ -520,7 +530,7 @@ class Permanent(gameobject.GameObject):
                 if is_combat:
                     self.trigger('onCombatDamageToPlayers', target, dmg)
             else:
-                self.trigger('onDealDamageToCreature', target, dmg)
+                self.trigger('onDealDamageToCreatures', target, dmg)
                 if is_combat:
                     self.trigger('onCombatDamageToCreatures', target, dmg)
             target.take_damage(self, dmg, is_combat)
@@ -555,6 +565,11 @@ class Permanent(gameobject.GameObject):
         for aura in self.auras[:]:
             aura.disenchant()
 
+        # Revolt: "a permanent you controlled left the battlefield this turn"
+        if (self.zone is not None and getattr(self.zone, 'is_battlefield', False)
+                and target_zone is not self.zone and self.controller is not None):
+            self.controller.turn_events['permanent_left'] = True
+
         return super(Permanent, self).change_zone(target_zone, from_top, shuffle, status_mod, modi_func)
 
     def dies(self):
@@ -564,6 +579,8 @@ class Permanent(gameobject.GameObject):
         # e.g. change zones
         # yet still remember last known states
         self.trigger('onDeath')
+        if self.is_creature:
+            self.controller.turn_events['creature_died'] = True
         print("{} has died\n".format(self))
         return self.change_zone(self.owner.graveyard)
 

@@ -13,6 +13,9 @@ class Card(gameobject.GameObject):
     triggers = {}
 
     activated_abilities = []
+    # from-hand activated abilities (cycling, bloodrush, ...):
+    # list of (mana_cost_str, effect_code_str, target_spec_list_or_None)
+    hand_abilities = []
 
     static_effects = []
     continuous_effects = ''

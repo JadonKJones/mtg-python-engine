@@ -186,7 +186,11 @@ class GameObject():
                 return True
 
         ability = ability.replace(' ', '_')
-        return static_abilities.StaticAbilities[ability] in self.characteristics.abilities
+        try:
+            member = static_abilities.StaticAbilities[ability]
+        except KeyError:
+            return False  # not a keyword this engine models
+        return member in self.characteristics.abilities
 
     def share_color(self, other):
         return bool(set(self.characteristics.color) & set(other.characteristics.color))

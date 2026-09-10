@@ -2,6 +2,17 @@
 # Regenerate: python -m parser.parse_scryfall && python -m parser.translate_oracle
 
 ##############################
+Adventurer's Inn
+
+	Abilities:
+		T: self.controller.mana.add(mana.Mana.COLORLESS, 1)
+
+	Triggers:
+		onEtB
+			self.controller.gain_life(2)
+
+
+##############################
 Aerial Modification
 
 	Aura:
@@ -12,6 +23,16 @@ Aerial Modification
 
 
 ##############################
+Aether Adept
+
+	Triggers:
+		onEtB
+			[t.bounce() for t in self.legal_targets]
+				Targets:
+					'target creature'
+
+
+##############################
 Aether Meltdown
 
 	Aura:
@@ -19,6 +40,16 @@ Aether Meltdown
 			'creature'
 
 		self.add_pt((-4, 0))
+
+
+##############################
+Airdrop Aeronauts
+
+	Triggers:
+		onEtB
+			self.card.controller.gain_life(5)
+				If:
+					bool(self.card.controller.turn_events['permanent_left'])
 
 
 ##############################
@@ -68,6 +99,56 @@ Artisan's Sorrow
 
 
 ##############################
+Auriok Sunchaser
+
+	StaticEffects:
+		'self'
+			"modifyPT"
+			(2, 2)
+			lambda eff: len([_a for _a in eff.apply_target.controller.battlefield if _a.is_artifact]) >= 3
+		'self'
+			"gainAbility"
+			'Flying'
+			lambda eff: len([_a for _a in eff.apply_target.controller.battlefield if _a.is_artifact]) >= 3
+
+
+##############################
+Balamb T-Rexaur
+
+	Triggers:
+		onEtB
+			self.controller.gain_life(3)
+
+
+##############################
+Barging Sergeant
+
+	Triggers:
+		onAttack
+			[t.add_counter('+1/+1') for t in self.legal_targets]
+				Targets:
+					p.is_creature and p.status.is_attacking and p is not self.card and p.power < self.card.power
+
+
+##############################
+Barrier of Bones
+
+	Triggers:
+		onEtB
+			self.controller.surveil(1)
+
+
+##############################
+Batterhorn
+
+	Triggers:
+		onEtB
+			[t.destroy() for t in self.legal_targets]
+				Targets:
+					'target artifact'
+
+
+##############################
 Battlewise Valor
 
 	Targets:
@@ -78,10 +159,82 @@ Battlewise Valor
 
 
 ##############################
+Bellows Lizard
+
+	Abilities:
+		1R: self.card.add_effect('modifyPT', (1, 0), self, self.game.eot_time)
+
+
+##############################
+Blighted Woodland
+
+	Abilities:
+		T: self.controller.mana.add(mana.Mana.COLORLESS, 1)
+
+
+##############################
+Blustersquall
+
+	Targets:
+		'target opponent creature'
+
+	[t.tap() for t in self.legal_targets]
+
+
+##############################
+Boros Challenger
+
+	Abilities:
+		2RW: self.card.add_effect('modifyPT', (1, 1), self, self.game.eot_time)
+
+	Triggers:
+		onAttack
+			[t.add_counter('+1/+1') for t in self.legal_targets]
+				Targets:
+					p.is_creature and p.status.is_attacking and p is not self.card and p.power < self.card.power
+
+
+##############################
+Boros Elite
+
+	Triggers:
+		onAttack
+			self.card.add_effect('modifyPT', (2, 2), self, self.game.eot_time)
+				Conditioned On:
+					len([_c for _c in self.card.controller.battlefield if _c.is_creature and _c.status.is_attacking]) >= 3
+
+
+##############################
+Boros Mastiff
+
+	Triggers:
+		onAttack
+			self.card.add_effect('gainAbility', 'Lifelink', self, self.game.eot_time)
+				Conditioned On:
+					len([_c for _c in self.card.controller.battlefield if _c.is_creature and _c.status.is_attacking]) >= 3
+
+
+##############################
 Brindle Boar
 
 	Abilities:
 		Sacrifice ~: self.controller.gain_life(4)
+
+
+##############################
+Burglar Rat
+
+	Triggers:
+		onEtB
+			self.controller.opponent.discard(1, rand=True)
+
+
+##############################
+Burning-Tree Emissary
+
+	Triggers:
+		onEtB
+			self.controller.mana.add(mana.Mana.RED, 1), self.controller.mana.add(mana.Mana.GREEN, 1)
 
 
 ##############################
@@ -95,6 +248,16 @@ Centaur's Herald
 
 	Abilities:
 		2G, Sacrifice ~: self.controller.create_token('3/3 green Centaur', 1)
+
+
+##############################
+Clinging Anemones
+
+	Triggers:
+		onControllerCreatureEtB
+			self.card.add_counter('+1/+1')
+				If:
+					self.trigger_source is not self.card and (self.trigger_source.power > self.card.power or self.trigger_source.toughness > self.card.toughness)
 
 
 ##############################
@@ -132,6 +295,27 @@ Craterize
 
 
 ##############################
+Crocanura
+
+	Triggers:
+		onControllerCreatureEtB
+			self.card.add_counter('+1/+1')
+				If:
+					self.trigger_source is not self.card and (self.trigger_source.power > self.card.power or self.trigger_source.toughness > self.card.toughness)
+
+
+##############################
+Crypt of the Eternals
+
+	Abilities:
+		T: self.controller.mana.add(mana.Mana.COLORLESS, 1)
+
+	Triggers:
+		onEtB
+			self.controller.gain_life(1)
+
+
+##############################
 Dead Weight
 
 	Aura:
@@ -148,6 +332,7 @@ Deadly Visit
 		'target creature'
 
 	[t.destroy() for t in self.legal_targets]
+	self.controller.surveil(2)
 
 
 ##############################
@@ -166,6 +351,13 @@ Devout Chaplain
 		T: [t.exile() for t in self.legal_targets]
 			Targets:
 				'target artifact or enchantment'
+
+
+##############################
+Dimir Locket
+
+	Abilities:
+		T, Sacrifice ~: self.controller.draw(2)
 
 
 ##############################
@@ -197,6 +389,22 @@ Divine Verdict
 
 
 ##############################
+Dragon Hatchling
+
+	Abilities:
+		R: self.card.add_effect('modifyPT', (1, 0), self, self.game.eot_time)
+
+
+##############################
+Electrickery
+
+	Targets:
+		'target opponent creature'
+
+	[t.take_damage(self, 1) for t in self.legal_targets]
+
+
+##############################
 Era of Innovation
 
 	Abilities:
@@ -211,6 +419,24 @@ Escarpment Fortress
 			"modifyPT"
 			(1, 0)
 			lambda eff: eff.apply_target.is_creature
+
+
+##############################
+Experiment One
+
+	Triggers:
+		onControllerCreatureEtB
+			self.card.add_counter('+1/+1')
+				If:
+					self.trigger_source is not self.card and (self.trigger_source.power > self.card.power or self.trigger_source.toughness > self.card.toughness)
+
+
+##############################
+Experimental Aviator
+
+	Triggers:
+		onEtB
+			self.controller.create_token('1/1 colorless Thopter', 2)
 
 
 ##############################
@@ -233,6 +459,51 @@ Fall of the Gavel
 
 
 ##############################
+Festerhide Boar
+
+	Triggers:
+		onEtB
+			self.card.add_counter('+1/+1', 2)
+				If:
+					bool(self.card.controller.turn_events['creature_died'])
+
+
+##############################
+Flinthoof Boar
+
+	Abilities:
+		R: self.card.add_effect('gainAbility', 'Haste', self, self.game.eot_time)
+
+
+##############################
+Generous Stray
+
+	Triggers:
+		onEtB
+			self.controller.draw(1)
+
+
+##############################
+Ghalma's Warden
+
+	StaticEffects:
+		'self'
+			"modifyPT"
+			(2, 2)
+			lambda eff: len([_a for _a in eff.apply_target.controller.battlefield if _a.is_artifact]) >= 3
+
+
+##############################
+Ghor-Clan Savage
+
+	Triggers:
+		onEtB
+			self.card.add_counter('+1/+1', 3)
+				If:
+					bool(self.card.controller.opponent.turn_events['damaged'])
+
+
+##############################
 Gideon's Lawkeeper
 
 	Abilities:
@@ -242,10 +513,100 @@ Gideon's Lawkeeper
 
 
 ##############################
+Glowspore Shaman
+
+	Triggers:
+		onEtB
+			self.controller.mill(3)
+
+
+##############################
+Goblin Banneret
+
+	Abilities:
+		1R: self.card.add_effect('modifyPT', (2, 0), self, self.game.eot_time)
+
+	Triggers:
+		onAttack
+			[t.add_counter('+1/+1') for t in self.legal_targets]
+				Targets:
+					p.is_creature and p.status.is_attacking and p is not self.card and p.power < self.card.power
+
+
+##############################
+Golgari Raiders
+
+	Triggers:
+		onEtB
+			self.card.add_counter('+1/+1', len([_c for _c in self.card.controller.graveyard if _c.is_creature]))
+
+
+##############################
+Gore-House Chainwalker
+
+	Triggers:
+		onEtB
+			self.card.add_counter('+1/+1') if self.card.controller.may('Have ~ enter with a +1/+1 counter (Unleash)?') else None
+
+	StaticEffects:
+		'self'
+			"cantBlock"
+			True
+			lambda eff: eff.apply_target.num_counters('+1/+1') > 0
+
+
+##############################
+Gorehorn Minotaurs
+
+	Triggers:
+		onEtB
+			self.card.add_counter('+1/+1', 2)
+				If:
+					bool(self.card.controller.opponent.turn_events['damaged'])
+
+
+##############################
+Grappling Sundew
+
+	Abilities:
+		4G: self.card.add_effect('gainAbility', 'Indestructible', self, self.game.eot_time)
+
+
+##############################
+Grasping Dunes
+
+	Abilities:
+		T: self.controller.mana.add(mana.Mana.COLORLESS, 1)
+
+
+##############################
 Harsh Scrutiny
 
-	None
 	self.controller.scry(1)
+
+
+##############################
+Hellhole Flailer
+
+	Triggers:
+		onEtB
+			self.card.add_counter('+1/+1') if self.card.controller.may('Have ~ enter with a +1/+1 counter (Unleash)?') else None
+
+	StaticEffects:
+		'self'
+			"cantBlock"
+			True
+			lambda eff: eff.apply_target.num_counters('+1/+1') > 0
+
+
+##############################
+Hidden Herbalists
+
+	Triggers:
+		onEtB
+			self.card.controller.mana.add(mana.Mana.GREEN, 2)
+				If:
+					bool(self.card.controller.turn_events['permanent_left'])
 
 
 ##############################
@@ -256,6 +617,13 @@ Holy Mantle
 			'creature'
 
 		self.add_pt((2, 2))
+
+
+##############################
+House Guildmage
+
+	Abilities:
+		2B, T: self.controller.surveil(2)
 
 
 ##############################
@@ -298,9 +666,36 @@ Iona's Judgment
 
 
 ##############################
+Ironshell Beetle
+
+	Triggers:
+		onEtB
+			[t.add_counter('+1/+1', 1) for t in self.legal_targets]
+				Targets:
+					'target creature'
+
+
+##############################
 Knight Watch
 
 	self.controller.create_token('2/2 white Knight', 2)
+
+
+##############################
+Kor Hookmaster
+
+	Triggers:
+		onEtB
+			[t.tap() for t in self.legal_targets]
+				Targets:
+					'target opponent creature'
+
+
+##############################
+Kraul Warrior
+
+	Abilities:
+		5G: self.card.add_effect('modifyPT', (3, 3), self, self.game.eot_time)
 
 
 ##############################
@@ -310,12 +705,6 @@ Lash of the Whip
 		'target creature'
 
 	[t.add_effect('modifyPT', (-4, -4), self, self.game.eot_time) for t in self.legal_targets]
-
-
-##############################
-Lay Bare the Heart
-
-	None
 
 
 ##############################
@@ -346,6 +735,7 @@ Liturgy of Blood
 		'target creature'
 
 	[t.destroy() for t in self.legal_targets]
+	self.controller.mana.add(mana.Mana.BLACK, 3)
 
 
 ##############################
@@ -353,6 +743,14 @@ Lobber Crew
 
 	Abilities:
 		T: self.controller.opponent.take_damage(self, 1)
+
+
+##############################
+Loxodon Restorer
+
+	Triggers:
+		onEtB
+			self.controller.gain_life(4)
 
 
 ##############################
@@ -366,6 +764,32 @@ Maniacal Rage
 
 
 ##############################
+Maverick Thopterist
+
+	Triggers:
+		onEtB
+			self.controller.create_token('1/1 colorless Thopter', 2)
+
+
+##############################
+Mist Raven
+
+	Triggers:
+		onEtB
+			[t.bounce() for t in self.legal_targets]
+				Targets:
+					'target creature'
+
+
+##############################
+Muse Drake
+
+	Triggers:
+		onEtB
+			self.controller.draw(1)
+
+
+##############################
 Nature's Way
 
 	Targets:
@@ -375,18 +799,30 @@ Nature's Way
 
 
 ##############################
-Never Happened
-
-	None
-
-
-##############################
 New Prahv Guildmage
 
 	Abilities:
 		WU: [t.add_effect('gainAbility', 'Flying', self, self.game.eot_time) for t in self.legal_targets]
 			Targets:
 				'target creature'
+
+
+##############################
+Omenspeaker
+
+	Triggers:
+		onEtB
+			self.controller.scry(2)
+
+
+##############################
+Parhelion Patrol
+
+	Triggers:
+		onAttack
+			[t.add_counter('+1/+1') for t in self.legal_targets]
+				Targets:
+					p.is_creature and p.status.is_attacking and p is not self.card and p.power < self.card.power
 
 
 ##############################
@@ -402,12 +838,23 @@ Portent of Betrayal
 
 
 ##############################
+Prey Upon
+
+	Targets:
+		'target your creature'
+		'target opponent creature'
+
+	(targets[0].deals_damage(targets[1], targets[0].power), targets[1].deals_damage(targets[0], targets[1].power)) if len(targets) == 2 and all(is_legal_target) else None
+
+
+##############################
 Price of Fame
 
 	Targets:
 		'target creature'
 
 	[t.destroy() for t in self.legal_targets]
+	self.controller.surveil(2)
 
 
 ##############################
@@ -433,6 +880,20 @@ Pursuit of Flight
 Radical Idea
 
 	self.controller.draw(1)
+
+
+##############################
+Rakdos Cackler
+
+	Triggers:
+		onEtB
+			self.card.add_counter('+1/+1') if self.card.controller.may('Have ~ enter with a +1/+1 counter (Unleash)?') else None
+
+	StaticEffects:
+		'self'
+			"cantBlock"
+			True
+			lambda eff: eff.apply_target.num_counters('+1/+1') > 0
 
 
 ##############################
@@ -483,6 +944,13 @@ Rix Maadi Guildmage
 
 
 ##############################
+Satyr Hedonist
+
+	Abilities:
+		R, Sacrifice ~: self.controller.mana.add(mana.Mana.RED, 3)
+
+
+##############################
 Savage Surge
 
 	Targets:
@@ -498,6 +966,21 @@ Searing Spear
 		'any target'
 
 	[t.take_damage(self, 3) for t in self.legal_targets]
+
+
+##############################
+Selesnya Locket
+
+	Abilities:
+		T, Sacrifice ~: self.controller.draw(2)
+
+
+##############################
+Sensor Splicer
+
+	Triggers:
+		onEtB
+			self.controller.create_token('3/3 colorless Phyrexian', 1)
 
 
 ##############################
@@ -528,6 +1011,20 @@ Solemn Offering
 
 
 ##############################
+Splatter Thug
+
+	Triggers:
+		onEtB
+			self.card.add_counter('+1/+1') if self.card.controller.may('Have ~ enter with a +1/+1 counter (Unleash)?') else None
+
+	StaticEffects:
+		'self'
+			"cantBlock"
+			True
+			lambda eff: eff.apply_target.num_counters('+1/+1') > 0
+
+
+##############################
 Stand Firm
 
 	Targets:
@@ -541,6 +1038,16 @@ Stand Firm
 Stir the Sands
 
 	self.controller.create_token('2/2 black Zombie', 3)
+
+
+##############################
+Sunhome Stalwart
+
+	Triggers:
+		onAttack
+			[t.add_counter('+1/+1') for t in self.legal_targets]
+				Targets:
+					p.is_creature and p.status.is_attacking and p is not self.card and p.power < self.card.power
 
 
 ##############################
@@ -585,9 +1092,47 @@ Talrand's Invocation
 
 
 ##############################
+Tenth District Guard
+
+	Triggers:
+		onEtB
+			[t.add_effect('modifyPT', (0, 1), self, self.game.eot_time) for t in self.legal_targets]
+				Targets:
+					'target creature'
+
+
+##############################
 The Crystal's Chosen
 
 	self.controller.create_token('1/1 colorless Hero', 4)
+
+
+##############################
+Timberland Guide
+
+	Triggers:
+		onEtB
+			[t.add_counter('+1/+1', 1) for t in self.legal_targets]
+				Targets:
+					'target creature'
+
+
+##############################
+Tireless Missionaries
+
+	Triggers:
+		onEtB
+			self.controller.gain_life(3)
+
+
+##############################
+Truefire Captain
+
+	Triggers:
+		onAttack
+			[t.add_counter('+1/+1') for t in self.legal_targets]
+				Targets:
+					p.is_creature and p.status.is_attacking and p is not self.card and p.power < self.card.power
 
 
 ##############################
@@ -600,12 +1145,23 @@ Turn to Slag
 
 
 ##############################
+Undercity Uprising
+
+	Targets:
+		'target your creature'
+		'target opponent creature'
+
+	(targets[0].deals_damage(targets[1], targets[0].power), targets[1].deals_damage(targets[0], targets[1].power)) if len(targets) == 2 and all(is_legal_target) else None
+
+
+##############################
 Unexplained Disappearance
 
 	Targets:
 		'target creature'
 
 	[t.bounce() for t in self.legal_targets]
+	self.controller.surveil(1)
 
 
 ##############################
@@ -621,6 +1177,33 @@ Unsummon
 Urban Evolution
 
 	self.controller.draw(3)
+
+
+##############################
+Urbis Protector
+
+	Triggers:
+		onEtB
+			self.controller.create_token('4/4 white Angel', 1)
+
+
+##############################
+Veiled Shade
+
+	Abilities:
+		1B: self.card.add_effect('modifyPT', (1, 1), self, self.game.eot_time)
+
+
+##############################
+Vengeful Rebel
+
+	Triggers:
+		onEtB
+			[t.add_effect('modifyPT', (-3, -3), self, self.game.eot_time) for t in self.legal_targets]
+				If:
+					bool(self.card.controller.turn_events['permanent_left'])
+				Targets:
+					'target opponent creature'
 
 
 ##############################
@@ -640,6 +1223,13 @@ Volt Charge
 
 
 ##############################
+Wall of Fire
+
+	Abilities:
+		R: self.card.add_effect('modifyPT', (1, 0), self, self.game.eot_time)
+
+
+##############################
 Wand of Vertebrae
 
 	Abilities:
@@ -647,9 +1237,34 @@ Wand of Vertebrae
 
 
 ##############################
+Whisper Agent
+
+	Triggers:
+		onEtB
+			self.controller.surveil(1)
+
+
+##############################
 Wild Guess
 
 	self.controller.draw(2)
+
+
+##############################
+Wojek Bodyguard
+
+	Triggers:
+		onAttack
+			[t.add_counter('+1/+1') for t in self.legal_targets]
+				Targets:
+					p.is_creature and p.status.is_attacking and p is not self.card and p.power < self.card.power
+
+
+##############################
+Zhur-Taa Druid
+
+	Abilities:
+		T: self.controller.mana.add(mana.Mana.GREEN, 1)
 
 
 ##############################

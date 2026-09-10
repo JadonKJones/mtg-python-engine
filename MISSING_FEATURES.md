@@ -35,39 +35,59 @@ Regenerate the per-card breakdown with `python -m parser.translate_oracle`
 | **Modal spells** — "Choose one —", "one or both", escalate, entwine — engine has `choose_one`, translator doesn't emit modes yet | Consign // Oblivion | medium |
 | **Choosing a value and acting on it** — name a card / color / type then filter | Duress-likes | medium |
 
-## 2. Casting — alternative & additional costs  *(~40 cards)*
+## 2. Casting — alternative & additional costs
 
-The cast path in `player.get_action` only knows mana cost + the fixed cost
-strings in `utils.parse_ability_costs` (`T`, mana, `Pay N life`, `Sacrifice ~`).
+**Tier 2 — done:**
+
+- ✅ **Convoke** — `player.get_action` (existing path, verified + tested)
+- ✅ **Improvise** — tap artifacts for generic; `StaticAbilities.Improvise`
+- ✅ **From-hand activated abilities** — new `c <card>` action + `Card.hand_abilities`
+  (generated to `data/collection_hand_abilities.py`), card discarded as cost
+- ✅ **Cycling / Landcycling** — draw / land-tutor from hand (Stir the Sands, Balamb T-Rexaur)
+- ✅ **Bloodrush** — from-hand pump on a target attacking creature
+- fixed `GameObject.has_ability()` to return False (not crash) on keywords the engine doesn't model
+
+**Still open:**
 
 | missing | example cards | scope |
 |---|---|---|
-| **Convoke** (tap creatures to pay) — partially stubbed, not wired | Chord of Calling, Siege Wurm, Overgrown Battlement decks | medium |
-| **Improvise** (tap artifacts to pay) | Maverick Thopterist, Reverse Engineer | medium |
-| **Kicker / "as an additional cost, …"** (sacrifice, discard, reveal, pay life) | Wet-Toed Coral Merfolk-likes, additional-cost burn | medium |
+| **Kicker / "as an additional cost, …"** (sacrifice, discard, reveal, pay life) | additional-cost burn | medium |
+| **"When you cycle this card, …"** trigger | Stir the Sands (token half) | small |
 | **Alternative costs** — "you may pay {X} rather than", free spells | — | medium |
 | **Cast from graveyard** — Flashback, Jump-start, Aftermath, Retrace, Escape | Beacon Bolt, Gravitic Punch, Consign // Oblivion, Devious Cover-Up | large |
 | **X spells** — `X` in cost, chosen on cast, readable in the effect | Syncopate, Rolling Thunder, Fireball-likes | medium |
 | **Cost reduction / increase** — `reduceCost`/`additionalCost` effect hooks exist but are `pass` | affinity, "costs {1} less" | medium |
 | **Additional/replacement targets while on the stack**, "can't be countered" as a property | Terra Stomper | small |
 
-## 3. Named keyword mechanics  *(each is self-contained; ~90 cards total)*
+## 3. Named keyword mechanics
 
-None of these are modeled. Each needs a trigger condition or static hook plus its
-own resolution. Small individually, many in aggregate.
+**Tier 1 — done** (engine primitives + translator keyword-expansion in
+`_kw_extras`):
 
-- **Energy counters** ({E}) — a whole player resource pool (Scrapper Champion, Aether Hub-likes) — *medium, and only worth it for the ~4 energy cards*
-- **Surveil N** (~15 cards) — like scry but to graveyard — *small, once `scry` is real*
-- **Mentor** (~4) — attack trigger, +1/+1 counter on a lesser-power attacker
-- **Battalion** / "attacks with at least two other creatures" (~4)
-- **Undergrowth** — count creature cards in your graveyard (~6)
-- **Revolt** — "a permanent you controlled left the battlefield this turn" (~5)
-- **Bloodthirst** — ETB conditional on an opponent having been dealt damage (~2)
-- **Heroic** — trigger when you cast a spell targeting this creature (~2)
-- **Bloodrush** — discard from hand for a combat pump (~2)
-- **Cycling / Landcycling / Typecycling** — discard-to-draw activated from hand (~2)
-- **Bestow** — cast a creature as an Aura (~2)
-- **Monstrosity**, **Unleash**, **Evolve**, **Extort**, **Graft**, **Landfall**, **Detain**, **Level up**, **Cipher**, **Scavenge**, **Overload**, **Exert**, **Proliferate**, **Crew** / Vehicles, **Fabricate** — 1–3 cards each
+- ✅ **Scry / Surveil** — `Player.scry()` / `.surveil()`, emitted from text
+- ✅ **Infect** — `StaticAbilities.Infect`; damage to creatures → −1/−1 counters,
+  to players → `Player.poison`; 10 poison loses (SBA)
+- ✅ **Mentor** — onAttack trigger, +1/+1 counter on a lesser-power attacker
+- ✅ **Evolve** — onControllerCreatureEtB, P/T compare
+- ✅ **Unleash** — may-enter-with-counter ETB + `cantBlock` effect while it has one
+- ✅ **Bloodthirst** — ETB counters gated on `opponent.turn_events['damaged']`
+- ✅ **Undergrowth** — ETB counters per creature card in your graveyard
+- ✅ **Metalcraft / Fateful hour** — static self bonus with a live toggle
+- ✅ **Battalion** — onAttack + "3+ attackers" requirement
+- ✅ **Revolt / Morbid / Raid** — ETB clause gated on a turn-event
+  (`permanent_left` / `creature_died` / `attacked`)
+- ✅ **Fight** — two-target spell, mutual `deals_damage`
+
+**Tier 2 — needs the cost pipeline:** Convoke, Improvise, Bloodrush, Cycling,
+alternative costs.
+
+**Tier 3 — needs a new subsystem:** Regenerate (replacement effects), Aftermath /
+Jump-start / Flashback / Overload (cast-from-graveyard), Extort (cast trigger +
+payment), Energy counters ({E} pool).
+
+**Tier 4 — niche / 1–3 cards each:** Monstrosity, Graft, Bestow, Heroic, Exalted,
+Delirium, Landfall, Detain, Level up, Cipher, Scavenge, Proliferate, Crew /
+Vehicles, Unleash-adjacent, plus the Final-Fantasy flavor keywords.
 
 ## 4. Effect primitives the engine can't express  *(~120 cards)*
 
