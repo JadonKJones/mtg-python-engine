@@ -48,7 +48,18 @@ def face(c):
 # ---------------------------------------------------------------------------
 
 def _dmg_target(word):
-    return {
+    prefix = ""
+    if word.startswith("up to "):
+        prefix = "up to "
+        word = word[len(prefix):]
+        # Match 'up to one target ...', 'up to two target ...', etc.
+        for num in _WORD_NUM.keys():
+            if word.startswith(num + " "):
+                prefix += num + " "
+                word = word[len(num)+1:]
+                break
+
+    t = {
         "any target": "'creature or player'",
         "target creature": "'creature'",
         "target creature or player": "'creature or player'",
@@ -59,23 +70,81 @@ def _dmg_target(word):
         "target attacking or blocking creature": "'attacking or blocking creature'",
     }.get(word)
 
+    if t and prefix:
+        return f"'{prefix}{t[1:]}"
+    return t
+
 
 def _destroy_target(word):
-    return {
-        "target creature": "'creature'",
-        "target artifact": "'artifact'",
-        "target enchantment": "'enchantment'",
-        "target land": "'land'",
-        "target nonland permanent": "'nonland permanent'",
-        "target artifact or enchantment": "'artifact or enchantment'",
-        "target artifact or creature": "'artifact or creature'",
-        "target creature or enchantment": "'creature or enchantment'",
-        "target creature or planeswalker": "'creature or planeswalker'",
-        "target nonblack creature": "'nonblack creature'",
-        "target nonwhite creature": "'nonwhite creature'",
-        "target tapped creature": "'tapped creature'",
-        "target permanent": "'permanent'",
+    prefix = ""
+    if word.startswith("up to "):
+        prefix = "up to "
+        word = word[len(prefix):]
+        for num in _WORD_NUM.keys():
+            if word.startswith(num + " "):
+                prefix += num + " "
+                word = word[len(num)+1:]
+                break
+        if word.startswith("target "):
+            word = word[7:]
+    else:
+        if word.startswith("target "):
+            word = word[7:]
+
+    t = {
+        "creature": "'creature'",
+        "artifact": "'artifact'",
+        "enchantment": "'enchantment'",
+        "land": "'land'",
+        "nonland permanent": "'nonland permanent'",
+        "artifact or enchantment": "'artifact or enchantment'",
+        "artifact or creature": "'artifact or creature'",
+        "creature or enchantment": "'creature or enchantment'",
+        "creature or planeswalker": "'creature or planeswalker'",
+        "nonblack creature": "'nonblack creature'",
+        "nonwhite creature": "'nonwhite creature'",
+        "tapped creature": "'tapped creature'",
+        "permanent": "'permanent'",
     }.get(word)
+
+    if t and prefix:
+        return f"'{prefix}target {t[1:]}"
+    if t:
+        return f"'target {t[1:]}"
+    return None
+
+def _gy_target(word):
+    prefix = ""
+    if word.startswith("up to "):
+        prefix = "up to "
+        word = word[len(prefix):]
+        for num in _WORD_NUM.keys():
+            if word.startswith(num + " "):
+                prefix += num + " "
+                word = word[len(num)+1:]
+                break
+
+    if word.startswith("target "):
+        word = word[7:]
+
+    t = {
+        "creature card from your graveyard": "'creature card from your graveyard'",
+        "creature card in your graveyard": "'creature card in your graveyard'",
+        "card from your graveyard": "'card from your graveyard'",
+        "card in your graveyard": "'card in your graveyard'",
+        "card from a graveyard": "'card from a graveyard'",
+        "card in a graveyard": "'card in a graveyard'",
+        "artifact card from your graveyard": "'artifact card from your graveyard'",
+        "artifact or creature card from your graveyard": "'artifact or creature card from your graveyard'",
+        "artifact or creature card in your graveyard": "'artifact or creature card in your graveyard'",
+        "artifact or enchantment card from your graveyard": "'artifact or enchantment card from your graveyard'",
+    }.get(word)
+
+    if t and prefix:
+        return f"'{prefix}target {t[1:]}"
+    if t:
+        return f"'target {t[1:]}"
+    return None
 
 
 def clause_to_code(cl, actor):
@@ -85,6 +154,12 @@ def clause_to_code(cl, actor):
     low = s.lower()
 
     # --- no-target player effects ---
+    m = re.fullmatch(r"scry (\w+)", low)
+    if m and n(m.group(1)):
+        return "%s.scry(%d)" % (actor, n(m.group(1)))
+    m = re.fullmatch(r"surveil (\w+)", low)
+    if m and n(m.group(1)):
+        return "%s.surveil(%d)" % (actor, n(m.group(1)))
     m = re.fullmatch(r"draw (\w+) cards?", low)
     if m and n(m.group(1)):
         return "%s.draw(%d)" % (actor, n(m.group(1)))
@@ -139,22 +214,34 @@ def clause_to_code(cl, actor):
     m = re.fullmatch(r"~ deals (\d+) damage to (.+)", low.replace("this creature", "~").replace("this spell", "~"))
     if m and _dmg_target(m.group(2)):
         return ("TARGET", _dmg_target(m.group(2)),
-                "targets[0].take_damage(self, %d)" % int(m.group(1)))
+                "[t.take_damage(self, %d) for t in targets]" % int(m.group(1)))
     m = re.fullmatch(r"destroy (.+)", low)
     if m and _destroy_target(m.group(1)):
-        return ("TARGET", _destroy_target(m.group(1)), "targets[0].destroy()")
+        return ("TARGET", _destroy_target(m.group(1)), "[t.destroy() for t in targets]")
     m = re.fullmatch(r"exile (.+)", low)
     if m and _destroy_target(m.group(1)):
-        return ("TARGET", _destroy_target(m.group(1)), "targets[0].exile()")
+        return ("TARGET", _destroy_target(m.group(1)), "[t.exile() for t in targets]")
+    m = re.fullmatch(r"exile (.+?)\.? return (?:that card|it) to the battlefield under (?:its owner's|your) control(?: at the beginning of the next end step|)?", low)
+    if m and _destroy_target(m.group(1)):
+        return ("TARGET", _destroy_target(m.group(1)), "[t.flicker() for t in targets]")
     m = re.fullmatch(r"return (.+?) to (?:its|their) owner['’]s hand", low)
     if m and _destroy_target(m.group(1)):
-        return ("TARGET", _destroy_target(m.group(1)), "targets[0].bounce()")
+        return ("TARGET", _destroy_target(m.group(1)), "[t.bounce() for t in targets]")
+    m = re.fullmatch(r"return (.+?) to your hand", low)
+    if m and _gy_target(m.group(1)):
+        return ("TARGET", _gy_target(m.group(1)), "[t.change_zone(self.controller.hand) for t in targets]")
+    m = re.fullmatch(r"return (.+?) to the battlefield", low)
+    if m and _gy_target(m.group(1)):
+        return ("TARGET", _gy_target(m.group(1)), "[t.change_zone(self.controller.battlefield) for t in targets]")
     m = re.fullmatch(r"tap (.+)", low)
     if m and _destroy_target(m.group(1)):
-        return ("TARGET", _destroy_target(m.group(1)), "targets[0].tap()")
+        return ("TARGET", _destroy_target(m.group(1)), "[t.tap() for t in targets]")
     m = re.fullmatch(r"untap (.+)", low)
     if m and _destroy_target(m.group(1)):
-        return ("TARGET", _destroy_target(m.group(1)), "targets[0].untap()")
+        return ("TARGET", _destroy_target(m.group(1)), "[t.untap() for t in targets]")
+    m = re.fullmatch(r"target player discards (\w+) cards?", low)
+    if m and n(m.group(1)):
+        return ("TARGET", "'player'", f"[t.discard({n(m.group(1))}) for t in targets]")
     m = re.fullmatch(r"counter (.+)", low)
     if m:
         kind = m.group(1).replace("target ", "").replace(" spell", "").strip()
@@ -168,20 +255,47 @@ def clause_to_code(cl, actor):
             "activated or triggered": "'spell'",
         }.get(kind)
         if crit:
-            return ("TARGET", crit, "targets[0].counter(source=self)")
+            return ("TARGET", crit, "[t.counter(source=self) for t in targets]")
+
     m = re.fullmatch(r"target creature gets ([+-]\d+)/([+-]\d+) until end of turn", low)
     if m:
         return ("TARGET", "'creature'",
-                "targets[0].add_effect('modifyPT', (%d, %d), self, self.game.eot_time)"
+                "[t.add_effect('modifyPT', (%d, %d), self, self.game.eot_time) for t in targets]"
                 % (int(m.group(1)), int(m.group(2))))
+
+    m = re.fullmatch(r"(.+) gets ([+-]\d+)/([+-]\d+) until end of turn", low)
+    if m and _destroy_target(m.group(1)):
+        return ("TARGET", _destroy_target(m.group(1)),
+                "[t.add_effect('modifyPT', (%d, %d), self, self.game.eot_time) for t in targets]"
+                % (int(m.group(2)), int(m.group(3))))
+
+    m = re.fullmatch(r"(.+) gains (.+) until end of turn", low)
+    if m and _destroy_target(m.group(1)):
+        ab = m.group(2).title().replace(" ", "_")
+        return ("TARGET", _destroy_target(m.group(1)),
+                "[t.add_effect('gainAbility', %r, self, self.game.eot_time) for t in targets]" % ab)
+
+    m = re.fullmatch(r"target (.+) gets ([+-]\d+)/([+-]\d+) and gains (.+) until end of turn", low)
+    if m:
+        ab = m.group(4).title().replace(" ", "_")
+        return ("TARGET", "'creature'",
+                "[t.add_effect('modifyPT', (%d, %d), self, self.game.eot_time) for t in targets], [t.add_effect('gainAbility', %r, self, self.game.eot_time) for t in targets]" % (int(m.group(2)), int(m.group(3)), ab))
+
+    m = re.fullmatch(r"target (.+) gains (.+) and (.+) until end of turn", low)
+    if m:
+        ab1 = m.group(2).title().replace(" ", "_")
+        ab2 = m.group(3).title().replace(" ", "_")
+        return ("TARGET", "'creature'",
+                "[t.add_effect('gainAbility', %r, self, self.game.eot_time) for t in targets], [t.add_effect('gainAbility', %r, self, self.game.eot_time) for t in targets]" % (ab1, ab2))
+
     m = re.fullmatch(r"put (\w+) \+1/\+1 counters? on target creature", low)
     if m and n(m.group(1)):
-        return ("TARGET", "'creature'", "targets[0].add_counter('+1/+1', %d)" % n(m.group(1)))
+        return ("TARGET", "'creature'", "[t.add_counter('+1/+1', %d) for t in targets]" % n(m.group(1)))
     m = re.fullmatch(r"target creature gains ([\w ]+?) until end of turn", low)
     if m:
         ab = m.group(1).replace("and ", "").strip().title().replace(" ", "_")
         return ("TARGET", "'creature'",
-                "targets[0].add_effect('gainAbility', %r, self, self.game.eot_time)" % ab)
+                "[t.add_effect('gainAbility', %r, self, self.game.eot_time) for t in targets]" % ab)
     return None
 
 
@@ -254,7 +368,7 @@ def translate(card):
             continue
         if isinstance(code, tuple):
             _, crit, tcode = code
-            abilities.append((cost, tcode.replace("targets[0]", "self.targets_chosen[0]"), crit))
+            abilities.append((cost, tcode.replace("targets", "self.targets_chosen"), crit))
         else:
             abilities.append((cost, code, None))
         matched += 1
@@ -271,7 +385,7 @@ def translate(card):
             continue
         if isinstance(code, tuple):
             _, crit, tcode = code
-            triggers.append(("onEtB", tcode.replace("targets[0]", "self.targets_chosen[0]"), crit))
+            triggers.append(("onEtB", tcode.replace("targets", "self.targets_chosen"), crit))
         else:
             triggers.append(("onEtB", code, None))
         matched += 1

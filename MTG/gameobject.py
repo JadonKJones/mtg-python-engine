@@ -232,8 +232,9 @@ class GameObject():
             not isinstance(self.target_criterias, list)):
             return []
 
+        criterias_to_check = getattr(self, 'targets_chosen_criterias', self.target_criterias)
         return [c(self, t) for c, t in 
-                zip(self.target_criterias, self.targets_chosen)]
+                zip(criterias_to_check, self.targets_chosen)]
 
     def has_valid_target(self):
         if self.target_criterias is None:
@@ -242,6 +243,10 @@ class GameObject():
         # for each target criteria, check if at least one TARGETABLE OBJECT
         # somewhere satisfies this criteria (i.e. is targetable)
         for crit in self.target_criterias:
+            min_targets = getattr(crit, 'min_targets', 1)
+            if min_targets == 0:
+                continue
+
             has_valid_target = False
             for _zone in ['battlefield', 'stack',
                           'graveyard', 'exile']:

@@ -549,6 +549,26 @@ class Player():
             self.graveyard.add(self.library.pop())
         return True
 
+    def surveil(self, num=1):
+        """Look at the top `num` cards; optionally send some to the graveyard.
+
+        Minimal interactive implementation: for each card, keep on top or move
+        to the graveyard. Order-preserving for the kept cards.
+        """
+        num = min(num, len(self.library))
+        if num <= 0:
+            return True
+        top = self.library.elements[-num:]
+        del self.library.elements[-num:]
+        keep, grave = [], []
+        for card in reversed(top):
+            ans = self.make_choice("Surveil: keep %r on top? (yes/no)" % card)
+            (keep if str(ans).strip().lower() in ("", "y", "yes") else grave).append(card)
+        self.library.elements = self.library.elements + list(reversed(keep))
+        for card in grave:
+            self.graveyard.add(card)
+        return True
+
     def scry(self, num=1):
         """Look at the top `num` cards; optionally send some to the bottom.
 

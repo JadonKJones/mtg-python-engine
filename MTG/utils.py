@@ -48,6 +48,16 @@ def get_card_from_user_input(player, string):
         return zone.get_card_by_name(string[2:])
 
 
+class Target:
+    def __init__(self, criteria_func, min_targets=1, max_targets=1):
+        self.criteria_func = criteria_func
+        self.min_targets = min_targets
+        self.max_targets = max_targets
+
+    def __call__(self, source, target):
+        return self.criteria_func(source, target)
+
+
 def choose_targets(source):
     # TODO: ensure boolean/card return values of this func
     # is being parsed correctly.
@@ -59,24 +69,46 @@ def choose_targets(source):
         return False
 
     targets_chosen = []
+    source.targets_chosen_criterias = []
+
     for criteria, prompt in zip(source.target_criterias, source.target_prompts):
         
-        # keep choosing until we get a valid target
-        # TODO: allow optional targeting;
-        # TODO: if no valid target available, fizzles
-        card = None
-        try:
-            while not card:
-                answer = source.controller.make_choice(prompt)
-                card = get_card_from_user_input(source.controller, answer)
-                if card is None: continue
-                if not criteria(source, card):
-                    card = None
-        except:
-            traceback.print_exc()
-            return False
+        min_targets = getattr(criteria, 'min_targets', 1)
+        max_targets = getattr(criteria, 'max_targets', 1)
 
-        targets_chosen.append(card)
+        for i in range(max_targets if max_targets != float('inf') else 999):
+            card = None
+            try:
+                while not card:
+                    if max_targets > 1 or min_targets == 0:
+                        ans_prompt = f"{prompt.strip()} (Target {i+1}/{max_targets}, leave blank if done)\n"
+                    else:
+                        ans_prompt = prompt
+
+                    answer = source.controller.make_choice(ans_prompt)
+
+                    if not answer.strip():
+                        if i >= min_targets:
+                            break
+                        else:
+                            print(f"You must choose at least {min_targets} target(s).")
+                            continue
+
+                    card = get_card_from_user_input(source.controller, answer)
+                    if card is None: continue
+                    if not criteria(source, card):
+                        print("Invalid target.")
+                        card = None
+
+                if card is None:
+                    break
+            except:
+                traceback.print_exc()
+                return False
+
+            targets_chosen.append(card)
+            source.targets_chosen_criterias.append(criteria)
+
     return targets_chosen
 
 _TARGET_SHORTCUTS = {
@@ -114,13 +146,55 @@ _TARGET_SHORTCUTS = {
     'blocking creature': lambda self, p: p.is_creature and p.status.is_blocking,
     'attacking or blocking creature': lambda self, p: p.is_creature and (p.status.is_attacking or p.status.is_blocking),
     'tapped creature': lambda self, p: p.is_creature and p.status.tapped,
+    'creature card from your graveyard': lambda self, p: p.zone == self.controller.graveyard and p.is_creature,
+    'creature card in your graveyard': lambda self, p: p.zone == self.controller.graveyard and p.is_creature,
+    'card from your graveyard': lambda self, p: p.zone == self.controller.graveyard,
+    'card in your graveyard': lambda self, p: p.zone == self.controller.graveyard,
+    'card from a graveyard': lambda self, p: p.zone and p.zone.zone_type == 'GRAVEYARD',
+    'card in a graveyard': lambda self, p: p.zone and p.zone.zone_type == 'GRAVEYARD',
+    'artifact card from your graveyard': lambda self, p: p.zone == self.controller.graveyard and p.is_artifact,
+    'artifact or creature card from your graveyard': lambda self, p: p.zone == self.controller.graveyard and (p.is_artifact or p.is_creature),
+    'artifact or creature card in your graveyard': lambda self, p: p.zone == self.controller.graveyard and (p.is_artifact or p.is_creature),
+    'artifact or enchantment card from your graveyard': lambda self, p: p.zone == self.controller.graveyard and (p.is_artifact or p.is_enchantment),
 }
 
+_WORD_NUM = {"one": 1, "two": 2, "three": 3, "four": 4,
+             "five": 5, "six": 6, "seven": 7, "eight": 8, "ten": 10}
 
 def parse_targets(criterias):
+    import math
     for i, v in enumerate(criterias):
-        if isinstance(v, str) and v in _TARGET_SHORTCUTS:
-            criterias[i] = _TARGET_SHORTCUTS[v]
+        if isinstance(v, str):
+            min_t = 1
+            max_t = 1
+            original_v = v
+
+            if v.startswith("up to "):
+                v = v[6:]
+                min_t = 0
+                for word, num in _WORD_NUM.items():
+                    if v.startswith(word + " "):
+                        max_t = num
+                        v = v[len(word)+1:]
+                        break
+            elif v.startswith("any number of "):
+                v = v[14:]
+                min_t = 0
+                max_t = math.inf
+
+            if v.startswith("target "):
+                v = v[7:]
+
+            if v in _TARGET_SHORTCUTS:
+                criterias[i] = Target(_TARGET_SHORTCUTS[v], min_t, max_t)
+            elif original_v in _TARGET_SHORTCUTS:
+                criterias[i] = Target(_TARGET_SHORTCUTS[original_v], min_t, max_t)
+            else:
+                # If we cannot find it, leave it as is or wrap it in Target if it's somehow evaluable
+                pass
+        elif callable(v) and not isinstance(v, Target):
+            criterias[i] = Target(v)
+
     return criterias
 
 def parse_ability_costs(cost):

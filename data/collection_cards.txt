@@ -25,9 +25,9 @@ Aether Meltdown
 Angelic Edict
 
 	Targets:
-		'creature or enchantment'
+		'target creature or enchantment'
 
-	targets[0].exile()
+	[t.exile() for t in targets]
 
 
 ##############################
@@ -36,7 +36,7 @@ Annihilating Fire
 	Targets:
 		'creature or player'
 
-	targets[0].take_damage(self, 3)
+	[t.take_damage(self, 3) for t in targets]
 
 
 ##############################
@@ -45,14 +45,14 @@ Annul
 	Targets:
 		'artifact or enchantment spell'
 
-	targets[0].counter(source=self)
+	[t.counter(source=self) for t in targets]
 
 
 ##############################
 Aquus Steed
 
 	Abilities:
-		2U, T: self.targets_chosen[0].add_effect('modifyPT', (-2, 0), self, self.game.eot_time)
+		2U, T: [t.add_effect('modifyPT', (-2, 0), self, self.game.eot_time) for t in self.targets_chosen]
 			Targets:
 				'creature'
 
@@ -61,9 +61,9 @@ Aquus Steed
 Artisan's Sorrow
 
 	Targets:
-		'artifact or enchantment'
+		'target artifact or enchantment'
 
-	targets[0].destroy()
+	[t.destroy() for t in targets]
 	self.controller.scry(2)
 
 
@@ -73,7 +73,7 @@ Battlewise Valor
 	Targets:
 		'creature'
 
-	targets[0].add_effect('modifyPT', (2, 2), self, self.game.eot_time)
+	[t.add_effect('modifyPT', (2, 2), self, self.game.eot_time) for t in targets]
 	self.controller.scry(1)
 
 
@@ -108,9 +108,9 @@ Conclave Guildmage
 Consign
 
 	Targets:
-		'nonland permanent'
+		'target nonland permanent'
 
-	targets[0].bounce()
+	[t.bounce() for t in targets]
 
 
 ##############################
@@ -119,16 +119,16 @@ Counterspell
 	Targets:
 		'spell'
 
-	targets[0].counter(source=self)
+	[t.counter(source=self) for t in targets]
 
 
 ##############################
 Craterize
 
 	Targets:
-		'land'
+		'target land'
 
-	targets[0].destroy()
+	[t.destroy() for t in targets]
 
 
 ##############################
@@ -145,9 +145,19 @@ Dead Weight
 Deadly Visit
 
 	Targets:
+		'target creature'
+
+	[t.destroy() for t in targets]
+	self.controller.surveil(2)
+
+
+##############################
+Destined
+
+	Targets:
 		'creature'
 
-	targets[0].destroy()
+	[t.add_effect('modifyPT', (1, 0), self, self.game.eot_time) for t in targets], [t.add_effect('gainAbility', 'Indestructible', self, self.game.eot_time) for t in targets]
 
 
 ##############################
@@ -156,16 +166,16 @@ Devious Cover-Up
 	Targets:
 		'spell'
 
-	targets[0].counter(source=self)
+	[t.counter(source=self) for t in targets]
 
 
 ##############################
 Devout Chaplain
 
 	Abilities:
-		T: self.targets_chosen[0].exile()
+		T: [t.exile() for t in self.targets_chosen]
 			Targets:
-				'artifact or enchantment'
+				'target artifact or enchantment'
 
 
 ##############################
@@ -174,7 +184,7 @@ Disappearing Act
 	Targets:
 		'spell'
 
-	targets[0].counter(source=self)
+	[t.counter(source=self) for t in targets]
 
 
 ##############################
@@ -208,9 +218,9 @@ Escarpment Fortress
 Fade into Antiquity
 
 	Targets:
-		'artifact or enchantment'
+		'target artifact or enchantment'
 
-	targets[0].exile()
+	[t.exile() for t in targets]
 
 
 ##############################
@@ -219,7 +229,7 @@ Fall of the Gavel
 	Targets:
 		'spell'
 
-	targets[0].counter(source=self)
+	[t.counter(source=self) for t in targets]
 	self.controller.gain_life(5)
 
 
@@ -227,9 +237,9 @@ Fall of the Gavel
 Gideon's Lawkeeper
 
 	Abilities:
-		W, T: self.targets_chosen[0].tap()
+		W, T: [t.tap() for t in self.targets_chosen]
 			Targets:
-				'creature'
+				'target creature'
 
 
 ##############################
@@ -250,6 +260,13 @@ Holy Mantle
 
 
 ##############################
+House Guildmage
+
+	Abilities:
+		2B, T: self.controller.surveil(2)
+
+
+##############################
 Hypothesizzle
 
 	self.controller.draw(2)
@@ -267,7 +284,7 @@ Inescapable Blaze
 	Targets:
 		'creature or player'
 
-	targets[0].take_damage(self, 6)
+	[t.take_damage(self, 6) for t in targets]
 
 
 ##############################
@@ -276,16 +293,16 @@ Integrity
 	Targets:
 		'creature'
 
-	targets[0].add_effect('modifyPT', (2, 2), self, self.game.eot_time)
+	[t.add_effect('modifyPT', (2, 2), self, self.game.eot_time) for t in targets]
 
 
 ##############################
 Iona's Judgment
 
 	Targets:
-		'creature or enchantment'
+		'target creature or enchantment'
 
-	targets[0].exile()
+	[t.exile() for t in targets]
 
 
 ##############################
@@ -300,7 +317,7 @@ Lash of the Whip
 	Targets:
 		'creature'
 
-	targets[0].add_effect('modifyPT', (-4, -4), self, self.game.eot_time)
+	[t.add_effect('modifyPT', (-4, -4), self, self.game.eot_time) for t in targets]
 
 
 ##############################
@@ -334,9 +351,9 @@ Legion Guildmage
 Liturgy of Blood
 
 	Targets:
-		'creature'
+		'target creature'
 
-	targets[0].destroy()
+	[t.destroy() for t in targets]
 
 
 ##############################
@@ -357,6 +374,42 @@ Maniacal Rage
 
 
 ##############################
+Maximize Altitude
+
+	Targets:
+		'creature'
+
+	[t.add_effect('modifyPT', (1, 1), self, self.game.eot_time) for t in targets], [t.add_effect('gainAbility', 'Flying', self, self.game.eot_time) for t in targets]
+
+
+##############################
+Mighty Leap
+
+	Targets:
+		'creature'
+
+	[t.add_effect('modifyPT', (2, 2), self, self.game.eot_time) for t in targets], [t.add_effect('gainAbility', 'Flying', self, self.game.eot_time) for t in targets]
+
+
+##############################
+Moment of Heroism
+
+	Targets:
+		'creature'
+
+	[t.add_effect('modifyPT', (2, 2), self, self.game.eot_time) for t in targets], [t.add_effect('gainAbility', 'Lifelink', self, self.game.eot_time) for t in targets]
+
+
+##############################
+Nature's Way
+
+	Targets:
+		'creature'
+
+	[t.add_effect('gainAbility', 'Vigilance', self, self.game.eot_time) for t in targets], [t.add_effect('gainAbility', 'Trample', self, self.game.eot_time) for t in targets]
+
+
+##############################
 Never Happened
 
 	None
@@ -366,9 +419,9 @@ Never Happened
 New Prahv Guildmage
 
 	Abilities:
-		WU: self.targets_chosen[0].add_effect('gainAbility', 'Flying', self, self.game.eot_time)
+		WU: [t.add_effect('gainAbility', 'Flying', self, self.game.eot_time) for t in self.targets_chosen]
 			Targets:
-				'creature'
+				'target creature'
 
 
 ##############################
@@ -387,9 +440,10 @@ Portent of Betrayal
 Price of Fame
 
 	Targets:
-		'creature'
+		'target creature'
 
-	targets[0].destroy()
+	[t.destroy() for t in targets]
+	self.controller.surveil(2)
 
 
 ##############################
@@ -398,7 +452,7 @@ Psychic Strike
 	Targets:
 		'spell'
 
-	targets[0].counter(source=self)
+	[t.counter(source=self) for t in targets]
 
 
 ##############################
@@ -421,9 +475,9 @@ Radical Idea
 Ray of Dissolution
 
 	Targets:
-		'enchantment'
+		'target enchantment'
 
-	targets[0].destroy()
+	[t.destroy() for t in targets]
 	self.controller.gain_life(3)
 
 
@@ -439,7 +493,7 @@ Righteous Blow
 	Targets:
 		'attacking or blocking creature'
 
-	targets[0].take_damage(self, 2)
+	[t.take_damage(self, 2) for t in targets]
 
 
 ##############################
@@ -448,7 +502,16 @@ Rites of Reaping
 	Targets:
 		'creature'
 
-	targets[0].add_effect('modifyPT', (3, 3), self, self.game.eot_time)
+	[t.add_effect('modifyPT', (3, 3), self, self.game.eot_time) for t in targets]
+
+
+##############################
+Sangrite Surge
+
+	Targets:
+		'creature'
+
+	[t.add_effect('modifyPT', (3, 3), self, self.game.eot_time) for t in targets], [t.add_effect('gainAbility', 'Double_Strike', self, self.game.eot_time) for t in targets]
 
 
 ##############################
@@ -457,7 +520,7 @@ Savage Surge
 	Targets:
 		'creature'
 
-	targets[0].add_effect('modifyPT', (2, 2), self, self.game.eot_time)
+	[t.add_effect('modifyPT', (2, 2), self, self.game.eot_time) for t in targets]
 
 
 ##############################
@@ -466,7 +529,7 @@ Searing Spear
 	Targets:
 		'creature or player'
 
-	targets[0].take_damage(self, 3)
+	[t.take_damage(self, 3) for t in targets]
 
 
 ##############################
@@ -487,12 +550,21 @@ Siege Modification
 
 
 ##############################
+Skillful Lunge
+
+	Targets:
+		'creature'
+
+	[t.add_effect('modifyPT', (2, 0), self, self.game.eot_time) for t in targets], [t.add_effect('gainAbility', 'First_Strike', self, self.game.eot_time) for t in targets]
+
+
+##############################
 Solemn Offering
 
 	Targets:
-		'artifact or enchantment'
+		'target artifact or enchantment'
 
-	targets[0].destroy()
+	[t.destroy() for t in targets]
 	self.controller.gain_life(4)
 
 
@@ -502,8 +574,17 @@ Stand Firm
 	Targets:
 		'creature'
 
-	targets[0].add_effect('modifyPT', (1, 1), self, self.game.eot_time)
+	[t.add_effect('modifyPT', (1, 1), self, self.game.eot_time) for t in targets]
 	self.controller.scry(2)
+
+
+##############################
+Status
+
+	Targets:
+		'creature'
+
+	[t.add_effect('modifyPT', (1, 1), self, self.game.eot_time) for t in targets], [t.add_effect('gainAbility', 'Deathtouch', self, self.game.eot_time) for t in targets]
 
 
 ##############################
@@ -516,9 +597,9 @@ Stir the Sands
 Survey the Wreckage
 
 	Targets:
-		'land'
+		'target land'
 
-	targets[0].destroy()
+	[t.destroy() for t in targets]
 	self.controller.create_token('1/1 red Goblin', 1)
 
 
@@ -535,7 +616,7 @@ Take Heart
 	Targets:
 		'creature'
 
-	targets[0].add_effect('modifyPT', (2, 2), self, self.game.eot_time)
+	[t.add_effect('modifyPT', (2, 2), self, self.game.eot_time) for t in targets]
 
 
 ##############################
@@ -551,30 +632,40 @@ The Crystal's Chosen
 
 
 ##############################
+Treasured Find
+
+	Targets:
+		'target card from your graveyard'
+
+	[t.change_zone(self.controller.hand) for t in targets]
+
+
+##############################
 Turn to Slag
 
 	Targets:
 		'creature'
 
-	targets[0].take_damage(self, 5)
+	[t.take_damage(self, 5) for t in targets]
 
 
 ##############################
 Unexplained Disappearance
 
 	Targets:
-		'creature'
+		'target creature'
 
-	targets[0].bounce()
+	[t.bounce() for t in targets]
+	self.controller.surveil(1)
 
 
 ##############################
 Unsummon
 
 	Targets:
-		'creature'
+		'target creature'
 
-	targets[0].bounce()
+	[t.bounce() for t in targets]
 
 
 ##############################
@@ -596,7 +687,7 @@ Volt Charge
 	Targets:
 		'creature or player'
 
-	targets[0].take_damage(self, 3)
+	[t.take_damage(self, 3) for t in targets]
 
 
 ##############################

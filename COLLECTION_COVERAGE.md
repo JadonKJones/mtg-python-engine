@@ -2,11 +2,11 @@
 
 482 unique cards.
 
-- **implemented**: 41
-- **partial**: 33
+- **implemented**: 49
+- **partial**: 35
 - **keyword**: 48
 - **vanilla**: 17
-- **unsupported**: 343
+- **unsupported**: 333
 
 > Every card is castable in a game. `keyword`/`vanilla` have no non-keyword text; `partial` wires the clauses the engine supports and drops the rest; `unsupported` plays as a vanilla/keyword permanent.
 
@@ -26,6 +26,8 @@
 - Counterspell — ok
 - Craterize — ok
 - Dead Weight — ok
+- Deadly Visit — ok
+- Destined // Lead — ok
 - Devout Chaplain — ok
 - Divine Favor — ok
 - Era of Innovation — ok
@@ -41,16 +43,22 @@
 - Ledev Champion — ok
 - Lobber Crew — ok
 - Maniacal Rage — ok
+- Mighty Leap — ok
+- Moment of Heroism — ok
 - Pursuit of Flight — ok
 - Ray of Dissolution — ok
 - Righteous Blow — ok
+- Sangrite Surge — ok
 - Searing Spear — ok
 - Shielded Aether Thief — ok
 - Siege Modification — ok
+- Skillful Lunge — ok
 - Solemn Offering — ok
 - Stand Firm — ok
+- Status // Statue — ok
 - Survey the Wreckage — ok
 - Talrand's Invocation — ok
+- Unexplained Disappearance — ok
 - Unsummon — ok
 - Vessel of Endless Rest — ok
 
@@ -58,10 +66,10 @@
 
 - Annihilating Fire — 1/2 clauses
 - Conclave Guildmage — 1/2 clauses
-- Deadly Visit — 1/2 clauses
 - Devious Cover-Up — 1/3 clauses
 - Disappearing Act — 1/2 clauses
 - Harsh Scrutiny — 2/4 clauses
+- House Guildmage — 1/2 clauses
 - Hypothesizzle — 1/3 clauses
 - Illusionist's Stratagem — 1/2 clauses
 - Inescapable Blaze — 1/2 clauses
@@ -69,11 +77,13 @@
 - League Guildmage — 1/2 clauses
 - Legion Guildmage — 1/2 clauses
 - Liturgy of Blood — 1/2 clauses
+- Maximize Altitude — 1/2 clauses
+- Nature's Way — 1/2 clauses
 - Never Happened — 1/2 clauses
 - New Prahv Guildmage — 1/2 clauses
 - Pilfered Plans — 1/2 clauses
 - Portent of Betrayal — 1/4 clauses
-- Price of Fame — 1/3 clauses
+- Price of Fame — 2/3 clauses
 - Psychic Strike — 1/2 clauses
 - Radical Idea — 1/2 clauses
 - Repel the Darkness — 1/2 clauses
@@ -83,8 +93,8 @@
 - Swarm Guildmage — 1/2 clauses
 - Take Heart — 1/2 clauses
 - The Crystal's Chosen — 1/2 clauses
+- Treasured Find — 1/2 clauses
 - Turn to Slag — 1/2 clauses
-- Unexplained Disappearance — 1/2 clauses
 - Urban Evolution — 1/2 clauses
 - Volt Charge — 1/2 clauses
 - Wand of Vertebrae — 1/2 clauses
@@ -165,7 +175,6 @@
 - Defiant Greatmaw — When this creature enters, put two -1/-1 counters on target creature y
 - Deft Dismissal — ~ deals 3 damage divided as you choose among one, two, or three target
 - Demotion — Enchant creature
-- Destined // Lead — Target creature gets +1/+0 and gains indestructible until end of turn.
 - Dimir Locket — {T}: Add {U} or {B}.
 - Dimir Spybug — Flying
 - Disciple of Phenax — When this creature enters, target player reveals a number of cards fro
@@ -244,7 +253,6 @@
 - Hidden Strings — You may tap or untap target permanent, then you may tap or untap anoth
 - Hindervines — Prevent all combat damage that would be dealt this turn by creatures w
 - Hold the Gates — Creatures you control get +0/+1 for each Gate you control and have vig
-- House Guildmage — {1}{U}, {T}: Target creature doesn't untap during its controller's nex
 - Hungry Flames — ~ deals 3 damage to target creature and 2 damage to target player or p
 - Hunt the Hunter — Target green creature you control gets +2/+2 until end of turn. It fig
 - Hunted Witness — When this creature dies, create a 1/1 white Soldier creature token wit
@@ -279,20 +287,16 @@
 - Master of Diversion — Whenever this creature attacks, tap target creature defending player c
 - Maulfist Revolutionary — Trample
 - Maverick Thopterist — Improvise
-- Maximize Altitude — Target creature gets +1/+1 and gains flying until end of turn.
 - Maze Sentinel — Vigilance
 - Might of the Masses — Target creature gets +1/+1 until end of turn for each creature you con
-- Mighty Leap — Target creature gets +2/+2 and gains flying until end of turn.
 - Miming Slime — Create an X/X green Ooze creature token, where X is the greatest power
 - Mist Raven — Flying
 - Molderhulk — Undergrowth — This spell costs {1} less to cast for each creature card
-- Moment of Heroism — Target creature gets +2/+2 and gains lifelink until end of turn.
 - Monk's Fist — Job select
 - Monstrous Onslaught — ~ deals X damage divided as you choose among any number of target crea
 - Mountain — 
 - Muse Drake — Flying
 - Mwonvuli Beast Tracker — When this creature enters, search your library for a creature card wit
-- Nature's Way — Target creature you control gains vigilance and trample until end of t
 - Necrotic Wound — Undergrowth — Target creature gets -X/-X until end of turn, where X is
 - Nephalia Smuggler — {3}{U}, {T}: Exile another target creature you control, then return th
 - Nightveil Sprite — Flying
@@ -344,7 +348,6 @@
 - Ruthless Sniper — Whenever you cycle or discard a card, you may pay {1}. If you do, put 
 - Salvage Scuttler — Whenever this creature attacks, return an artifact you control to its 
 - Samurai's Katana — Job select
-- Sangrite Surge — Target creature gets +3/+3 and gains double strike until end of turn.
 - Satyr Hedonist — {R}, Sacrifice this creature: Add {R}{R}{R}.
 - Satyr Piper — {3}{G}: Target creature must be blocked this turn if able.
 - Scholar of Athreos — {2}{B}: Each opponent loses 1 life. You gain life equal to the life lo
@@ -365,7 +368,6 @@
 - Shipwreck Singer — Flying
 - Silent Dart — {4}, {T}, Sacrifice this artifact: It deals 3 damage to target creatur
 - Skarrg Guildmage — {R}{G}: Creatures you control gain trample until end of turn.
-- Skillful Lunge — Target creature gets +2/+0 and gains first strike until end of turn.
 - Skullcrack — Players can't gain life this turn. Damage can't be prevented this turn
 - Skyline Scout — Whenever this creature attacks, you may pay {1}{W}. If you do, it gain
 - Slime Molding — Create an X/X green Ooze creature token.
@@ -378,7 +380,6 @@
 - Spire Tracer — This creature can't be blocked except by creatures with flying or reac
 - Spring // Mind — Search your library for a basic land card, put it onto the battlefield
 - Sprouting Renewal — Convoke
-- Status // Statue — Target creature gets +1/+1 and gains deathtouch until end of turn.
 - Stone Quarry — This land enters tapped.
 - Stoneshock Giant — {6}{R}{R}: Monstrosity 3.
 - Street Riot — During your turn, creatures you control get +1/+0 and have trample.
@@ -406,7 +407,6 @@
 - Totem-Guide Hartebeest — When this creature enters, you may search your library for an Aura car
 - Tower Defense — Creatures you control get +0/+5 and gain reach until end of turn.
 - Traitorous Instinct — Gain control of target creature until end of turn. Untap that creature
-- Treasured Find — Return target card from your graveyard to your hand. Exile ~.
 - Truefire Captain — Mentor
 - Trusted Forcemage — Soulbond
 - Undercity Necrolisk — {1}, Sacrifice another creature: Put a +1/+1 counter on this creature.
